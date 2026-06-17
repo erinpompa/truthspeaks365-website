@@ -330,7 +330,7 @@ const PresenterCTA = () => (
         </div>
       </div>
       <div className="ts-reveal" style={{ borderRadius: 20, overflow: "hidden", border: "3px solid var(--ink)", boxShadow: "6px 6px 0 var(--ink)", aspectRatio: "4/5", maxHeight: 500 }}>
-        <img src="assets/photo-presenter-action.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
+        <img src="assets/photo-presenter-gym.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
       </div>
     </div>
   </section>
