@@ -325,10 +325,11 @@ const PresenterCTA = () => (
             Now hiring for the 2026-2027 season. Application deadline July 1st, 2026.
           </p>
         </div>
+        <div style={{ marginTop: 28 }}>
+          <Button variant="dark" size="lg" href="presenter.html">Learn more</Button>
+        </div>
       </div>
-      <div className="ts-reveal" style={{ display: "flex", justifyContent: "flex-end" }}>
-        <Button variant="dark" size="lg" href="presenter.html">Apply now →</Button>
-      </div>
+      <div></div>
     </div>
   </section>
 );
