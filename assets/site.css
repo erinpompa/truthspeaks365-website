@@ -1,0 +1,66 @@
+/* =====================================================================
+   TRUTHSPEAKS 365 — SITE BASE
+   Layered on top of colors_and_type.css (the design-system tokens).
+   ===================================================================== */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; padding: 0; }
+
+/* The client prefers white over the warm "cream/paper" base. Override the
+   paper tokens to white site-wide (this file loads after colors_and_type.css).
+   Brand colors + ink sections still carry the rhythm. */
+:root {
+  --paper: #ffffff;
+  --paper-2: #ffffff;
+}
+
+body { background: var(--white); overflow-x: hidden; }
+img { max-width: 100%; }
+::selection { background: var(--lime); color: var(--ink); }
+
+/* image-slot empty state picks up the frame color */
+image-slot { background: var(--bg, var(--violet)); }
+
+@keyframes ts-marquee { from { transform: translateX(0); } to { transform: translateX(-33.333%); } }
+
+/* entrance: content is ALWAYS visible. (Both IntersectionObserver and CSS
+   animations get throttled/paused in offscreen iframes, which can leave
+   opacity-gated content stuck invisible — so we never gate visibility on
+   motion. .ts-reveal is kept as a harmless hook.) */
+.ts-reveal { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* section width helper */
+.ts-wrap { max-width: 1220px; margin: 0 auto; padding-left: 28px; padding-right: 28px; }
+
+/* responsive nav */
+@media (max-width: 700px) {
+  .ts-nav-desk { display: none !important; }
+  .ts-nav-burger { display: grid !important; }
+}
+@media (max-width: 760px) {
+  .ts-foot-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+}
+
+/* responsive layout helpers */
+@media (max-width: 640px) {
+  .ts-split { grid-template-columns: 1fr !important; }
+  .ts-grid-3 { grid-template-columns: 1fr !important; }
+  .ts-grid-4 { grid-template-columns: 1fr 1fr !important; }
+  .ts-offers { grid-template-columns: 1fr 1fr !important; }
+  .ts-logos { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 560px) {
+  .ts-offers { grid-template-columns: 1fr !important; }
+  .ts-grid-4 { grid-template-columns: 1fr !important; }
+  .ts-logos { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 1000px) {
+  .ts-steps { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 520px) {
+  .ts-steps { grid-template-columns: 1fr !important; }
+}
