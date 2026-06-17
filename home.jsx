@@ -29,8 +29,28 @@ const Hero = () => (
   </section>
 );
 
+const PARTNER_LOGOS = [
+  "4-h-Logo.png","abraham-logo.png","Absurbypark-Logo.png","ASAP-logo.png","BayonneLogo.png",
+  "BergenSchools-logo.png","Boys-and-girls-club-logo.png","Brick-schools-logo.png","CASL-logo.png",
+  "CGTI-Logo.png","Charter-high-school-logo.png","Clearview-schools-logo.png","coalition-logo.png",
+  "Cranford-high-school-logo.png","CT-Logo.png","deal-high-school-logo.png","Deptford-logo.png",
+  "east-brunswick-logo.png","Edison-logo.png","ELKS-logo.png","empower-logo.png",
+  "Girls-inc-logo.png","Glassboro-logo.png","HOSA-logo.png","John-p-logo.png",
+  "Kawameh-logo.png","LMTI-logo.png","MASC-Logo.png","Michigan-Stuco-logo.png",
+  "middlesex-college-logo.png","Milestone-logo.png","NA4SA-Logo.png","NH-College-logo.png",
+  "NHASC-Logo.png","NJAC-LOGO.png","NJCDC-Logo.png","NM-FFA.png","North-Arlington-HS-logo.png",
+  "North-Highschool-logo.png","OASC-logo.png","Passaic-logo.png","Passaic-schools-logo.png",
+  "Paulsboro-logo.png","Penns-grove-logo.png","PPS-Logo.png","Prevention-logo.png",
+  "River-Dell-logo.png","Rose-Hulman-Logo.png","RYLA-Logo.png","SCSCA-logo.png",
+  "seeds-of-change-logo.png","Shepard-logo.png","Shore-regional-logo.png","Snowball-logo.png",
+  "Sussex-tech-logo.png","Tenafly-logo.png","the-bridge-logo.jpg","Trenton-logo.png",
+  "Umes-logo.png","Veterans-elementary-logo.png","Veterans-Md-logo.png","VT-hosa-logo.png",
+  "waldwick-logo.jpg","Westfield-schools-logo.png","Willingboro-logo.png","Winslow-logo.png",
+  "Woodbridge-Logo.png","York-college-logo.png","young-leaders-in-action-logo.png"
+].map(f => `https://erinpompa.com/uploads/logos/${f}`);
+
 const WhoWeServe = () => (
-  <section style={{ background: "var(--lime)", padding: "62px 0 66px", borderBottom: "2px solid var(--ink)", borderTop: "2px solid var(--ink)" }}>
+  <section style={{ background: "var(--lime)", padding: "62px 0 66px", borderBottom: "2px solid var(--ink)", borderTop: "2px solid var(--ink)", overflow: "hidden" }}>
     <div className="ts-wrap">
       <div className="ts-reveal" style={{ textAlign: "center", marginBottom: 34 }}>
         <Eyebrow style={{ marginBottom: 12 }}>Who we serve</Eyebrow>
@@ -38,16 +58,20 @@ const WhoWeServe = () => (
           Schools and partners who <HL>trust us</HL> with their kids.
         </h2>
       </div>
-      <div className="ts-logos ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 16 }}>
-        {[1, 2, 3, 4, 5, 6].map(n => (
-          <div key={n} style={{ background: "var(--white)", border: "1px solid var(--ink-100)", borderRadius: 16, boxShadow: "var(--shadow-sm)", aspectRatio: "3 / 2", overflow: "hidden" }}>
-            <image-slot id={`partner-logo-${n}`} placeholder="Drop a logo" shape="rect" fit="contain" style={{ width: "100%", height: "100%", display: "block", "--bg": "#ededea" }}></image-slot>
+    </div>
+    <style>{`
+      @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+      .ts-marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+      .ts-marquee-track:hover { animation-play-state: paused; }
+    `}</style>
+    <div style={{ overflow: "hidden", marginTop: 8 }}>
+      <div className="ts-marquee-track">
+        {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => (
+          <div key={i} style={{ flexShrink: 0, width: 140, height: 80, margin: "0 10px", background: "var(--white)", borderRadius: 14, border: "2px solid var(--ink)", display: "flex", alignItems: "center", justifyContent: "center", padding: "10px 14px", boxSizing: "border-box" }}>
+            <img src={src} alt="partner logo" style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain", filter: "grayscale(20%)" }} />
           </div>
         ))}
       </div>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink-500)", textAlign: "center", marginTop: 18 }}>
-        Drag your partner and school logos onto the slots above.
-      </p>
     </div>
   </section>
 );
