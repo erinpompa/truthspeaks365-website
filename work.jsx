@@ -339,7 +339,7 @@ const TabContent = ({ t }) => (
     {(() => {
       const band = {
         g68: { src: "assets/photo-christine-selfie.jpg", obj: "center 30%", h: "min(620px, 52vw)", scrim: "rgba(22,20,19,.22)" },
-        g912: { src: "assets/photo-mic-room.jpg", obj: "center 42%", h: "min(360px, 32vw)", scrim: "rgba(22,20,19,.5)" },
+        g912: { src: "assets/photo-mic-room.jpg", obj: "center 42%", h: "min(360px, 32vw)", scrim: "rgba(22,20,19,.08)" },
       }[t.id];
       return band ? (
         <div className="ts-reveal" style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--ink-100)", marginBottom: 44, position: "relative" }}>
