@@ -338,7 +338,7 @@ const TabContent = ({ t }) => (
 
     {(() => {
       const band = {
-        g68: { src: "assets/photo-mic-room.jpg", obj: "center 42%", h: "min(620px, 52vw)", scrim: "rgba(22,20,19,.22)" },
+        g68: { src: "assets/photo-presenter-classroom.jpg", obj: "center center", h: "min(480px, 42vw)", scrim: "rgba(22,20,19,.15)" },
         g912: { src: "assets/photo-christine-selfie.jpg", obj: "center 30%", h: "min(360px, 32vw)", scrim: "rgba(22,20,19,.08)" },
       }[t.id];
       return band ? (
