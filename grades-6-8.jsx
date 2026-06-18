@@ -38,8 +38,8 @@ const G68Why = () => (
           We don't do generic "be yourself" talks. Every assembly is built around one concept rooted in resilience, delivered through storytelling and interactive activities that make it land.
         </p>
       </div>
-      <div style={{ borderRadius: 24, border: "3px solid var(--pink)", overflow: "hidden", boxShadow: "8px 8px 0 var(--pink)", aspectRatio: "4/5" }}>
-        <img src="assets/photo-speaker-unhealthy.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.1) contrast(0.95)" }} />
+      <div style={{ borderRadius: 24, border: "3px solid var(--pink)", overflow: "hidden", boxShadow: "8px 8px 0 var(--pink)", aspectRatio: "4/3", maxHeight: 380 }}>
+        <img src="assets/photo-presenter-classroom.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
       </div>
     </div>
   </section>
