@@ -60,8 +60,8 @@ const WhoWeServe = () => (
       </div>
     </div>
     <style>{`
-      @keyframes marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
-      .ts-marquee-track { display: flex; width: max-content; animation: marquee 40s linear infinite; }
+      @keyframes marquee { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+      .ts-marquee-track { display: flex; width: max-content; animation: marquee 90s linear infinite; }
       .ts-marquee-track:hover { animation-play-state: paused; }
     `}</style>
     <div style={{ overflow: "hidden", marginTop: 8 }}>
@@ -346,7 +346,7 @@ const PresenterCTA = () => (
         </p>
         <div style={{ display: "inline-block", marginTop: 18, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 14, padding: "12px 20px", boxShadow: "3px 3px 0 var(--ink)" }}>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.4, color: "var(--ink)", margin: 0, fontWeight: 700 }}>
-            Now hiring for the 2026-2027 season. Application deadline July 1st, 2026.
+            Now hiring for the 2026-2027 season. Application deadline July 17th, 2026.
           </p>
         </div>
         <div style={{ marginTop: 28 }}>

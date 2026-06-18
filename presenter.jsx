@@ -254,7 +254,7 @@ function App() {
         chip=""
         eyebrow="Become a presenter"
         title={<span>Your story is <HL color="var(--pink)">the curriculum.</HL></span>}
-        sub={<span>We hire and train women with real stories of moving through adversity, build a teachable framework around each one, and put them in front of the rooms that need them most. <strong style={{color:"var(--white)"}}>Now hiring for the 2026-2027 season. Deadline: July 1, 2026.</strong></span>}
+        sub={<span>We hire and train women with real stories of moving through adversity, build a teachable framework around each one, and put them in front of the rooms that need them most. <strong style={{color:"var(--white)"}}>Now hiring for the 2026-2027 season. Deadline: July 17, 2026.</strong></span>}
       />
       <MidApplyCTA />
       <Mission />
@@ -265,7 +265,7 @@ function App() {
       <BottomCTA
         eyebrow=""
         title={<span>Ready to <HL color="var(--pink)">apply?</HL></span>}
-        body="Application deadline: July 1, 2026."
+        body="Application deadline: July 17, 2026."
         btn="Start your application →"
         href="https://webforms.pipedrive.com/f/6Na9tudP4W1Zd45tKSj3nVqkVKBhKWA5iwwauydwnia1okUCzAfDi8XJMrhXraSLZx"
       />

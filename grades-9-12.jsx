@@ -30,7 +30,7 @@ const G912Why = () => (
   <section style={{ background: "var(--violet)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
       <div style={{ borderRadius: 24, border: "3px solid var(--violet)", overflow: "hidden", boxShadow: "8px 8px 0 var(--violet)", aspectRatio: "4/5" }}>
-        <img src="assets/photo-speaker-unhealthy.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.5) contrast(0.9)" }} />
+        <img src="assets/photo-christine-selfie.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.4) contrast(0.9)" }} />
       </div>
       <div>
         <Eyebrow style={{ marginBottom: 14 }}>Why it works</Eyebrow>
