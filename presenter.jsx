@@ -144,7 +144,7 @@ const WhatWereLookingFor = () => (
   <section style={{ background: "var(--paper)", padding: "84px 0" }}>
     <div className="ts-wrap">
       <SectionHead className="ts-reveal" eyebrow="What we're looking for" title={<span>The women we <HL color="var(--pink)">want on our team.</HL></span>} style={{ marginBottom: 44 }} />
-      <div className="ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
+      <div className="ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 20 }}>
         {LOOKING_NEW.map(item => (
           <div key={item.title} style={{ background: item.color, border: "2px solid var(--ink)", borderRadius: 22, padding: "32px 28px", boxShadow: "4px 4px 0 rgba(255,255,255,.12)" }}>
             <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 22, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", margin: "0 0 14px", lineHeight: 1.1 }}>{item.title}</h3>
@@ -169,7 +169,7 @@ const Benefits = () => (
         </p>
       </div>
 
-      <div className="ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+      <div className="ts-split ts-auto-grid ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
         {/* Real Training */}
         <div style={{ background: "var(--lime)", border: "2px solid var(--ink)", borderRadius: 22, padding: "32px 30px", boxShadow: "4px 4px 0 rgba(255,255,255,.15)", gridRow: "span 2" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 28, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", margin: "0 0 16px" }}>Real Training</h3>
@@ -224,7 +224,7 @@ const ApplicationProcess = () => (
     <div className="ts-wrap">
       <SectionHead className="ts-reveal" eyebrow="How to apply" title={<span>The application <HL color="var(--pink)">process.</HL></span>} style={{ marginBottom: 44 }} />
 
-      <div className="ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+      <div className="ts-split ts-auto-grid ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
         {APP_STEPS.map((s, i) => (
           <div key={s.n} style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 22, padding: "32px 28px", boxShadow: "4px 4px 0 var(--ink)", display: "flex", flexDirection: "column", gap: 14, gridColumn: i === 2 ? "1 / -1" : undefined }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 52, lineHeight: 1, color: "var(--ink)", letterSpacing: "-0.03em" }}>{s.n}</div>

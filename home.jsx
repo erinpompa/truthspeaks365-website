@@ -141,7 +141,7 @@ const Tracks = () => (
   <section style={{ background: "var(--paper)", padding: "84px 0" }}>
     <div className="ts-wrap">
       <SectionHead className="ts-reveal" eyebrow="Work with us" title={<span>One mission. <HL>Three rooms.</HL></span>} sub="Pick your audience. We'll bring the right woman, the right story, and the right framework built for that age group. Every presentation is tailored to fit the room, because a third grader and a tenth grader are not the same, and we wouldn't treat them like they are." style={{ marginBottom: 44 }} />
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, alignItems: "stretch" }}>
+      <div className="ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20, alignItems: "stretch" }}>
         {TRACKS.map((t, i) => (
           <div key={t.tag} className="ts-reveal" style={{ animationDelay: `${i * 80}ms`, display: "flex" }}>
             <TrackCard {...t} />
@@ -323,7 +323,7 @@ const Impact = () => (
           Real rooms. <HL color="var(--pink)">Real impact.</HL>
         </h2>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="ts-reveal">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="ts-split ts-reveal">
         {REVIEWS.map(r => <ReviewCard key={r.name} {...r} light />)}
       </div>
       <div style={{ textAlign: "center", marginTop: 40 }} className="ts-reveal">

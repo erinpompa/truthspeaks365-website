@@ -64,3 +64,11 @@ image-slot { background: var(--bg, var(--violet)); }
 @media (max-width: 520px) {
   .ts-steps { grid-template-columns: 1fr !important; }
 }
+/* Reset grid-column/row spans when a grid collapses to 1 col */
+@media (max-width: 640px) {
+  .ts-auto-grid > * { grid-column: auto !important; grid-row: auto !important; }
+}
+/* Prevent buttons from overflowing narrow screens */
+@media (max-width: 480px) {
+  .ts-btn { white-space: normal !important; text-align: center; justify-content: center; max-width: 100%; box-sizing: border-box; }
+}

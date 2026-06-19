@@ -87,7 +87,7 @@ const CMPillars = () => {
         </div>
       </div>
       {/* 4 supporting cards */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
+      <div className="ts-grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 18 }}>
         {cards.map(item => (
           <div key={item.title} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "28px 24px", display: "flex", flexDirection: "column", gap: 14, boxShadow: "4px 4px 0 var(--ink-200)" }}>
             <div style={{ width: 52, height: 52, borderRadius: 14, background: item.color, display: "grid", placeItems: "center", border: "2px solid var(--ink)", flexShrink: 0 }}>
@@ -125,7 +125,7 @@ const CMHowItWorks = () => {
   return (
     <div style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 24, padding: "32px", marginBottom: 44 }}>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 18 }}>How it works</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+      <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
         {steps.map(s => (
           <div key={s.n} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "32px 28px", boxShadow: "4px 4px 0 var(--ink-200)", display: "flex", flexDirection: "column", gap: 16 }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 52, lineHeight: 1, color: s.color, WebkitTextStroke: "2px var(--ink)", letterSpacing: "-0.03em" }}>{s.n}</div>
@@ -151,7 +151,7 @@ const CMHowItWorks = () => {
 };
 
 const CMLive = () => (
-  <div style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 22, padding: "32px 36px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
+  <div className="ts-split" style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 22, padding: "32px 36px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 40, alignItems: "center" }}>
     <div>
       <Eyebrow color="var(--ink)" style={{ marginBottom: 12 }}>Currently running</Eyebrow>
       <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.03em", fontSize: "clamp(22px, 2.8vw, 34px)", lineHeight: 1.0, color: "var(--ink)", margin: "0 0 14px" }}>First series live at School 27, Paterson.</h3>
@@ -168,7 +168,7 @@ const CMLive = () => (
 );
 
 const CMAbout = () => (
-  <div style={{ background: "var(--ink)", borderRadius: 22, padding: "40px 44px", display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 48, alignItems: "center", marginBottom: 44 }}>
+  <div className="ts-split" style={{ background: "var(--ink)", borderRadius: 22, padding: "40px 44px", display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 48, alignItems: "center", marginBottom: 44 }}>
     <div style={{ borderRadius: 20, border: "3px solid var(--sky)", overflow: "hidden", boxShadow: "8px 8px 0 var(--sky)", background: "var(--ink-800)", aspectRatio: "4/5" }}>
       <image-slot id="work-cm-erin" placeholder="Drop a photo of Erin" shape="rect" style={{ width: "100%", height: "100%", display: "block", "--bg": "#1e2a35" }}></image-slot>
     </div>
@@ -234,7 +234,7 @@ const G68Presenters = () => {
   return (
     <div>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+      <div className="ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
         {presenters.map(p => <PresenterCard key={p.name} {...p} />)}
       </div>
     </div>
@@ -307,7 +307,7 @@ const G68HowItWorks = () => {
   return (
     <div style={{ background: "var(--ink)", borderRadius: 24, padding: "36px", marginBottom: 44 }}>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)", marginBottom: 24 }}>How it works</div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }}>
+      <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }}>
         {steps.map(s => (
           <div key={s.n} style={{ background: "rgba(255,255,255,.05)", border: "1px solid rgba(255,255,255,.1)", borderRadius: 18, padding: "26px 24px", display: "flex", flexDirection: "column", gap: 12 }}>
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 44, lineHeight: 1, color: s.color, letterSpacing: "-0.03em" }}>{s.n}</div>
@@ -338,8 +338,8 @@ const TabContent = ({ t }) => (
 
     {(() => {
       const band = {
-        g68: { src: "assets/photo-presenter-classroom.jpg", obj: "center center", h: "min(480px, 42vw)", scrim: "rgba(22,20,19,.15)" },
-        g912: { src: "assets/photo-christine-selfie.jpg", obj: "center 30%", h: "min(360px, 32vw)", scrim: "rgba(22,20,19,.08)" },
+        g68: { src: "assets/photo-presenter-classroom.jpg", obj: "center center", h: "clamp(200px, 42vw, 480px)", scrim: "rgba(22,20,19,.15)" },
+        g912: { src: "assets/photo-christine-selfie.jpg", obj: "center 30%", h: "clamp(180px, 32vw, 360px)", scrim: "rgba(22,20,19,.08)" },
       }[t.id];
       return band ? (
         <div className="ts-reveal" style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--ink-100)", marginBottom: 44, position: "relative" }}>

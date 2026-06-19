@@ -65,12 +65,12 @@ const Button = ({ children, variant = "primary", href, onClick, size = "md", sty
         textTransform: handDrawn ? "none" : "uppercase", letterSpacing: handDrawn ? 0 : "0.02em",
         fontSize: fs, padding: pads, lineHeight: 1, textDecoration: "none",
         background: v.bg, color: v.fg, border: `${handDrawn ? 2.5 : 2}px solid ${v.border}`, borderRadius: radius,
-        cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8, whiteSpace: "nowrap",
+        cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 8, whiteSpace: "nowrap", maxWidth: "100%",
         boxShadow: v.shadow ? (press ? "1px 1px 0 var(--ink)" : baseShadow) : "none",
         transform: v.shadow && press ? "translate(4px,4px)" : "translate(0,0)",
         transition: "transform .14s cubic-bezier(.2,.8,.2,1), box-shadow .14s, background .14s",
         ...style
-      }}>{children}</Tag>
+      }} className="ts-btn">{children}</Tag>
   );
 };
 
