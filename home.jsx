@@ -327,7 +327,7 @@ const Impact = () => (
         {REVIEWS.map(r => <ReviewCard key={r.name} {...r} light />)}
       </div>
       <div style={{ textAlign: "center", marginTop: 40 }} className="ts-reveal">
-        <Button variant="lime" size="md" href="https://www.google.com/search?q=TruthSpeaks+365+reviews" style={{}}>Read more reviews →</Button>
+        <Button variant="lime" size="md" href="https://www.google.com/search?sca_esv=3750d84e3b6f83f6&hl=en-MA&sxsrf=APpeQnuEcq_ucde2mBMLa5Tnhx2A5nl-Dg:1781876399065&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_3Vbc7C1xe0ZWxyG43hb1YzzLbGLxPO3ffIusjOe2NNjI8hOT3w_SX80PVY2TvLYjK3_95EophBngZGRh4fjBVouQ4_8&q=TruthSpeaks+365+Reviews&sa=X&ved=2ahUKEwizzLLutpOVAxX4hv0HHc7YAcoQ0bkNegQIJBAF&biw=1242&bih=552&dpr=1.1" style={{}}>Read more reviews →</Button>
       </div>
     </div>
   </section>
