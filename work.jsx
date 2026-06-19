@@ -16,7 +16,7 @@ const TABS = [
     ],
     formats: ["Single class periods", "Gym class integration", "Full school assemblies", "Multi-session series"],
     outcomes: ["Confidence in their own body", "Words for big feelings", "Connection with classmates"],
-    page: "character-move.html",
+    page: "/character-move",
   },
   {
     id: "g68", label: "Grades 6-8", short: "68", color: "var(--pink)", soft: "var(--pink-soft)",
@@ -27,7 +27,7 @@ const TABS = [
     offers: [],
     formats: ["40-60 minute assembly", "School-wide assemblies", "Small groups", "Series of sessions"],
     outcomes: ["A framework they can name", "Tools to use that same day", "Representation at the front"],
-    page: "grades-6-8.html",
+    page: "/grades-6-8",
   },
   {
     id: "g912", label: "Grades 9-12", short: "912", color: "var(--violet)", soft: "var(--violet-soft)",
@@ -42,7 +42,7 @@ const TABS = [
     ],
     formats: ["45-60 min keynote assemblies", "Half-day intensives", "Student leadership workshops"],
     outcomes: ["Language for hard things", "Tools they keep for life", "Honest conversations, finally"],
-    page: "grades-9-12.html",
+    page: "/grades-9-12",
   },
 ];
 
@@ -227,8 +227,8 @@ const PresenterCard = ({ name, tagline, role, color, nameColor, img, href }) => 
 
 const G68Presenters = () => {
   const presenters = [
-    { name: "Erin Pompa",       role: "Founder & Speaker",           tagline: "The shift starts here. Embrace the power of a perspective shift.",  color: "var(--lime)",   img: "uploads/NCSL+Carousel+post.png.webp",                href: "https://erinpompa.com" },
-    { name: "Christine Conti",  role: "Fear Into Courage Speaker",   tagline: "Let's turn fear into courage and find your voice.", color: "var(--pink)",   img: "uploads/Christine+Conti+Full+Body+Shot+1.png.webp", href: "speaker-profile.html?id=christine-conti" },
+    { name: "Erin Pompa",       role: "Founder & Speaker",           tagline: "The shift starts here. Embrace the power of a perspective shift.",  color: "var(--lime)",   img: "/uploads/NCSL+Carousel+post.png.webp",                href: "https://erinpompa.com" },
+    { name: "Christine Conti",  role: "Fear Into Courage Speaker",   tagline: "Let's turn fear into courage and find your voice.", color: "var(--pink)",   img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp", href: "/speaker-profile?id=christine-conti" },
     { name: "Nicolle Gonzalez", role: "Speaker", tagline: "Coming soon", color: "var(--lime)", nameColor: "var(--coral)", img: null, href: null },
   ];
   return (
@@ -338,8 +338,8 @@ const TabContent = ({ t }) => (
 
     {(() => {
       const band = {
-        g68: { src: "assets/photo-presenter-classroom.jpg", obj: "center center", h: "clamp(200px, 42vw, 480px)", scrim: "rgba(22,20,19,.15)" },
-        g912: { src: "assets/photo-christine-selfie.jpg", obj: "center 30%", h: "clamp(180px, 32vw, 360px)", scrim: "rgba(22,20,19,.08)" },
+        g68: { src: "/assets/photo-presenter-classroom.jpg", obj: "center center", h: "clamp(200px, 42vw, 480px)", scrim: "rgba(22,20,19,.15)" },
+        g912: { src: "/assets/photo-christine-selfie.jpg", obj: "center 30%", h: "clamp(180px, 32vw, 360px)", scrim: "rgba(22,20,19,.08)" },
       }[t.id];
       return band ? (
         <div className="ts-reveal" style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--ink-100)", marginBottom: 44, position: "relative" }}>

@@ -4,7 +4,7 @@
 
 const ACTION_CARDS = [
   { label: "Book a program", icon: "calendar-check", color: "var(--pink)", href: "https://calendar.app.google/3rMyUJt4Q6iRzvzW7", sub: "Schedule on our Google Calendar" },
-  { label: "Become a Presenter", icon: "mic", color: "var(--lime)", href: "presenter.html", sub: "Learn about joining our team" },
+  { label: "Become a Presenter", icon: "mic", color: "var(--lime)", href: "/presenter", sub: "Learn about joining our team" },
 ];
 
 const InfoCard = ({ icon, label, value, sub, href }) => (
@@ -68,12 +68,10 @@ const ContactSection = () => (
             <Icon name="mail" size={26} color="var(--ink)" />
           </a>
           {/* Instagram */}
-          <div>
-            <a href="https://www.instagram.com/truthspeaks365/" target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "var(--pink)", border: "2px solid var(--ink)", borderRadius: 999, padding: "10px 20px 10px 14px", textDecoration: "none", boxShadow: "3px 3px 0 var(--ink)" }}>
-              <Social name="instagram" size={18} color="var(--ink)" />
-              <span style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15, color: "var(--ink)" }}>Instagram</span>
-            </a>
-          </div>
+          <a href="https://www.instagram.com/truthspeaks365/" target="_blank" rel="noopener noreferrer" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, background: "var(--pink)", border: "2px solid var(--ink)", borderRadius: 22, padding: "16px 20px", textDecoration: "none", boxShadow: "4px 4px 0 var(--ink)" }}>
+            <Social name="instagram" size={18} color="var(--ink)" />
+            <span style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15, color: "var(--ink)" }}>@truthspeaks365</span>
+          </a>
         </div>
       </div>
     </div>
@@ -87,7 +85,7 @@ function App() {
       <NavBar active="Contact" />
       <PageHero
         eyebrow="Contact us"
-        bgImage="assets/photo-hs-crowd.jpg"
+        bgImage="/assets/photo-hs-crowd.jpg"
         title={<span>Let's make an <HL color="var(--pink)">impact.</HL></span>}
         sub="We can't wait to impact your students and to learn more about you if you feel called to impact students. Tell us what you need."
       />

@@ -129,10 +129,10 @@ const SectionHead = ({ eyebrow, eyebrowColor, title, sub, align = "center", ligh
    NAV multi-page, sticky, frosted on scroll. Logo lockup + page links.
    --------------------------------------------------------------------- */
 const NAV = [
-  { label: "Work With Us", href: "work.html" },
-  { label: "Become a Presenter", href: "presenter.html" },
-  { label: "Youth Resources", href: "resources.html" },
-  { label: "Contact", href: "contact.html" },
+  { label: "Work With Us", href: "/work" },
+  { label: "Become a Presenter", href: "/presenter" },
+  { label: "Youth Resources", href: "/resources" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const NavBar = ({ active = "Home" }) => {
@@ -152,8 +152,8 @@ const NavBar = ({ active = "Home" }) => {
       transition: "all .2s"
     }}>
       <div style={{ maxWidth: 1220, margin: "0 auto", padding: "12px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20 }}>
-        <a href="index.html" style={{ display: "inline-flex", alignItems: "center", flex: "none" }}>
-          <img src="assets/ts-icon.png" alt="TruthSpeaks 365" style={{ height: 52, display: "block" }} />
+        <a href="/" style={{ display: "inline-flex", alignItems: "center", flex: "none" }}>
+          <img src="/assets/ts-icon.png" alt="TruthSpeaks 365" style={{ height: 52, display: "block" }} />
         </a>
         <nav className="ts-nav-desk" style={{ display: "flex", alignItems: "center", gap: 26 }}>
           {NAV.map(l => (
@@ -216,7 +216,7 @@ const Footer = () => (
     <div style={{ maxWidth: 1220, margin: "0 auto" }}>
       <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr 1fr", gap: 40, alignItems: "start" }} className="ts-foot-grid">
         <div>
-          <img src="assets/logo-dark.png" alt="TruthSpeaks 365" style={{ height: 90, display: "block", marginLeft: -4 }} />
+          <img src="/assets/logo-dark.png" alt="TruthSpeaks 365" style={{ height: 90, display: "block", marginLeft: -4 }} />
         </div>
         <div>
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--lime)", marginBottom: 16 }}>Explore</div>

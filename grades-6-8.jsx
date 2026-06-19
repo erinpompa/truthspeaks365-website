@@ -16,7 +16,7 @@ const G68Hero = () => (
         Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-        <Button variant="lime" size="lg" href="work.html#g68">See what's included →</Button>
+        <Button variant="lime" size="lg" href="/work#g68">See what's included →</Button>
         <Button variant="ghost" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Book for your school →</Button>
       </div>
     </div>
@@ -39,7 +39,7 @@ const G68Why = () => (
         </p>
       </div>
       <div style={{ borderRadius: 24, border: "3px solid var(--pink)", overflow: "hidden", boxShadow: "8px 8px 0 var(--pink)", aspectRatio: "4/3", maxHeight: 380 }}>
-        <img src="assets/photo-presenter-classroom.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
+        <img src="/assets/photo-presenter-classroom.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center center" }} />
       </div>
     </div>
   </section>
@@ -87,7 +87,7 @@ const G68CTA = () => (
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-end" }}>
-        <Button variant="dark" size="lg" href="work.html#g68">See what's included →</Button>
+        <Button variant="dark" size="lg" href="/work#g68">See what's included →</Button>
         <Button variant="ghost" size="md" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ borderColor: "var(--ink)" }}>Book directly →</Button>
       </div>
     </div>

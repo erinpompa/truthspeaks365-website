@@ -7,7 +7,7 @@ const Hero = () => (
     {/* ---- background photo (drop assets/hero-video.mp4 to replace with video) ---- */}
     <div className="hero-bg-fallback" aria-hidden="true" style={{
       position: "absolute", inset: 0, zIndex: 0, background: "var(--ink)",
-      backgroundImage: "url('assets/photo-hs-crowd.jpg')",
+      backgroundImage: "url('/assets/photo-hs-crowd.jpg')",
       backgroundSize: "cover", backgroundPosition: "center 28%"
     }}></div>
     {/* When you have a hero video, set its filename here (e.g. src="assets/hero-video.mp4")
@@ -18,7 +18,7 @@ const Hero = () => (
 
     {/* ---- content ---- */}
     <div className="ts-wrap ts-reveal" style={{ position: "relative", zIndex: 3, textAlign: "center", padding: "72px 28px" }}>
-      <img src="assets/logo-horizontal.png" alt="TruthSpeaks 365" style={{ width: "clamp(280px, 40vw, 520px)", height: "auto", display: "block", margin: "0 auto 30px", filter: "drop-shadow(0 10px 30px rgba(0,0,0,.5))" }} />
+      <img src="/assets/logo-horizontal.png" alt="TruthSpeaks 365" style={{ width: "clamp(280px, 40vw, 520px)", height: "auto", display: "block", margin: "0 auto 30px", filter: "drop-shadow(0 10px 30px rgba(0,0,0,.5))" }} />
       <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.035em", fontSize: "clamp(52px, 8vw, 108px)", lineHeight: 0.9, margin: "0 0 26px", color: "var(--white)" }}>
         Women with courage.<br />Stories with <HL color="var(--pink)">impact.</HL>
       </h1>
@@ -101,9 +101,9 @@ const Mission = () => (
 );
 
 const TRACKS = [
-  { tag: "Grades 3-5", color: "var(--sky)", icon: "sprout", title: "Big Feelings, Brave Kids", body: "We combine movement, mindfulness, and social-emotional learning to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.", href: "work.html#g35" },
-  { tag: "Grades 6-8", color: "var(--pink)", icon: "flame", title: "Real Topics. Real Growth.", body: "Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.", href: "work.html#g68", feat: true },
-  { tag: "Grades 9-12", color: "var(--violet)", icon: "zap", title: "Real Talk. Real Tools.", body: "These are the conversations teenagers need to have. Honest, intentional presentations built around real stories of women who have overcome adversity paired with a framework they can carry with them.", href: "work.html#g912" },
+  { tag: "Grades 3-5", color: "var(--sky)", icon: "sprout", title: "Big Feelings, Brave Kids", body: "We combine movement, mindfulness, and social-emotional learning to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.", href: "/work#g35" },
+  { tag: "Grades 6-8", color: "var(--pink)", icon: "flame", title: "Real Topics. Real Growth.", body: "Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.", href: "/work#g68", feat: true },
+  { tag: "Grades 9-12", color: "var(--violet)", icon: "zap", title: "Real Talk. Real Tools.", body: "These are the conversations teenagers need to have. Honest, intentional presentations built around real stories of women who have overcome adversity paired with a framework they can carry with them.", href: "/work#g912" },
 ];
 
 const TrackCard = ({ tag, color, icon, title, body, href, feat }) => {
@@ -235,7 +235,7 @@ const _Frameworks_REMOVED = () => (
 
     <div style={{ background: "var(--paper-2)", borderTop: "2px solid var(--ink-100)", padding: "48px 0" }}>
       <div className="ts-wrap" style={{ textAlign: "center" }}>
-        <Button variant="lime" size="md" href="resources.html">See the free youth resources →</Button>
+        <Button variant="lime" size="md" href="/resources">See the free youth resources →</Button>
       </div>
     </div>
   </section>
@@ -350,11 +350,11 @@ const PresenterCTA = () => (
           </p>
         </div>
         <div style={{ marginTop: 28 }}>
-          <Button variant="dark" size="lg" href="presenter.html">Learn more</Button>
+          <Button variant="dark" size="lg" href="/presenter">Learn more</Button>
         </div>
       </div>
       <div className="ts-reveal" style={{ borderRadius: 20, overflow: "hidden", border: "3px solid var(--ink)", boxShadow: "6px 6px 0 var(--ink)", aspectRatio: "4/5", maxHeight: 500, position: "relative" }}>
-        <img src="assets/photo-presenter-gym.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(0.65) saturate(0.8)" }} />
+        <img src="/assets/photo-presenter-gym.jpg" alt="TruthSpeaks 365 presenter with students" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(0.65) saturate(0.8)" }} />
       </div>
     </div>
   </section>

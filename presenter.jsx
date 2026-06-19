@@ -45,9 +45,9 @@ const PresentersInAction = () => (
       <SectionHead className="ts-reveal" light eyebrow="This could be you" eyebrowColor="var(--lime)" title={<span>Real women. <HL color="var(--pink)">Real rooms.</HL></span>} sub="Our presenters are out there right now, telling the truth in gyms and classrooms across the country." style={{ marginBottom: 44 }} />
       <div className="ts-reveal ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
         {[
-          { src: "assets/photo-denese.webp", alt: "Denese Longsworth presenting Building Boundaries", obj: "center 18%" },
-          { src: "assets/photo-circle.jpg", alt: "A TruthSpeaks 365 presenter connecting with a circle of students", obj: "center 30%" },
-          { src: "assets/photo-christine-selfie.jpg", alt: "Christine Conti before a presentation", obj: "center 30%" },
+          { src: "/assets/photo-denese.webp", alt: "Denese Longsworth presenting Building Boundaries", obj: "center 18%" },
+          { src: "/assets/photo-circle.jpg", alt: "A TruthSpeaks 365 presenter connecting with a circle of students", obj: "center 30%" },
+          { src: "/assets/photo-christine-selfie.jpg", alt: "Christine Conti before a presentation", obj: "center 30%" },
         ].map(p => (
           <div key={p.src} style={{ borderRadius: 20, overflow: "hidden", border: "2px solid var(--ink)", boxShadow: "6px 6px 0 var(--lime)", aspectRatio: "3/4", background: "var(--ink-800)" }}>
             <img src={p.src} alt={p.alt} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.obj, display: "block" }} />

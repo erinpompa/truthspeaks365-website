@@ -19,7 +19,7 @@ const G912Hero = () => (
         This is not trauma dumping. Every story is paired with a framework that helps students understand that life happens on life's terms. We connect through the story, then show how we move through it. Students always leave knowing where to go for support, and we point them back to you first. We also provide resources and a practical framework they can carry with them.
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-        <Button variant="lime" size="lg" href="work.html#g912">See what's included →</Button>
+        <Button variant="lime" size="lg" href="/work#g912">See what's included →</Button>
         <Button variant="ghost" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Book for your school →</Button>
       </div>
     </div>
@@ -30,7 +30,7 @@ const G912Why = () => (
   <section style={{ background: "var(--violet)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
       <div style={{ borderRadius: 24, border: "3px solid var(--violet)", overflow: "hidden", boxShadow: "8px 8px 0 var(--violet)", aspectRatio: "4/5" }}>
-        <img src="assets/photo-christine-selfie.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.4) contrast(0.9)" }} />
+        <img src="/assets/photo-christine-selfie.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.4) contrast(0.9)" }} />
       </div>
       <div>
         <Eyebrow style={{ marginBottom: 14 }}>Why it works</Eyebrow>
@@ -87,7 +87,7 @@ const G912CTA = () => (
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-end" }}>
-        <Button variant="dark" size="lg" href="work.html#g912">See what's included →</Button>
+        <Button variant="dark" size="lg" href="/work#g912">See what's included →</Button>
         <Button variant="ghost" size="md" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ borderColor: "var(--ink)" }}>Book directly →</Button>
       </div>
     </div>
