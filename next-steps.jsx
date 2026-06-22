@@ -246,7 +246,7 @@ function App() {
                 <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--white)", background: "var(--sky)", border: "1.5px solid var(--ink)", borderRadius: 999, padding: "3px 12px" }}>30 sec to 1 min</span>
               </div>
               <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>
-                Start with an activity that's energizing, grounding, or centering, whatever fits your teaching style and your energy. Get the students involved right away. A call and response, a meditation, a question, a movement series. The goal: get the students to buy in, captivate them.
+                Start with an activity that gets them involved. It could be grounding, it could be energizing. Match your teaching style and your energy. A call and response, a meditation, a question, a movement series. The goal: get the students to buy in, captivate them.
               </p>
             </div>
 
