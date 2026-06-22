@@ -126,7 +126,7 @@ const LOOKING_NEW = [
   {
     color: "var(--lime)",
     title: "Women with a story worth telling and the courage to tell it",
-    body: "Our speakers go there. They share real, personal stories and have the kinds of honest conversations most people avoid. If you have lived through something and come out the other side with something to say, we want to hear from you.",
+    body: "They share real, personal stories and have the kinds of honest conversations most people avoid. We are hard hitting. We get in students' faces when it's appropriate. We differentiate our content by age group, but with high schoolers, we are rigorously honest with them and we have those conversations. If you have lived through something and come out the other side, we want to hear from you.",
   },
   {
     color: "var(--sky)",
@@ -178,7 +178,7 @@ const Benefits = () => (
           </p>
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)", marginBottom: 14 }}>You'll learn how to:</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {["Build a presentation that lands", "Deliver it with confidence and intention", "Speak to students at every age level", "Read a room and keep an audience engaged", "Handle the unexpected with grace"].map(item => (
+            {["Build a presentation that lands", "Deliver it with confidence and intention", "Speak to students at different age levels", "Read a room and keep an audience engaged", "Handle the unexpected with grace"].map(item => (
               <div key={item} style={{ display: "flex", alignItems: "center", gap: 12 }}>
                 <span style={{ width: 26, height: 26, borderRadius: 999, background: "var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
                   <Icon name="check" size={14} color="var(--lime)" />
@@ -198,7 +198,7 @@ const Benefits = () => (
         {/* You Get Paid */}
         <div style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 28px", boxShadow: "4px 4px 0 rgba(255,255,255,.15)" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", margin: "0 0 12px" }}>You Get Paid</h3>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.6, color: "var(--ink)", margin: 0 }}>We operate as an agency, which means when you book, you earn. You keep the majority of your speaker fee, and we handle the business side so you never have to chase a check or negotiate alone.</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.6, color: "var(--ink)", margin: 0 }}>We operate as an agency. We handle the business side so you never have to chase a check or negotiate alone.</p>
         </div>
 
         {/* Ongoing Support */}
