@@ -271,7 +271,7 @@ function App() {
                       <strong>Example:</strong> I have parents who suffered from addiction.
                     </div>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: "10px 0 0", fontStyle: "italic" }}>
-                      The goal is not to trauma dump, but to show students how you moved through it.
+                      This is not a trauma dump. This is to show students how you move through adversity.
                     </p>
                   </div>
                 </div>
@@ -284,8 +284,10 @@ function App() {
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: "0 0 10px" }}>
                       After identifying your story, identify the lesson you want students to walk away with. The lesson comes from your story. Everything builds from the lesson.
                     </p>
-                    <div style={{ background: "var(--paper-2)", border: "1.5px solid var(--ink-100)", borderRadius: 10, padding: "10px 14px", fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink)", lineHeight: 1.5 }}>
-                      <strong>Example:</strong> My parents suffered from addiction. The lesson: you can't control what happens around you, but you can control how you move through it.
+                    <div style={{ background: "var(--paper-2)", border: "1.5px solid var(--ink-100)", borderRadius: 10, padding: "10px 14px", fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink)", lineHeight: 1.7 }}>
+                      <strong>Example:</strong><br />
+                      <em>I grew up with parents who struggled with addiction.</em><br />
+                      <em>The lesson: you can't control what happens around you, but you can control how you move through it.</em>
                     </div>
                   </div>
                 </div>
@@ -294,10 +296,19 @@ function App() {
                 <div style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <span style={{ width: 28, height: 28, borderRadius: 8, background: "var(--pink)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, color: "var(--ink)" }}>3</span>
                   <div>
-                    <div style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15, color: "var(--ink)", marginBottom: 6 }}>Build your presentation</div>
-                    <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: 0 }}>
-                      Introduce your topic through an activity to get students invested and help them connect. This activity should help them embrace one part of the lesson. Think about teaching them one part of a framework to help them embody the lesson you have identified.
-                    </p>
+                    <div style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15, color: "var(--ink)", marginBottom: 10 }}>Build your presentation</div>
+                    <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                      {[
+                        "Introduce your topic through an activity to get students invested and help them connect. This activity should help them embrace one part of the lesson. Think about teaching them one part of a framework to help them embody the lesson you have identified.",
+                        "Share your personal story. Walk them through the challenge, what it felt like, and how you came out the other side.",
+                        "Land the lesson. Give students one concrete strategy or activity they can actually use after they walk out.",
+                      ].map((text, i) => (
+                        <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
+                          <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, color: "var(--ink)", background: "var(--pink)", border: "1.5px solid var(--ink)", borderRadius: 6, width: 22, height: 22, display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>{i + 1}</span>
+                          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: 0 }}>{text}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
