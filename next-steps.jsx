@@ -157,7 +157,7 @@ function App() {
       {/* Hero */}
       <section style={{ background: "var(--ink)", padding: "72px 0 80px", position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, backgroundImage: "url('/assets/photo-hs-crowd.jpg')", backgroundSize: "cover", backgroundPosition: "center 28%" }} />
-        <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(180deg, rgba(22,20,19,.72) 0%, rgba(22,20,19,.55) 42%, rgba(22,20,19,.82) 100%)" }} />
+        <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "rgba(22,20,19,.91)" }} />
         <div className="ts-wrap" style={{ maxWidth: 760, textAlign: "center", position: "relative", zIndex: 2 }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--lime)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 28, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
             <Icon name="calendar-clock" size={14} color="var(--ink)" /> Deadline: Friday, July 17th, 2026

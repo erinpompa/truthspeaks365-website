@@ -14,7 +14,7 @@ const Hero = () => (
         and it will autoplay over the placeholder below. */}
     <video className="hero-vid" autoPlay muted loop playsInline poster="" style={{ position: "absolute", inset: 0, zIndex: 1, width: "100%", height: "100%", objectFit: "cover", background: "transparent" }}></video>
     {/* legibility scrim */}
-    <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(180deg, rgba(22,20,19,.62) 0%, rgba(22,20,19,.42) 42%, rgba(22,20,19,.72) 100%)" }}></div>
+    <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(180deg, rgba(22,20,19,.82) 0%, rgba(22,20,19,.75) 42%, rgba(22,20,19,.88) 100%)" }}></div>
 
     {/* ---- content ---- */}
     <div className="ts-wrap ts-reveal" style={{ position: "relative", zIndex: 3, textAlign: "center", padding: "72px 28px" }}>
