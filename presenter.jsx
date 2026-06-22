@@ -126,7 +126,7 @@ const LOOKING_NEW = [
   {
     color: "var(--lime)",
     title: "Women with a story worth telling and the courage to tell it",
-    body: "They share real, personal stories with our young people because we pride ourselves on having the kinds of honest conversations most people avoid. We are hard hitting, and we get in students' faces when it's appropriate. We tailor our content to the age group, but with our high schoolers, we are rigorously honest. If you have lived through something and come out the other side, we want to hear from you.",
+    body: "We share personal stories with our young people because we pride ourselves on honest conversations. Sometimes that means being hard hitting and right in their faces. Sometimes it's quieter. It always depends on the age group, and we always stay appropriate. If you have lived through something and come out the other side, we want to hear from you.",
   },
   {
     color: "var(--sky)",
