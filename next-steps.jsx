@@ -299,9 +299,9 @@ function App() {
                     <div style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15, color: "var(--ink)", marginBottom: 10 }}>Build your presentation</div>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {[
-                        "Introduce your topic through an activity to get students invested and help them connect. This activity should help them embrace one part of the lesson. Think about teaching them one part of a framework to help them embody the lesson you have identified.",
+                        "Introduce your topic. You can use a game, an activity, or a reflection to get students invested.",
                         "Share your personal story. Walk them through the challenge, what it felt like, and how you came out the other side.",
-                        "Land the lesson. Give students one concrete strategy or activity they can actually use after they walk out.",
+                        "Land the lesson with one concrete strategy or activity that students can actually use. Make sure they are walking away with an action.",
                       ].map((text, i) => (
                         <div key={i} style={{ display: "flex", gap: 10, alignItems: "flex-start" }}>
                           <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, color: "var(--ink)", background: "var(--pink)", border: "1.5px solid var(--ink)", borderRadius: 6, width: 22, height: 22, display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>{i + 1}</span>
@@ -328,20 +328,29 @@ function App() {
             </div>
 
             {/* Recording checklist */}
-            <div style={{ background: "var(--ink)", borderRadius: 18, padding: "28px 30px", marginBottom: 40 }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--white)", marginBottom: 20 }}>When you record, your video will include:</div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <div style={{ background: "var(--ink)", borderRadius: 18, padding: "28px 30px", marginBottom: 20 }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--white)", marginBottom: 20 }}>What does your video look like?</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
                 {[
-                  { label: "Engagement", time: "30 seconds to 1 minute", color: "var(--sky)" },
-                  { label: "The Presentation", time: "4 to 5 minutes", color: "var(--pink)" },
-                  { label: "The Closing", time: "30 seconds to 1 minute", color: "var(--violet)" },
+                  { part: "Part 1", label: "Engagement", time: "30 sec to 1 min", color: "var(--sky)" },
+                  { part: "Part 2", label: "The Presentation", time: "4 to 5 min", color: "var(--pink)" },
+                  { part: "Part 3", label: "The Closing", time: "30 sec to 1 min", color: "var(--violet)" },
                 ].map(item => (
-                  <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    <span style={{ width: 10, height: 10, borderRadius: 999, background: item.color, flexShrink: 0 }} />
-                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 16, color: "var(--white)" }}>{item.label}</span>
-                    <span style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "var(--fg-on-dark2)" }}>{item.time}</span>
+                  <div key={item.label} style={{ display: "flex", alignItems: "center", gap: 14, background: "rgba(255,255,255,.05)", borderRadius: 12, padding: "14px 16px" }}>
+                    <div style={{ width: 22, height: 22, borderRadius: 6, border: "2px solid rgba(255,255,255,.3)", flexShrink: 0 }} />
+                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: item.color, textTransform: "uppercase", letterSpacing: "0.06em", minWidth: 52 }}>{item.part}</span>
+                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15, color: "var(--white)", flex: 1 }}>{item.label}</span>
+                    <span style={{ fontFamily: "var(--font-body)", fontSize: 14, color: "var(--fg-on-dark2)", whiteSpace: "nowrap" }}>{item.time}</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            {/* A few things to keep in mind */}
+            <div style={{ background: "var(--ink)", borderRadius: 18, padding: "24px 28px", marginBottom: 40, display: "flex", gap: 16, alignItems: "flex-start" }}>
+              <Icon name="zap" size={20} color="var(--lime)" style={{ flexShrink: 0, marginTop: 2 }} />
+              <div style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.65, color: "var(--fg-on-dark2)" }}>
+                <strong style={{ color: "var(--white)" }}>A few things to keep in mind:</strong> Present like you're actually in front of 9th to 12th graders. Full energy, full performance. Make it real, relatable, and actionable. Stay in character the whole time.
               </div>
             </div>
 
@@ -362,15 +371,10 @@ function App() {
                   <div><strong>In the body of the email, include:</strong> the story you chose and the lesson you are focusing on from it.</div>
                 </div>
               </div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 24 }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
                 <Icon name="calendar-x-2" size={18} color="var(--ink)" />
                 <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 17, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>Deadline: Friday, July 17th, 2026</span>
               </div>
-              <a href={`mailto:${SUBMIT_EMAIL}?subject=${encodeURIComponent(SUBMIT_SUBJECT)}`}
-                style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "var(--ink)", color: "var(--white)", border: "2px solid var(--ink)", borderRadius: 999, padding: "14px 32px", fontFamily: "var(--font-body)", fontWeight: 900, fontSize: 17, textDecoration: "none", boxShadow: "4px 4px 0 rgba(0,0,0,.25)" }}>
-                <Icon name="mail" size={18} color="var(--white)" />
-                Submit my video
-              </a>
             </div>
           </div>
         </div>
