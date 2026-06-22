@@ -3,7 +3,7 @@
    Shown after someone submits the application form
    ===================================================================== */
 
-const DEADLINE = "Friday, July 18, 2025";
+const DEADLINE = "Friday, July 17th, 2026";
 const SUBMIT_EMAIL = "erin@erinpompa.com";
 const SUBMIT_SUBJECT = "Truth Speaks 365 Submission";
 
@@ -132,14 +132,14 @@ function App() {
         <span style={{ position: "absolute", top: 40, right: "8%", width: 120, height: 120, borderRadius: "50%", background: "var(--sky)", opacity: 0.08 }} />
         <span style={{ position: "absolute", bottom: 30, left: "5%", width: 60, height: 60, borderRadius: 14, background: "var(--lime)", opacity: 0.12, transform: "rotate(18deg)" }} />
         <div className="ts-wrap" style={{ maxWidth: 760, textAlign: "center" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--lime)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 28, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
-            <Icon name="check" size={14} color="var(--ink)" /> Application received
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 28, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
+            <Icon name="calendar-clock" size={14} color="var(--ink)" /> Deadline — Friday, July 17th, 2026
           </div>
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(48px, 7vw, 88px)", lineHeight: 0.92, margin: "0 0 24px", color: "var(--white)" }}>
             You're in.<br /><span style={{ color: "var(--sky)" }}>Here's what's next.</span>
           </h1>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: "var(--fg-on-dark2)", margin: 0 }}>
-            Complete both steps below and submit your video by the deadline. We can't wait to see you do your thing.
+            Erin Pompa, the founder of TruthSpeaks 365, recorded a personal message for you. Start there — then follow the application instructions below and submit your video by the deadline.
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ function App() {
         <div className="ts-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
           <Icon name="calendar-clock" size={20} color="var(--ink)" />
           <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 18, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>
-            Submission deadline: Friday, July 18, 2025
+            Submission deadline: Friday, July 17th, 2026
           </span>
         </div>
       </div>
@@ -261,7 +261,7 @@ function App() {
               </p>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10, marginBottom: 20 }}>
                 <Icon name="calendar-x-2" size={18} color="var(--ink)" />
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 17, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>Deadline: Friday, July 18, 2025</span>
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 17, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>Deadline: Friday, July 17th, 2026</span>
               </div>
               <a href={`mailto:${SUBMIT_EMAIL}?subject=${encodeURIComponent(SUBMIT_SUBJECT)}`}
                 style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "var(--ink)", color: "var(--white)", border: "2px solid var(--ink)", borderRadius: 999, padding: "14px 32px", fontFamily: "var(--font-body)", fontWeight: 900, fontSize: 17, textDecoration: "none", boxShadow: "4px 4px 0 rgba(0,0,0,.25)" }}>
