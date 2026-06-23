@@ -7,6 +7,15 @@
 html { scroll-behavior: smooth; }
 html, body { margin: 0; padding: 0; }
 
+/* ---- Accessibility: visible focus ring for keyboard navigation ---- */
+:focus-visible {
+  outline: 3px solid var(--sky);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Remove default outline only when focus-visible is supported */
+:focus:not(:focus-visible) { outline: none; }
+
 /* The client prefers white over the warm "cream/paper" base. Override the
    paper tokens to white site-wide (this file loads after colors_and_type.css).
    Brand colors + ink sections still carry the rhythm. */

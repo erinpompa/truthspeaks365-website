@@ -144,6 +144,17 @@ const NavBar = ({ active = "Home" }) => {
     return () => window.removeEventListener("scroll", h);
   }, []);
   return (
+    <React.Fragment>
+    <a href="#main-content" style={{
+      position: "absolute", top: -100, left: 12, zIndex: 9999,
+      background: "var(--sky)", color: "var(--ink)", padding: "10px 18px",
+      fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 15,
+      borderRadius: 8, textDecoration: "none", border: "2px solid var(--ink)",
+      transition: "top .1s"
+    }}
+    onFocus={e => e.currentTarget.style.top = "12px"}
+    onBlur={e => e.currentTarget.style.top = "-100px"}
+    >Skip to main content</a>
     <header style={{
       position: "sticky", top: 0, zIndex: 60,
       background: scrolled ? "rgba(255,255,255,.9)" : "rgba(255,255,255,1)",
@@ -190,6 +201,7 @@ const NavBar = ({ active = "Home" }) => {
         </div>
       )}
     </header>
+    </React.Fragment>
   );
 };
 
@@ -248,7 +260,7 @@ const Footer = () => (
 
 // Inner-page hero band (ink) eyebrow + big title + sub, optional kicker chip
 const PageHero = ({ eyebrow, title, sub, accent = "var(--lime)", chip, bgImage }) => (
-  <section style={{ background: "var(--ink)", color: "var(--white)", padding: "64px 0 72px", position: "relative", overflow: "hidden" }}>
+  <section id="main-content" style={{ background: "var(--ink)", color: "var(--white)", padding: "64px 0 72px", position: "relative", overflow: "hidden" }}>
     {bgImage && <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, backgroundImage: `url('${bgImage}')`, backgroundSize: "cover", backgroundPosition: "center 28%" }}></div>}
     {bgImage && <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "rgba(22,20,19,.88)" }}></div>}
     <div className="ts-wrap ts-reveal" style={{ maxWidth: 920, position: "relative", zIndex: 2 }}>

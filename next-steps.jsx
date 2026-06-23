@@ -58,18 +58,28 @@ const AudioPlayer = () => {
       />
       <div style={{ fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--sky)", marginBottom: 14 }}>A message from Erin</div>
       <div style={{ display: "flex", alignItems: "center", gap: 18, marginBottom: 18 }}>
-        <button onClick={toggle} style={{
-          width: 58, height: 58, borderRadius: 999, background: "var(--sky)",
-          border: "2px solid var(--sky)", display: "grid", placeItems: "center",
-          cursor: "pointer", flexShrink: 0, boxShadow: "4px 4px 0 rgba(255,255,255,.15)"
-        }}>
+        <button
+          onClick={toggle}
+          aria-label={playing ? "Pause Erin's message" : "Play Erin's message"}
+          style={{
+            width: 58, height: 58, borderRadius: 999, background: "var(--sky)",
+            border: "2px solid var(--sky)", display: "grid", placeItems: "center",
+            cursor: "pointer", flexShrink: 0, boxShadow: "4px 4px 0 rgba(255,255,255,.15)"
+          }}>
           {playing
-            ? <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
-            : <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)"><polygon points="5,3 19,12 5,21"/></svg>
+            ? <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)" aria-hidden="true"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            : <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--ink)" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
           }
         </button>
         <div style={{ flex: 1 }}>
-          <div onClick={seek} style={{ height: 8, background: "rgba(255,255,255,.15)", borderRadius: 99, cursor: "pointer", position: "relative" }}>
+          <div
+            onClick={seek}
+            role="progressbar"
+            aria-label="Audio progress"
+            aria-valuenow={Math.round(progress)}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            style={{ height: 8, background: "rgba(255,255,255,.15)", borderRadius: 99, cursor: "pointer", position: "relative" }}>
             <div style={{ height: "100%", width: `${progress}%`, background: "var(--sky)", borderRadius: 99, transition: "width .1s linear" }} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 8, fontFamily: "var(--font-body)", fontSize: 13, color: "rgba(255,255,255,.5)" }}>
@@ -127,14 +137,14 @@ const RubricTable = () => (
       <thead>
         <tr style={{ background: "var(--ink)" }}>
           {["Category", "Excellent (4)", "Good (3)", "Needs Work (2)", "Incomplete (1)"].map((h, i) => (
-            <th key={h} style={{ padding: "12px 16px", textAlign: "left", color: i === 0 ? "var(--sky)" : "var(--white)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase", borderRight: i < 4 ? "1px solid rgba(255,255,255,.1)" : "none" }}>{h}</th>
+            <th key={h} scope="col" style={{ padding: "12px 16px", textAlign: "left", color: i === 0 ? "var(--sky)" : "var(--white)", fontWeight: 800, fontSize: 12, letterSpacing: "0.06em", textTransform: "uppercase", borderRight: i < 4 ? "1px solid rgba(255,255,255,.1)" : "none" }}>{h}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {RUBRIC.map((r, i) => (
           <tr key={r.cat} style={{ background: i % 2 === 0 ? "var(--white)" : "var(--paper-2)", borderTop: "1px solid var(--ink-100)" }}>
-            <td style={{ padding: "14px 16px", fontWeight: 800, color: "var(--ink)", borderRight: "1px solid var(--ink-100)", verticalAlign: "top", minWidth: 140 }}>{r.cat}</td>
+            <th scope="row" style={{ padding: "14px 16px", fontWeight: 800, color: "var(--ink)", borderRight: "1px solid var(--ink-100)", verticalAlign: "top", minWidth: 140, textAlign: "left" }}>{r.cat}</th>
             <td style={{ padding: "14px 16px", color: "var(--ink)", borderRight: "1px solid var(--ink-100)", verticalAlign: "top", lineHeight: 1.5 }}>{r.e4}</td>
             <td style={{ padding: "14px 16px", color: "var(--ink-500)", borderRight: "1px solid var(--ink-100)", verticalAlign: "top", lineHeight: 1.5 }}>{r.e3}</td>
             <td style={{ padding: "14px 16px", color: "var(--ink-500)", borderRight: "1px solid var(--ink-100)", verticalAlign: "top", lineHeight: 1.5 }}>{r.e2}</td>
@@ -155,7 +165,7 @@ function App() {
   return (
     <React.Fragment>
       {/* Hero */}
-      <section style={{ background: "var(--ink)", padding: "72px 0 80px", position: "relative", overflow: "hidden" }}>
+      <section id="main-content" style={{ background: "var(--ink)", padding: "72px 0 80px", position: "relative", overflow: "hidden" }}>
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, backgroundImage: "url('/assets/photo-hs-crowd.jpg')", backgroundSize: "cover", backgroundPosition: "center 28%" }} />
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "rgba(22,20,19,.91)" }} />
         <div className="ts-wrap" style={{ maxWidth: 760, textAlign: "center", position: "relative", zIndex: 2 }}>
