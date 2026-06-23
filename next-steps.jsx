@@ -277,8 +277,8 @@ function App() {
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: "0 0 10px" }}>
                       Choose one story of overcoming adversity that you want to share. It could be living with addiction, navigating thoughts of suicide, healing after sexual assault, growing up with divorced parents, struggling with mental health, losing someone you loved, or anything else you have personally walked through.
                     </p>
-                    <div style={{ background: "var(--paper-2)", border: "1.5px solid var(--ink-100)", borderRadius: 10, padding: "10px 14px", fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink)", lineHeight: 1.5 }}>
-                      <strong>Example:</strong> I have parents who suffered from addiction.
+                    <div style={{ background: "var(--paper-2)", border: "1.5px solid var(--ink-100)", borderRadius: 10, padding: "10px 14px", fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink)", lineHeight: 1.7 }}>
+                      <strong>Example:</strong> Let's say you grew up with parents who suffered from addiction and this impacted your life. You can identify this as your story.
                     </div>
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.6, color: "var(--ink-500)", margin: "10px 0 0", fontStyle: "italic" }}>
                       This is not a trauma dump. This is to show students how you move through adversity.
@@ -295,9 +295,9 @@ function App() {
                       After identifying your story, identify the lesson you want students to walk away with. The lesson comes from your story. Everything builds from the lesson.
                     </p>
                     <div style={{ background: "var(--paper-2)", border: "1.5px solid var(--ink-100)", borderRadius: 10, padding: "10px 14px", fontFamily: "var(--font-body)", fontSize: 14, color: "var(--ink)", lineHeight: 1.7 }}>
-                      <strong>Example:</strong><br />
-                      <em>I grew up with parents who struggled with addiction.</em><br />
-                      <em>The lesson: you can't control what happens around you, but you can control how you move through it.</em>
+                      <strong>Example:</strong> You identified your story as growing up with parents who struggled with addiction. Now identify the lesson within that story.<br /><br />
+                      <em>The lesson: you can't control what happens around you, but you can control how you move through it.</em><br /><br />
+                      This is what you are going to teach. Your story just supports it.
                     </div>
                   </div>
                 </div>
