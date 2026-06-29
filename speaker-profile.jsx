@@ -8,6 +8,7 @@ const SPEAKERS = {
     name: "Christine Conti",
     role: "Fear Into Courage Speaker",
     tagline: "Let's turn fear into courage and find your voice.",
+    sub: "Helping students turn their fear into courage and find their voice.",
     color: "var(--pink)",
     img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp",
     bio: "Christine Conti helps students face their fears so they can discover their voice and take courageous action. An experienced educator, wellness advocate, and motivational speaker, Christine inspires students to practice the \"F It\" Framework: Face it. Feel it. Flip it. Through this simple and empowering approach, she guides students to strengthen resilience, speak up because their voice matters, and step forward with courage and confidence. Christine also helps students recognize that their hardships can become a source of strength, something they can use to inspire and help others in the world.",
