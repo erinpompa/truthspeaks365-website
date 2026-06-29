@@ -15,6 +15,18 @@ const SPEAKERS = {
     framework: "Face It. Feel It. Flip It.",
     ctaTitle: <span>Bring <HL color="var(--pink)">Christine</HL> to your school or event.</span>,
   },
+  "nicolle-gonzalez": {
+    name: "Nicolle Gonzalez",
+    role: "Emotions & Resilience Speaker",
+    tagline: "Your feelings don't make you weak. They make you human.",
+    sub: "I help students name what they're carrying, stop running from it, and learn to move through it.",
+    color: "var(--sky)",
+    img: null,
+    bio: "Nicolle Gonzalez grew up first-generation American, the daughter of Cuban and Dominican immigrants, raised with the unspoken pressure that failure was not an option. She learned early to push her feelings down and keep moving. When her mom was diagnosed with cancer, she swallowed her fear and kept going, because that is what she was taught. That pattern followed her for years, through addiction, homelessness, and incarceration. What pulled her out was not a program. It was a volunteer who looked at her and asked, 'Why not you?' and a social worker who helped her see her own value. Today, Nicolle is a bilingual speaker and Social Work student at Rutgers who brings her full story into the room. She helps students recognize what they are feeling, stop carrying it alone, and learn to move through it instead of running from it.",
+    speaks: ["Naming and recognizing your emotions", "Asking for help without shame", "Moving through adversity", "Self-worth and belonging", "Grounding and emotional regulation"],
+    framework: "Recognize It. Reach Out. Move Through It.",
+    ctaTitle: <span>Bring <HL color="var(--sky)">Nicolle</HL> to your school or event.</span>,
+  },
   "erin-pompa": {
     name: "Erin Pompa",
     role: "Founder & Speaker",
@@ -63,7 +75,10 @@ function App() {
           {/* Right photo */}
           <div style={{ position: "relative", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
             <div style={{ width: "100%", height: "100%", minHeight: 500, position: "relative", overflow: "hidden", borderLeft: `4px solid ${s.color}` }}>
-              <img src={s.img} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+              {s.img
+                ? <img src={s.img} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+                : <div style={{ width: "100%", height: "100%", minHeight: 500, background: s.color, opacity: 0.25 }} />
+              }
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(22,20,19,.3) 0%, transparent 40%)" }}></div>
             </div>
           </div>
