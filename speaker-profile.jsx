@@ -18,11 +18,11 @@ const SPEAKERS = {
   "nicolle-gonzalez": {
     name: "Nicolle Gonzalez",
     role: "Emotions & Resilience Speaker",
-    tagline: "Your feelings don't make you weak. They make you human.",
+    tagline: "I ran from my feelings for years. Now I teach students to face theirs.",
     sub: "I help students name what they're carrying, stop running from it, and learn to move through it.",
     color: "var(--sky)",
     img: null,
-    bio: "Nicolle Gonzalez grew up first-generation American, the daughter of Cuban and Dominican immigrants, raised with the unspoken pressure that failure was not an option. She learned early to push her feelings down and keep moving. When her mom was diagnosed with cancer, she swallowed her fear and kept going, because that is what she was taught. That pattern followed her for years, through addiction, homelessness, and incarceration. What pulled her out was not a program. It was a volunteer who looked at her and asked, 'Why not you?' and a social worker who helped her see her own value. Today, Nicolle is a bilingual speaker and Social Work student at Rutgers who brings her full story into the room. She helps students recognize what they are feeling, stop carrying it alone, and learn to move through it instead of running from it.",
+    bio: "Nicolle Gonzalez is a bilingual speaker and social work student who empowers students to navigate difficult emotions with honesty, courage, and hope. Combining her personal story with practical tools, she teaches young people how to recognize what they are feeling, build healthy support systems, and move through life's challenges without letting them define who they are. Students leave inspired to believe that they matter, they are enough, and they are capable of creating a brighter future.",
     speaks: ["Naming and recognizing your emotions", "Asking for help without shame", "Moving through adversity", "Self-worth and belonging", "Grounding and emotional regulation"],
     framework: "Recognize It. Reach Out. Move Through It.",
     ctaTitle: <span>Bring <HL color="var(--sky)">Nicolle</HL> to your school or event.</span>,
