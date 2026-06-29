@@ -229,7 +229,7 @@ const G68Presenters = () => {
   const presenters = [
     { name: "Erin Pompa",       role: "Founder & Speaker",           tagline: "The shift starts here. Embrace the power of a perspective shift.",  color: "var(--lime)",   img: "/uploads/NCSL+Carousel+post.png.webp",                href: "https://erinpompa.com" },
     { name: "Christine Conti",  role: "Fear Into Courage Speaker",   tagline: "Let's turn fear into courage and find your voice.", color: "var(--pink)",   img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp", href: "/speaker-profile?id=christine-conti" },
-    { name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Your feelings don't make you weak. They make you human.", color: "var(--sky)", nameColor: "var(--sky)", img: null, href: "/speaker-profile?id=nicolle-gonzalez" },
+    { name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Name it. Stop running. Learn to move through it.", color: "var(--sky)", nameColor: "var(--ink)", img: "/uploads/nicolle-gonzalez.jpg", href: "/speaker-profile?id=nicolle-gonzalez" },
   ];
   return (
     <div>
