@@ -22,7 +22,7 @@ const SPEAKERS = {
     sub: "I help students name what they're carrying, stop running from it, and learn to move through it.",
     color: "var(--sky)",
     img: null,
-    bio: "Nicolle Gonzalez is a bilingual speaker and social work student who empowers students to navigate difficult emotions with honesty, courage, and hope. Combining her personal story with practical tools, she teaches young people how to recognize what they are feeling, build healthy support systems, and move through life's challenges without letting them define who they are. Students leave inspired to believe that they matter, they are enough, and they are capable of creating a brighter future.",
+    bio: "Nicolle Gonzalez is a bilingual speaker and social work student who empowers students to navigate difficult emotions with honesty, courage, and hope. Combining her personal story with practical tools, she teaches young people how to recognize what they are feeling, build healthy support systems, and move through life's challenges without letting them define who they are. Students don't just leave feeling inspired. They leave with real tools they can use the moment they walk out the door, and believing that they matter, they are enough, and they are capable of creating a brighter future.",
     speaks: ["Naming and recognizing your emotions", "Asking for help without shame", "Moving through adversity", "Self-worth and belonging", "Grounding and emotional regulation"],
     framework: "Recognize It. Reach Out. Move Through It.",
     ctaTitle: <span>Bring <HL color="var(--sky)">Nicolle</HL> to your school or event.</span>,
