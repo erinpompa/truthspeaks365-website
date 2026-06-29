@@ -59,9 +59,7 @@ function App() {
             <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(44px, 6vw, 80px)", lineHeight: 0.92, margin: "0 0 24px", color: "var(--white)" }}>
               <HL color={s.color}>{s.name.split(" ")[0]}</HL><br />{s.name.split(" ").slice(1).join(" ")}
             </h1>
-            <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(17px, 1.8vw, 20px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 480, margin: "0 0 10px", fontWeight: 600 }}>
-              {s.tagline}
-            </p>
+            {s.tagline && <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(17px, 1.8vw, 20px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 480, margin: "0 0 10px", fontWeight: 600 }}>{s.tagline}</p>}
             {s.sub && <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.5, color: "var(--fg-on-dark2)", maxWidth: 440, margin: "0 0 32px" }}>{s.sub}</p>}
             <div style={{ marginTop: s.sub ? 0 : 22 }}>
               <a href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ display: "inline-flex", alignItems: "center", gap: 10, background: "var(--lime)", color: "var(--ink)", border: "2px solid var(--ink)", borderRadius: 999, padding: "14px 28px", fontFamily: "var(--font-body)", fontWeight: 900, fontSize: 17, textDecoration: "none", boxShadow: "4px 4px 0 var(--ink)", transition: "all .15s cubic-bezier(.2,.8,.2,1)" }}
