@@ -7,7 +7,6 @@ const SPEAKERS = {
   "christine-conti": {
     name: "Christine Conti",
     role: "Fear Into Courage Speaker",
-    tagline: "Let's turn fear into courage and find your voice.",
     sub: "Helping students turn their fear into courage and find their voice.",
     color: "var(--pink)",
     img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp",
