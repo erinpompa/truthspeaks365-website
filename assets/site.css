@@ -81,3 +81,25 @@ image-slot { background: var(--bg, var(--violet)); }
 @media (max-width: 480px) {
   .ts-btn { white-space: normal !important; text-align: center; justify-content: center; max-width: 100%; box-sizing: border-box; }
 }
+
+/* ---- Speaker profile mobile fixes ---- */
+@media (max-width: 640px) {
+  .ts-speaker-hero { grid-template-columns: 1fr !important; min-height: auto !important; }
+  .ts-speaker-hero-text { padding: 48px 0 32px !important; }
+  .ts-speaker-photo { min-height: 280px !important; border-left: none !important; border-top: 4px solid var(--accent-color, var(--sky)); }
+  .ts-speaker-bio { grid-template-columns: 1fr !important; }
+  .ts-topic-label { white-space: normal !important; }
+}
+
+/* ---- Home stats grid mobile ---- */
+@media (max-width: 640px) {
+  .ts-stats-grid { grid-template-columns: 1fr 1fr !important; gap: 24px !important; }
+}
+@media (max-width: 380px) {
+  .ts-stats-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- Prevent any nowrap text from overflowing on phone ---- */
+@media (max-width: 640px) {
+  .ts-wrap { padding-left: 18px; padding-right: 18px; }
+}

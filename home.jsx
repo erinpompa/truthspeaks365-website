@@ -12,7 +12,7 @@ const Hero = () => (
     }}></div>
     {/* When you have a hero video, set its filename here (e.g. src="assets/hero-video.mp4")
         and it will autoplay over the placeholder below. */}
-    <video className="hero-vid" autoPlay muted loop playsInline poster="" style={{ position: "absolute", inset: 0, zIndex: 1, width: "100%", height: "100%", objectFit: "cover", background: "transparent" }}></video>
+    <video className="hero-vid" autoPlay muted loop playsInline poster="" aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, width: "100%", height: "100%", objectFit: "cover", background: "transparent" }}></video>
     {/* legibility scrim */}
     <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 2, background: "linear-gradient(180deg, rgba(22,20,19,.82) 0%, rgba(22,20,19,.75) 42%, rgba(22,20,19,.88) 100%)" }}></div>
 
@@ -195,7 +195,7 @@ const _Frameworks_REMOVED = () => (
         borderTop: "2px solid var(--ink-100)",
         padding: "56px 0",
       }}>
-        <div className="ts-wrap" style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", gap: 48, alignItems: "start" }}>
+        <div className="ts-wrap ts-stats-grid" style={{ display: "grid", gridTemplateColumns: "180px 1fr 1fr", gap: 48, alignItems: "start" }}>
           {/* Big number */}
           <div style={{
             fontFamily: "var(--font-display)", fontWeight: 900,

@@ -179,7 +179,7 @@ const NavBar = ({ active = "Home" }) => {
           ))}
           <Button variant="primary" size="sm" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book us →</Button>
         </nav>
-        <button className="ts-nav-burger" onClick={() => setOpen(o => !o)} aria-label="Menu" style={{
+        <button className="ts-nav-burger" onClick={() => setOpen(o => !o)} aria-label="Menu" aria-expanded={open} aria-controls="ts-nav-mobile" style={{
           display: "none", background: "var(--ink)", border: "2px solid var(--ink)", borderRadius: 12,
           width: 46, height: 46, placeItems: "center", cursor: "pointer", color: "var(--white)"
         }}>
@@ -187,7 +187,7 @@ const NavBar = ({ active = "Home" }) => {
         </button>
       </div>
       {open && (
-        <div className="ts-nav-mobile" style={{ borderTop: "1px solid var(--ink-100)", background: "var(--paper)", padding: "10px 28px 20px" }}>
+        <div id="ts-nav-mobile" className="ts-nav-mobile" role="navigation" aria-label="Mobile menu" style={{ borderTop: "1px solid var(--ink-100)", background: "var(--paper)", padding: "10px 28px 20px" }}>
           {NAV.map(l => (
             <a key={l.label} href={l.href} style={{
               display: "block", padding: "12px 0", fontFamily: "var(--font-body)", fontWeight: 800,
@@ -209,7 +209,7 @@ const NavBar = ({ active = "Home" }) => {
    MARQUEE scrolling phrase band
    --------------------------------------------------------------------- */
 const Marquee = ({ items, bg = "var(--lime)", color = "var(--ink)", star = "var(--pink)", speed = 30 }) => (
-  <div style={{ background: bg, borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)", overflow: "hidden", padding: "13px 0" }}>
+  <div aria-hidden="true" style={{ background: bg, borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)", overflow: "hidden", padding: "13px 0" }}>
     <div style={{ display: "flex", whiteSpace: "nowrap", animation: `ts-marquee ${speed}s linear infinite`, width: "max-content" }}>
       {[...items, ...items, ...items].map((t, i) => (
         <span key={i} style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: 22, color, padding: "0 26px", display: "inline-flex", alignItems: "center", gap: 26 }}>

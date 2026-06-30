@@ -50,9 +50,9 @@ function App() {
 
       {/* Hero */}
       <section style={{ background: "var(--ink)", overflow: "hidden" }}>
-        <div className="ts-wrap" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, alignItems: "stretch", minHeight: 560 }}>
+        <div className="ts-wrap ts-speaker-hero" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, alignItems: "stretch", minHeight: 560 }}>
           {/* Left text */}
-          <div className="ts-reveal" style={{ padding: "80px 48px 80px 0", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="ts-reveal ts-speaker-hero-text" style={{ padding: "80px 48px 80px 0", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: s.color, color: "var(--ink)", borderRadius: 999, padding: "6px 16px", marginBottom: 24, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid rgba(255,255,255,.2)", alignSelf: "flex-start" }}>
               <Icon name="mic" size={12} color="var(--ink)" /> {s.role}
             </div>
@@ -71,7 +71,7 @@ function App() {
           </div>
           {/* Right photo */}
           <div style={{ position: "relative", display: "flex", alignItems: "flex-end", justifyContent: "center" }}>
-            <div style={{ width: "100%", height: "100%", minHeight: 500, position: "relative", overflow: "hidden", borderLeft: `4px solid ${s.color}` }}>
+            <div className="ts-speaker-photo" style={{ width: "100%", height: "100%", minHeight: 500, position: "relative", overflow: "hidden", borderLeft: `4px solid ${s.color}`, "--accent-color": s.color }}>
               {s.img
                 ? <img src={s.img} alt={s.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
                 : <div style={{ width: "100%", height: "100%", minHeight: 500, background: s.color, opacity: 0.25 }} />
@@ -84,7 +84,7 @@ function App() {
 
       {/* Bio + speaks on no color band */}
       <section style={{ background: "var(--paper)", padding: "80px 0" }}>
-        <div className="ts-wrap" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "start" }}>
+        <div className="ts-wrap ts-speaker-bio" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "start" }}>
           <div className="ts-reveal">
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(26px, 3vw, 38px)", lineHeight: 1.05, color: "var(--ink)", margin: "0 0 22px" }}>
               {s.name.split(" ")[0]} <HL color={s.color}>{s.name.split(" ").slice(1).join(" ")}</HL>
@@ -109,7 +109,7 @@ function App() {
                     <span style={{ width: 30, height: 30, borderRadius: 999, background: "var(--lime)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
                       <Icon name="check" size={16} color="var(--ink)" />
                     </span>
-                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5, color: "var(--white)", whiteSpace: "nowrap" }}>{topic}</span>
+                    <span className="ts-topic-label" style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5, color: "var(--white)", whiteSpace: "nowrap" }}>{topic}</span>
                   </div>
                 ))}
               </div>
