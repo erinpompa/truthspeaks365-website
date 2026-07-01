@@ -101,8 +101,8 @@ const Mission = () => (
 );
 
 const TRACKS = [
-  { tag: "Grades 3-5", color: "var(--sky)", icon: "sprout", title: "Big Feelings, Brave Kids", body: "We combine movement, mindfulness, and social-emotional learning to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.", href: "/work#g35" },
-  { tag: "Grades 6-8", color: "var(--pink)", icon: "flame", title: "Real Topics. Real Growth.", body: "Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.", href: "/work#g68", feat: true },
+  { tag: "Grades 3-5", color: "var(--sky)", icon: "sprout", title: "Big Feelings, Brave Kids", body: "We combine movement, mindfulness, and character development to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.", href: "/work#g35" },
+  { tag: "Grades 6-8", color: "var(--pink)", icon: "flame", title: "Real Topics. Real Growth.", body: "Each presentation goes all in on one concept rooted in resilience and character development. We bring it to life through storytelling and real-time activities that meet students where they are.", href: "/work#g68", feat: true },
   { tag: "Grades 9-12", color: "var(--violet)", icon: "zap", title: "Real Talk. Real Tools.", body: "These are the conversations teenagers need to have. Honest, intentional presentations built around real stories of women who have overcome adversity paired with a framework they can carry with them.", href: "/work#g912" },
 ];
 

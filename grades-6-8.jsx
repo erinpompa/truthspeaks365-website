@@ -13,7 +13,7 @@ const G68Hero = () => (
         Real Topics.<br /><HL color="var(--pink)">Real Growth.</HL>
       </h1>
       <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 36px", fontWeight: 600 }}>
-        Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.
+        Each presentation goes all in on one concept rooted in resilience and character development. We bring it to life through storytelling and real-time activities that meet students where they are.
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
         <Button variant="lime" size="lg" href="/work#g68">See what's included →</Button>

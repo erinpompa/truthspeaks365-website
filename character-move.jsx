@@ -18,7 +18,7 @@ const CMHero = () => (
         Character<br /><HL color="var(--sky)">Move.</HL>
       </h1>
       <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 36px", fontWeight: 600 }}>
-        We combine movement, mindfulness, and social-emotional learning to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.
+        We combine movement, mindfulness, and character development to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
         <Button variant="lime" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Schedule a free call →</Button>
@@ -53,7 +53,7 @@ const Pillars = () => {
   const items = [
     { icon: "music-2",   color: "var(--sky)",    title: "Creative Dance",        body: "Movement as a language students express emotion, build coordination, and discover joy in their own bodies." },
     { icon: "heart",     color: "var(--pink)",   title: "Guided Reflection",     body: "After every movement session, students pause and name what they felt. Awareness before regulation." },
-    { icon: "users",     color: "var(--lime)",   title: "Social-Emotional Learning", body: "Character, connection, and self-regulation woven into every session not bolted on after." },
+    { icon: "users",     color: "var(--lime)",   title: "Character Development", body: "Character, connection, and self-regulation woven into every session not bolted on after." },
     { icon: "shield",    color: "var(--violet)", title: "Anti-Bullying Principles", body: "Students learn to respect one another and grow as leaders through movement and community." },
   ];
   return (
@@ -103,7 +103,7 @@ const About = () => (
 const HowItWorks = () => {
   const steps = [
     { n: "01", color: "var(--sky)",    title: "We customize to you",      body: "Character Move fits a single class period or fills a full school assembly. Gym classes, English classes, auditoriums we adapt to your space, schedule, and budget." },
-    { n: "02", color: "var(--pink)",   title: "Sessions in action",       body: "Each session blends creative dance, guided reflection, and social-emotional learning. Students move, feel, and connect every single time." },
+    { n: "02", color: "var(--pink)",   title: "Sessions in action",       body: "Each session blends creative dance, guided reflection, and character development. Students move, feel, and connect every single time." },
     { n: "03", color: "var(--lime)",   title: "Showcase (optional)",      body: "Culminate the series with a student-and-family showcase that celebrates learning, connection, and growth." },
   ];
   return (

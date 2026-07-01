@@ -8,11 +8,11 @@ const TABS = [
     icon: "sprout",
     kicker: "Big Feelings, Brave Kids",
     headline: <span>Character <HL color="var(--sky)">Move</HL></span>,
-    intro: "We combine movement, mindfulness, and social-emotional learning to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.",
+    intro: "We combine movement, mindfulness, and character development to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.",
     offers: [
       { icon: "music-2", title: "Creative movement sessions", body: "Students express emotion through guided dance and movement. Builds body awareness, confidence, and joy." },
       { icon: "heart", title: "Mindfulness & reflection", body: "After every movement session, kids pause, breathe, and name what they felt. Awareness before regulation." },
-      { icon: "users-round", title: "SEL woven in", body: "Character, connection, and self-regulation built into every session, not added on top." },
+      { icon: "users-round", title: "Character development woven in", body: "Character, connection, and self-regulation built into every session, not added on top." },
     ],
     formats: ["Single class periods", "Gym class integration", "Full school assemblies", "Multi-session series"],
     outcomes: ["Confidence in their own body", "Words for big feelings", "Connection with classmates"],
@@ -23,7 +23,7 @@ const TABS = [
     icon: "flame", feat: true,
     kicker: "Real Topics. Real Growth.",
     headline: <span>One concept. <HL color="var(--lime)">All in.</HL></span>,
-    intro: "Each presentation goes all in on one concept rooted in resilience, social-emotional learning, and character development. We bring it to life through storytelling and real-time activities that meet students where they are.",
+    intro: "Each presentation goes all in on one concept rooted in resilience and character development. We bring it to life through storytelling and real-time activities that meet students where they are.",
     offers: [],
     formats: ["40-60 minute assembly", "School-wide assemblies", "Small groups", "Series of sessions"],
     outcomes: ["A framework they can name", "Tools to use that same day", "Representation at the front"],
@@ -70,7 +70,7 @@ const CMPillars = () => {
   const cards = [
     { icon: "music-2",  color: "var(--sky)",    title: "Creative Dance",                                   body: "Movement is the language. Students express emotions, build coordination, and discover the joy in their bodies, all while learning the concepts on a deeper level." },
     { icon: "heart",   color: "var(--pink)",   title: "Guided Reflection",                                body: "Every session connects the dots. We're always coming back to the concepts, helping students make the link between what they're feeling in their bodies and what they're learning in the room." },
-    { icon: "users",   color: "var(--lime)",   title: "Social Emotional Learning & Character Development", body: "This is the core of everything. Every lesson is rooted in themes that help students understand themselves, their emotions, and how they show up in the world." },
+    { icon: "users",   color: "var(--lime)",   title: "Character Development", body: "This is the core of everything. Every lesson is rooted in themes that help students understand themselves, their emotions, and how they show up in the world." },
     { icon: "shield",  color: "var(--violet)", title: "Anti-Bullying Principles",                         body: "Students learn to respect their own space and one another's, and to hold the room with love and care. Because how we move together matters just as much as what we learn." },
   ];
   return (
@@ -111,7 +111,7 @@ const CMHowItWorks = () => {
     },
     {
       n: "02", color: "var(--pink)", title: "We listen first",
-      body: "We meet with your admin, counselor, and staff to identify the core social-emotional and character development concepts and themes you want your students to learn or reinforce.",
+      body: "We meet with your admin, counselor, and staff to identify the core character development concepts and themes you want your students to learn or reinforce.",
     },
     {
       n: "03", color: "var(--violet)", title: "We build around your goals for your students",
@@ -119,7 +119,7 @@ const CMHowItWorks = () => {
     },
     {
       n: "04", color: "var(--lime)", title: "Students take the stage (optional)",
-      body: "If you choose, the journey ends with a showcase. Students perform what they've learned, combining movement and social-emotional learning into a presentation for friends, family, and your community.",
+      body: "If you choose, the journey ends with a showcase. Students perform what they've learned, combining movement and character development into a presentation for friends, family, and your community.",
     },
   ];
   return (
