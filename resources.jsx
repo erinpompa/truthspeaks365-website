@@ -131,9 +131,6 @@ const YouthPortalFeature = () => (
     <div className="ts-wrap ts-reveal" style={{ maxWidth: 880 }}>
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }} className="ts-split">
         <div>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", borderRadius: 999, padding: "6px 16px", marginBottom: 22, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
-            <Icon name="compass" size={13} color="var(--ink)" /> New Resource
-          </div>
           <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(32px, 5vw, 60px)", lineHeight: 0.95, color: "var(--white)", margin: "0 0 20px" }}>
             What are you <HL color="var(--lime)">going through?</HL>
           </h2>
