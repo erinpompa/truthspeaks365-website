@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth Resource Portal | TruthSpeaks 365</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background: #0d0d12;
+      color: #fff;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    /* ---- CRISIS BAR ---- */
+    .crisis-bar {
+      background: #ff1a6e;
+      color: #fff;
+      text-align: center;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+    .crisis-bar a { text-decoration: underline; }
+
+    /* ---- HEADER ---- */
+    .site-nav {
+      background: #0d0d12;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.55);
+    }
+    .site-nav span { color: rgba(255,255,255,.3); margin: 0 10px; }
+
+    .hero {
+      text-align: center;
+      padding: 64px 24px 48px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: clamp(42px, 9vw, 88px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .hero h1 .hl {
+      background: #c6ef3b;
+      color: #0d0d12;
+      padding: 0 8px;
+      display: inline-block;
+    }
+    .hero p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(255,255,255,.65);
+      max-width: 520px;
+      margin: 20px auto 0;
+      font-weight: 500;
+    }
+
+    /* ---- TABS ---- */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 36px auto 0;
+      max-width: 480px;
+      border: 2px solid rgba(255,255,255,.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .tab-btn {
+      flex: 1;
+      padding: 14px 20px;
+      background: transparent;
+      border: none;
+      color: rgba(255,255,255,.45);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.18s;
+      border-right: 1px solid rgba(255,255,255,.15);
+      line-height: 1.3;
+    }
+    .tab-btn:last-child { border-right: none; }
+    .tab-btn.active {
+      background: #ff1a6e;
+      color: #fff;
+    }
+    .tab-btn small {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      opacity: 0.8;
+      margin-top: 2px;
+    }
+
+    /* ---- CONTENT PANELS ---- */
+    .panel { display: none; padding: 40px 0 80px; }
+    .panel.active { display: block; }
+
+    .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+    /* ---- CATEGORY ---- */
+    .category { margin-bottom: 48px; }
+    .category-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    /* category colors */
+    .cat-mental    { background: rgba(255,26,110,.18); color: #ff6699; border: 1px solid rgba(255,26,110,.3); }
+    .cat-body      { background: rgba(160,80,220,.18); color: #c07eff; border: 1px solid rgba(160,80,220,.3); }
+    .cat-bullying  { background: rgba(255,160,30,.18); color: #ffb347; border: 1px solid rgba(255,160,30,.3); }
+    .cat-worth     { background: rgba(198,239,59,.18); color: #c6ef3b; border: 1px solid rgba(198,239,59,.3); }
+    .cat-family    { background: rgba(50,140,255,.18); color: #74b4ff; border: 1px solid rgba(50,140,255,.3); }
+    .cat-substance { background: rgba(0,200,180,.18); color: #00d4c0; border: 1px solid rgba(0,200,180,.3); }
+    .cat-relation  { background: rgba(255,120,50,.18); color: #ff8c42; border: 1px solid rgba(255,120,50,.3); }
+    .cat-identity  { background: rgba(180,100,255,.18); color: #d080ff; border: 1px solid rgba(180,100,255,.3); }
+
+    /* ---- CARDS ---- */
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 580px) { .cards { grid-template-columns: 1fr; } }
+
+    .card {
+      background: #17171f;
+      border: 1.5px solid rgba(255,255,255,.1);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.18s;
+    }
+    .card:hover { border-color: rgba(255,255,255,.25); }
+
+    .card-trigger {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      cursor: pointer;
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      text-align: left;
+    }
+    .card-emoji { font-size: 22px; flex-shrink: 0; line-height: 1; padding-top: 2px; }
+    .card-quote {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.82);
+      font-style: italic;
+      flex: 1;
+    }
+
+    .card-action {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px 16px 56px;
+    }
+    .find-help-btn {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #ff1a6e;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .find-help-btn .arrow {
+      font-size: 14px;
+      transition: transform 0.18s;
+    }
+    .card.open .find-help-btn .arrow { transform: rotate(90deg); }
+
+    .card-resource {
+      display: none;
+      padding: 0 20px 20px 56px;
+    }
+    .card.open .card-resource { display: block; }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,26,110,.12);
+      border: 1px solid rgba(255,26,110,.3);
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #ff6699;
+      transition: background 0.15s;
+    }
+    .resource-link:hover { background: rgba(255,26,110,.22); }
+    .resource-name { display: block; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.45); margin-top: 2px; }
+    .resource-desc { display: block; font-size: 11.5px; font-weight: 500; color: rgba(255,255,255,.55); margin-top: 6px; line-height: 1.5; }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: #0a0a10;
+      border-top: 1px solid rgba(255,255,255,.1);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+      margin-bottom: 20px;
+    }
+    .footer-headline {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .footer-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,.55);
+      max-width: 480px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+    .footer-crisis {
+      font-size: 14px;
+      font-weight: 700;
+      color: #ff6699;
+      margin-bottom: 28px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 12px;
+      color: rgba(255,255,255,.35);
+      flex-wrap: wrap;
+    }
+    .footer-links a { transition: color 0.15s; }
+    .footer-links a:hover { color: rgba(255,255,255,.7); }
+  </style>
+</head>
+<body>
+
+<!-- CRISIS BAR -->
+<div class="crisis-bar">
+  🚨 Need help right now? Text HELLO to <a href="sms:741741">741741</a> &nbsp;|&nbsp; Call or text <a href="tel:988">988</a> &nbsp;|&nbsp; Free, confidential, 24/7.
+</div>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="https://truthspeaks365.com">// TRUTHSPEAKS 365</a><span>&#xBB;</span>YOUTH RESOURCE PORTAL
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>WHAT ARE YOU<br /><span class="hl">GOING THROUGH?</span></h1>
+  <p>Pick your grade level. Find a challenge that sounds like you. We'll point you to the right resource. No sign-in, no judgment.</p>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('ms', this)">
+      MIDDLE SCHOOL<small>GRADES 6-8</small>
+    </button>
+    <button class="tab-btn" onclick="switchTab('hs', this)">
+      HIGH SCHOOL<small>GRADES 9-12</small>
+    </button>
+  </div>
+</div>
+
+<!-- ===== MIDDLE SCHOOL PANEL ===== -->
+<div class="panel active" id="panel-ms">
+  <div class="container">
+
+    <!-- FEELINGS AND MENTAL HEALTH -->
+    <div class="category">
+      <div class="category-label cat-mental">Feelings and Mental Health</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😰</span>
+            <span class="card-quote">"I feel anxious and stressed almost every day and I can't make it stop."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.headspace.com/teens" target="_blank" rel="noopener">
+              headspace.com/teens
+              <span class="resource-name">Headspace for Teens</span>
+            </a>
+            <span class="resource-desc">Free guided meditations and tools for managing anxiety, stress, and big feelings.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😢</span>
+            <span class="card-quote">"I've been really sad lately and I don't even know why."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.crisistextline.org" target="_blank" rel="noopener">
+              crisistextline.org
+              <span class="resource-name">Crisis Text Line</span>
+            </a>
+            <span class="resource-desc">Text HOME to 741741 to connect with a trained crisis counselor, 24/7. Free and confidential.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😶</span>
+            <span class="card-quote">"I need to talk to someone but I'm not ready to tell my parents or teachers."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.teenlineonline.org" target="_blank" rel="noopener">
+              teenlineonline.org
+              <span class="resource-name">Teen Line</span>
+            </a>
+            <span class="resource-desc">Talk or text with a trained teen volunteer who actually gets it. Confidential. No adults unless you want them.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😤</span>
+            <span class="card-quote">"I get so angry and I don't know how to calm down before I say something I regret."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.childmind.org" target="_blank" rel="noopener">
+              childmind.org
+              <span class="resource-name">Child Mind Institute</span>
+            </a>
+            <span class="resource-desc">Real guides on managing anger, emotional regulation, and what's actually happening in your brain.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😴</span>
+            <span class="card-quote">"I feel totally numb, like nothing matters and I can't feel anything anymore."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://988lifeline.org" target="_blank" rel="noopener">
+              988lifeline.org
+              <span class="resource-name">988 Suicide and Crisis Lifeline</span>
+            </a>
+            <span class="resource-desc">Call or text 988 anytime. Real people, real support, no judgment. You deserve to feel something again.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BODY IMAGE -->
+    <div class="category">
+      <div class="category-label cat-body">Body Image</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😔</span>
+            <span class="card-quote">"I hate the way I look. I look in the mirror and I just don't like what I see."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.allianceforeatingdisorders.com" target="_blank" rel="noopener">
+              allianceforeatingdisorders.com
+              <span class="resource-name">Alliance for Eating Disorders Awareness</span>
+            </a>
+            <span class="resource-desc">Support for anyone struggling with body image, eating, or self-worth. Helpline: 1-866-662-1235.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🍽️</span>
+            <span class="card-quote">"My relationship with food feels out of control. I restrict, binge, or obsess over what I eat."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.allianceforeatingdisorders.com" target="_blank" rel="noopener">
+              allianceforeatingdisorders.com
+              <span class="resource-name">Alliance for Eating Disorders Awareness</span>
+            </a>
+            <span class="resource-desc">You are not alone in this. Free resources, support groups, and a helpline staffed by real people.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">📱</span>
+            <span class="card-quote">"Everyone on social media looks perfect and I feel awful about myself every time I scroll."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.smilingmind.com.au" target="_blank" rel="noopener">
+              smilingmind.com.au
+              <span class="resource-name">Smiling Mind</span>
+            </a>
+            <span class="resource-desc">Free mindfulness app built for teens. Helps you build a healthier relationship with yourself and the world online.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BULLYING -->
+    <div class="category">
+      <div class="category-label cat-bullying">Bullying and Social Pressure</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😠</span>
+            <span class="card-quote">"I'm being bullied in person and I don't know what to do or who to tell."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.stopbullying.gov/resources/get-help-now" target="_blank" rel="noopener">
+              stopbullying.gov
+              <span class="resource-name">StopBullying.gov - Get Help Now</span>
+            </a>
+            <span class="resource-desc">Step-by-step guidance on what to do, who to tell, and how to document what's happening.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">💻</span>
+            <span class="card-quote">"I'm being bullied online - texts, DMs, comments - and I can't escape it."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.stopbullying.gov/cyberbullying" target="_blank" rel="noopener">
+              stopbullying.gov/cyberbullying
+              <span class="resource-name">StopBullying.gov - Cyberbullying</span>
+            </a>
+            <span class="resource-desc">How to block, report, document, and get support when the harassment follows you home through a screen.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😬</span>
+            <span class="card-quote">"My friends pressure me to do things I don't want to do and I don't know how to say no."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.mentalhealthfirstaid.org" target="_blank" rel="noopener">
+              mentalhealthfirstaid.org
+              <span class="resource-name">Mental Health First Aid</span>
+            </a>
+            <span class="resource-desc">Tools for setting boundaries, handling peer pressure, and knowing when a situation isn't safe.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SELF-WORTH -->
+    <div class="category">
+      <div class="category-label cat-worth">Self-Worth and Confidence</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🪞</span>
+            <span class="card-quote">"I always think negative things about myself. I call myself stupid, ugly, worthless."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://my.life" target="_blank" rel="noopener">
+              my.life
+              <span class="resource-name">MyLife</span>
+            </a>
+            <span class="resource-desc">A mindfulness and self-compassion app built for young people. Helps you talk to yourself differently.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😞</span>
+            <span class="card-quote">"I compare myself to everyone else and I always come up short."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.copenotes.com" target="_blank" rel="noopener">
+              copenotes.com
+              <span class="resource-name">Cope Notes</span>
+            </a>
+            <span class="resource-desc">Daily texts with real mental health facts and small reminders that you are enough, exactly as you are.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🌻</span>
+            <span class="card-quote">"I want to feel more positive and grateful but I don't know where to start."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.friendsresilience.org" target="_blank" rel="noopener">
+              friendsresilience.org
+              <span class="resource-name">FRIENDS Resilience</span>
+            </a>
+            <span class="resource-desc">Research-backed tools for building optimism, resilience, and emotional strength from the inside out.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- HOME, FAMILY AND LOSS -->
+    <div class="category">
+      <div class="category-label cat-family">Home, Family and Loss</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🏠</span>
+            <span class="card-quote">"Things at home are really hard and I'm carrying all of it with me at school."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.childmind.org" target="_blank" rel="noopener">
+              childmind.org
+              <span class="resource-name">Child Mind Institute</span>
+            </a>
+            <span class="resource-desc">Guides on navigating hard home situations, finding a trusted adult, and protecting your mental health when home isn't safe.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🍺</span>
+            <span class="card-quote">"Someone in my family drinks too much or uses drugs and it affects everyone in the house."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.nar-anon.org/what-is-narateen" target="_blank" rel="noopener">
+              nar-anon.org/what-is-narateen
+              <span class="resource-name">Narateen</span>
+            </a>
+            <span class="resource-desc">Support groups for teens affected by someone else's drug use. You didn't cause it and you're not alone in it.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🕊️</span>
+            <span class="card-quote">"I lost someone important to me and I don't know how to move through the grief."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.rainbows.org" target="_blank" rel="noopener">
+              rainbows.org
+              <span class="resource-name">Rainbows for All Children</span>
+            </a>
+            <span class="resource-desc">Support groups and resources for young people grieving a loss. Grief is not a timeline - it's a process.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">💔</span>
+            <span class="card-quote">"My friend is going through something really bad and I don't know how to help them."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.hopesquad.com" target="_blank" rel="noopener">
+              hopesquad.com
+              <span class="resource-name">Hope Squad</span>
+            </a>
+            <span class="resource-desc">Peer-to-peer support tools for teens who want to show up for a friend who's struggling. You can make a difference.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== HIGH SCHOOL PANEL ===== -->
+<div class="panel" id="panel-hs">
+  <div class="container">
+
+    <!-- FEELINGS AND MENTAL HEALTH - HS -->
+    <div class="category">
+      <div class="category-label cat-mental">Feelings and Mental Health</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😰</span>
+            <span class="card-quote">"My anxiety is out of control and it's affecting my grades, my sleep, everything."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.headspace.com/teens" target="_blank" rel="noopener">
+              headspace.com/teens
+              <span class="resource-name">Headspace for Teens</span>
+            </a>
+            <span class="resource-desc">Free meditations and exercises for anxiety, sleep, focus, and getting through high-stress seasons of life.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😶</span>
+            <span class="card-quote">"I'm struggling but I've been hiding it for so long I don't know how to ask for help."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.crisistextline.org" target="_blank" rel="noopener">
+              crisistextline.org
+              <span class="resource-name">Crisis Text Line</span>
+            </a>
+            <span class="resource-desc">Text HOME to 741741. You don't have to explain everything. You just have to start. They'll meet you there.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🧠</span>
+            <span class="card-quote">"I think I might have depression or anxiety but I haven't been officially diagnosed."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.nami.org/Your-Journey/Kids-Teens-and-Young-Adults/Teens" target="_blank" rel="noopener">
+              nami.org
+              <span class="resource-name">NAMI Teen Resources</span>
+            </a>
+            <span class="resource-desc">The National Alliance on Mental Illness has clear, honest info on what different mental health conditions actually feel like.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😴</span>
+            <span class="card-quote">"I feel completely burned out. School, pressure, expectations - I'm running on empty."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.smilingmind.com.au" target="_blank" rel="noopener">
+              smilingmind.com.au
+              <span class="resource-name">Smiling Mind</span>
+            </a>
+            <span class="resource-desc">Free app with programs specifically for stress, burnout, and finding balance during high-pressure times.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BODY IMAGE - HS -->
+    <div class="category">
+      <div class="category-label cat-body">Body Image</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🍽️</span>
+            <span class="card-quote">"I've been restricting, purging, or binging and I'm scared but I don't know how to stop."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.allianceforeatingdisorders.com" target="_blank" rel="noopener">
+              allianceforeatingdisorders.com
+              <span class="resource-name">Alliance for Eating Disorders Awareness</span>
+            </a>
+            <span class="resource-desc">Helpline: 1-866-662-1235. Free support groups, resources, and connection to treatment. You deserve to heal.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">📱</span>
+            <span class="card-quote">"I compare my body to what I see online and I never measure up no matter what I do."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.childmind.org" target="_blank" rel="noopener">
+              childmind.org
+              <span class="resource-name">Child Mind Institute</span>
+            </a>
+            <span class="resource-desc">Research-backed articles on social media, body image, and how to rewire the comparison trap.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- BULLYING - HS -->
+    <div class="category">
+      <div class="category-label cat-bullying">Bullying and Social Pressure</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">💻</span>
+            <span class="card-quote">"I'm being harassed online and it follows me everywhere. I can't escape it."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.stopbullying.gov/cyberbullying" target="_blank" rel="noopener">
+              stopbullying.gov/cyberbullying
+              <span class="resource-name">StopBullying.gov - Cyberbullying</span>
+            </a>
+            <span class="resource-desc">How to document, report, and get support when harassment happens online. You have options and rights.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😬</span>
+            <span class="card-quote">"The pressure to fit in, drink, or do things I don't want to do is overwhelming."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.hopesquad.com" target="_blank" rel="noopener">
+              hopesquad.com
+              <span class="resource-name">Hope Squad</span>
+            </a>
+            <span class="resource-desc">Peer support tools and strategies for navigating social pressure and staying true to yourself.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RELATIONSHIPS - HS -->
+    <div class="category">
+      <div class="category-label cat-relation">Relationships</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">❤️</span>
+            <span class="card-quote">"I'm in a relationship that feels controlling, scary, or just not right."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.loveisrespect.org" target="_blank" rel="noopener">
+              loveisrespect.org
+              <span class="resource-name">Love Is Respect</span>
+            </a>
+            <span class="resource-desc">24/7 support for teens in unhealthy or abusive relationships. Text, call, or chat - completely confidential.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">😕</span>
+            <span class="card-quote">"I don't know if what's happening between me and my partner is normal or not."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.loveisrespect.org" target="_blank" rel="noopener">
+              loveisrespect.org
+              <span class="resource-name">Love Is Respect</span>
+            </a>
+            <span class="resource-desc">Quizzes, guides, and real talk on what healthy relationships look and feel like. You deserve to know the difference.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SUBSTANCE USE - HS -->
+    <div class="category">
+      <div class="category-label cat-substance">Substance Use</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🍾</span>
+            <span class="card-quote">"I've been drinking or using to cope with something I can't face sober."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.aa.org/young-people-aa" target="_blank" rel="noopener">
+              aa.org/young-people-aa
+              <span class="resource-name">Young People in AA</span>
+            </a>
+            <span class="resource-desc">Resources specifically for young people dealing with alcohol. Meetings, stories, and real talk - no judgment.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🙏</span>
+            <span class="card-quote">"I want to stop but I'm scared to ask for help without getting in trouble."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.icypaa.org" target="_blank" rel="noopener">
+              icypaa.org
+              <span class="resource-name">ICYPAA</span>
+            </a>
+            <span class="resource-desc">International network of young people in recovery. Community, support, and a path forward - no shame required.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🏠</span>
+            <span class="card-quote">"Someone in my family uses and I'm the one holding everything together."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://al-anon.org/newcomers/teen-corner-alateen" target="_blank" rel="noopener">
+              al-anon.org - Alateen
+              <span class="resource-name">Alateen</span>
+            </a>
+            <span class="resource-desc">Support groups for teens affected by someone else's drinking. That weight isn't yours to carry alone.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SELF-WORTH - HS -->
+    <div class="category">
+      <div class="category-label cat-worth">Self-Worth and Identity</div>
+      <div class="cards">
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🪞</span>
+            <span class="card-quote">"I don't know who I am. I feel like I wear a different mask for every person in my life."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener">
+              psychologytoday.com/us/therapists
+              <span class="resource-name">Psychology Today Therapist Finder</span>
+            </a>
+            <span class="resource-desc">Find a therapist near you who works with teens. Filter by issue, insurance, and cost. You deserve someone in your corner.</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <button class="card-trigger" onclick="toggleCard(this)">
+            <span class="card-emoji">🌻</span>
+            <span class="card-quote">"I want to build real confidence - not just fake it. I don't know where to start."</span>
+          </button>
+          <div class="card-action">
+            <button class="find-help-btn" onclick="toggleCard(this.closest('.card').querySelector('.card-trigger'))">FIND HELP <span class="arrow">→</span></button>
+          </div>
+          <div class="card-resource">
+            <a class="resource-link" href="https://www.copenotes.com" target="_blank" rel="noopener">
+              copenotes.com
+              <span class="resource-name">Cope Notes</span>
+            </a>
+            <span class="resource-desc">Daily science-backed text messages that rewire how you talk to yourself - one small shift at a time.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">// TRUTHSPEAKS 365</div>
+  <div class="footer-headline">YOU ARE NOT ALONE.</div>
+  <div class="footer-sub">If you are thinking about hurting yourself or anyone else, please talk to someone right now.</div>
+  <div class="footer-crisis">Text HELLO to 741741 &nbsp;|&nbsp; Call or text 988 &nbsp;|&nbsp; Free, confidential, always available.</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/truthspeaks365" target="_blank">Follow @truthspeaks365</a>
+    <span>·</span>
+    <a href="https://truthspeaks365.com">truthspeaks365.com</a>
+    <span>·</span>
+    <a href="https://truthspeaks365.com/resources">Back to Resources</a>
+    <span>·</span>
+    <span>2025 TruthSpeaks 365 · All Rights Reserved</span>
+  </div>
+</footer>
+
+<script>
+  function switchTab(tab, btn) {
+    // deactivate all
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    // activate chosen
+    btn.classList.add('active');
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+
+  function toggleCard(trigger) {
+    const card = trigger.closest('.card');
+    const wasOpen = card.classList.contains('open');
+    // close all
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('open'));
+    // open this one if it was closed
+    if (!wasOpen) card.classList.add('open');
+  }
+</script>
+
+</body>
+</html>

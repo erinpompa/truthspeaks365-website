@@ -126,6 +126,50 @@ const Support = () => (
   </section>
 );
 
+const YouthPortalFeature = () => (
+  <section style={{ background: "var(--ink)", padding: "80px 0 90px", borderBottom: "2px solid var(--ink)" }}>
+    <div className="ts-wrap ts-reveal" style={{ maxWidth: 880 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }} className="ts-split">
+        <div>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", borderRadius: 999, padding: "6px 16px", marginBottom: 22, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
+            <Icon name="compass" size={13} color="var(--ink)" /> New Resource
+          </div>
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(32px, 5vw, 60px)", lineHeight: 0.95, color: "var(--white)", margin: "0 0 20px" }}>
+            What are you <HL color="var(--lime)">going through?</HL>
+          </h2>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, color: "var(--fg-on-dark2)", margin: "0 0 28px", fontWeight: 500 }}>
+            Students pick a challenge that sounds like them and get pointed to a real, vetted resource. No sign-in, no judgment, no lecture. Just help.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+            <Button variant="lime" size="lg" href="/youth-resource-quest">Open the Resource Portal →</Button>
+          </div>
+        </div>
+        <div style={{ background: "var(--surface-dark)", border: "2px solid var(--ink-700)", borderRadius: 24, padding: "28px 28px 24px", boxShadow: "6px 6px 0 var(--lime)" }}>
+          <div style={{ marginBottom: 16 }}>
+            <div style={{ background: "#ff1a6e", borderRadius: 10, padding: "9px 14px", fontSize: 12, fontWeight: 700, color: "#fff", marginBottom: 14 }}>
+              🚨 Need help right now? Text HELLO to 741741 or call 988
+            </div>
+          </div>
+          {[
+            { emoji: "😰", text: "I feel anxious and can't make it stop.", color: "rgba(255,102,153,.15)" },
+            { emoji: "💔", text: "My friend is struggling and I don't know how to help.", color: "rgba(50,140,255,.12)" },
+            { emoji: "🍽️", text: "My relationship with food feels out of control.", color: "rgba(160,80,220,.12)" },
+            { emoji: "💻", text: "I'm being bullied online and I can't escape it.", color: "rgba(255,160,30,.12)" },
+          ].map(c => (
+            <div key={c.text} style={{ background: c.color, borderRadius: 12, padding: "12px 14px", marginBottom: 8, display: "flex", gap: 12, alignItems: "flex-start" }}>
+              <span style={{ fontSize: 18, lineHeight: 1, paddingTop: 2 }}>{c.emoji}</span>
+              <span style={{ fontFamily: "var(--font-body)", fontSize: 13.5, color: "rgba(255,255,255,.75)", lineHeight: 1.45, fontStyle: "italic" }}>"{c.text}"</span>
+            </div>
+          ))}
+          <div style={{ fontSize: 12, color: "rgba(255,255,255,.3)", marginTop: 12, textAlign: "center", fontWeight: 600, letterSpacing: "0.08em" }}>
+            + 20 more challenges across two grade levels
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 function App() {
   useLucide();
   return (
@@ -136,14 +180,8 @@ function App() {
         eyebrow="Youth resources"
         title={<span>Tools you can <HL color="var(--pink)">use.</HL></span>}
       />
-      <section style={{ background: "var(--paper)", padding: "100px 0 120px", borderBottom: "2px solid var(--ink)" }}>
-        <div className="ts-wrap ts-reveal" style={{ textAlign: "center", maxWidth: 720, margin: "0 auto" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.03em", fontSize: "clamp(40px, 6vw, 72px)", lineHeight: 0.95, color: "var(--ink)", margin: 0 }}>
-            We're working on something <HL color="var(--lime)">good.</HL>
-          </h2>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.12em", fontSize: "clamp(16px, 2vw, 22px)", color: "var(--ink)", marginTop: 24 }}>Coming soon</div>
-        </div>
-      </section>
+      <YouthPortalFeature />
+      <Support />
       <Footer />
     </React.Fragment>
   );
