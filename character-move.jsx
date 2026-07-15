@@ -81,7 +81,7 @@ const About = () => (
     <div className="ts-wrap ts-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "center" }}>
       <div className="ts-reveal">
         <div style={{ borderRadius: 24, border: "3px solid var(--sky)", overflow: "hidden", boxShadow: "8px 8px 0 var(--sky)", background: "var(--ink-800)", aspectRatio: "4/5" }}>
-          <image-slot id="erin-character-move" placeholder="Drop a photo of Erin" shape="rect" style={{ width: "100%", height: "100%", display: "block", "--bg": "#1e2a35" }}></image-slot>
+          <img src="/uploads/erin_photo_3.jpg" alt="Erin Pompa" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
         </div>
       </div>
       <div className="ts-reveal">
