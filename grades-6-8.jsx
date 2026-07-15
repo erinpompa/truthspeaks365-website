@@ -5,26 +5,26 @@
 
 const G68Hero = () => (
   <section style={{ background: "var(--ink)", padding: "80px 0 90px", position: "relative", overflow: "hidden" }}>
-    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920 }}>
+    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920, textAlign: "center", margin: "0 auto" }}>
       <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 24, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
         <Icon name="flame" size={14} color="var(--ink)" /> Grades 6-8 Program
       </div>
       <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(48px, 7vw, 92px)", lineHeight: 0.92, margin: "0 0 28px", color: "var(--white)" }}>
         Real Topics.<br /><HL color="var(--pink)">Real Growth.</HL>
       </h1>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 36px", fontWeight: 600 }}>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 auto 36px", fontWeight: 600 }}>
         Each presentation goes all in on one concept rooted in resilience and character development. We bring it to life through storytelling and real-time activities that meet students where they are.
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-        <Button variant="lime" size="lg" href="/work#g68">See what's included →</Button>
-        <Button variant="ghost" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Book for your school →</Button>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
+        <Button variant="lime" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book for your school →</Button>
+        <Button variant="ghost" size="lg" href="#g68-why" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Learn more ↓</Button>
       </div>
     </div>
   </section>
 );
 
 const G68Why = () => (
-  <section style={{ background: "var(--sky)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
+  <section id="g68-why" style={{ background: "var(--sky)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
       <div>
         <Eyebrow style={{ marginBottom: 14 }}>Why it works</Eyebrow>

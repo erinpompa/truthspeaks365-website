@@ -5,29 +5,29 @@
 
 const G912Hero = () => (
   <section style={{ background: "var(--ink)", padding: "80px 0 90px", position: "relative", overflow: "hidden" }}>
-    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920 }}>
+    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920, textAlign: "center", margin: "0 auto" }}>
       <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--violet)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 24, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
         <Icon name="zap" size={14} color="var(--ink)" /> Grades 9-12 Program
       </div>
       <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(48px, 7vw, 92px)", lineHeight: 0.92, margin: "0 0 28px", color: "var(--white)" }}>
         Real Talk.<br /><HL color="var(--violet)">Real Tools.</HL>
       </h1>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 16px", fontWeight: 600 }}>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 720, margin: "0 auto 16px", fontWeight: 600 }}>
         These are the conversations teenagers need to have. During our presentations, we go there, honestly and intentionally. We share real stories of women who have overcome adversity, including experiences with substance abuse, incarceration, challenging relationships, and sexual assault. And if your school prefers, we can adjust the content accordingly.
       </p>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 36px", fontWeight: 600 }}>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 720, margin: "0 auto 36px", fontWeight: 600 }}>
         This is not trauma dumping. Every story is paired with a framework that helps students understand that life happens on life's terms. We connect through the story, then show how we move through it. Students always leave knowing where to go for support, and we point them back to you first. We also provide resources and a practical framework they can carry with them.
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
-        <Button variant="lime" size="lg" href="/work#g912">See what's included →</Button>
-        <Button variant="ghost" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Book for your school →</Button>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
+        <Button variant="lime" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book for your school →</Button>
+        <Button variant="ghost" size="lg" href="#g912-why" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Learn more ↓</Button>
       </div>
     </div>
   </section>
 );
 
 const G912Why = () => (
-  <section style={{ background: "var(--violet)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
+  <section id="g912-why" style={{ background: "var(--violet)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
       <div style={{ borderRadius: 24, border: "3px solid var(--violet)", overflow: "hidden", boxShadow: "8px 8px 0 var(--violet)", aspectRatio: "4/5" }}>
         <img src="/assets/photo-christine-selfie.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.4) contrast(0.9)" }} />
