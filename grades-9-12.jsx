@@ -27,9 +27,9 @@ const G912Hero = () => (
 );
 
 const G912Why = () => (
-  <section id="g912-why" style={{ background: "var(--violet)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
+  <section id="g912-why" style={{ background: "var(--paper)", padding: "80px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 56, alignItems: "center" }}>
-      <div style={{ borderRadius: 24, border: "3px solid var(--violet)", overflow: "hidden", boxShadow: "8px 8px 0 var(--violet)", aspectRatio: "4/5" }}>
+      <div style={{ borderRadius: 24, border: "3px solid var(--ink)", overflow: "hidden", boxShadow: "8px 8px 0 var(--violet)", aspectRatio: "4/5" }}>
         <img src="/assets/photo-christine-selfie.jpg" alt="TruthSpeaks 365 presenter" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", filter: "brightness(1.4) contrast(0.9)" }} />
       </div>
       <div>
@@ -74,26 +74,6 @@ const G912Frameworks = () => {
   );
 };
 
-const G912CTA = () => (
-  <section style={{ background: "var(--violet)", padding: "80px 0", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}>
-    <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center" }}>
-      <div>
-        <Eyebrow color="var(--ink)" style={{ marginBottom: 14 }}>Ready to bring this to your school?</Eyebrow>
-        <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.03em", fontSize: "clamp(32px, 4.5vw, 54px)", lineHeight: 0.96, color: "var(--ink)", margin: "0 0 16px" }}>
-          See everything that's included.
-        </h2>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, color: "var(--ink)", margin: 0, fontWeight: 500, maxWidth: 480 }}>
-          Head to our Work With Us page to see formats, what students walk away with, and how to get on the calendar.
-        </p>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-end" }}>
-        <Button variant="dark" size="lg" href="/work#g912">See what's included →</Button>
-        <Button variant="ghost" size="md" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ borderColor: "var(--ink)" }}>Book directly →</Button>
-      </div>
-    </div>
-  </section>
-);
-
 function App() {
   useLucide();
   return (
@@ -102,7 +82,6 @@ function App() {
       <G912Hero />
       <G912Why />
       <G912Frameworks />
-      <G912CTA />
       <Footer />
     </React.Fragment>
   );

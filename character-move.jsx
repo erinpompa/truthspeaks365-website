@@ -10,17 +10,17 @@ const CMHero = () => (
     <span style={{ position: "absolute", bottom: 60, left: "4%", width: 48, height: 48, borderRadius: 14, background: "var(--pink)", opacity: 0.22, transform: "rotate(20deg)" }}></span>
     <span style={{ position: "absolute", top: "40%", right: "14%", width: 22, height: 22, borderRadius: 6, background: "var(--lime)", opacity: 0.35, transform: "rotate(-12deg)" }}></span>
 
-    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920 }}>
+    <div className="ts-wrap ts-reveal" style={{ maxWidth: 920, textAlign: "center", margin: "0 auto" }}>
       <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--sky)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 24, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
         <Icon name="sprout" size={14} color="var(--ink)" /> Grades 3-5 Program
       </div>
       <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(52px, 8vw, 100px)", lineHeight: 0.92, margin: "0 0 28px", color: "var(--white)" }}>
         Character<br /><HL color="var(--sky)">Move.</HL>
       </h1>
-      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 0 36px", fontWeight: 600 }}>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 680, margin: "0 auto 36px", fontWeight: 600 }}>
         We combine movement, mindfulness, and character development to reinforce what your school is already teaching. Students build confidence, resilience, and connection through their bodies and their minds.
       </p>
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
         <Button variant="lime" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Schedule a free call →</Button>
         <Button variant="ghost" size="lg" href="#about" style={{ color: "var(--white)", borderColor: "rgba(255,255,255,.4)" }}>Learn more ↓</Button>
       </div>
