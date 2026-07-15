@@ -168,7 +168,7 @@ function App() {
   useLucide();
   return (
     <React.Fragment>
-      <NavBar />
+      <NavBar active="Work With Us" />
       <CMHero />
       <CMVideo />
       <Pillars />
