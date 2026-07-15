@@ -74,26 +74,6 @@ const G68Concepts = () => {
   );
 };
 
-const G68CTA = () => (
-  <section style={{ background: "var(--pink)", padding: "80px 0", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)" }}>
-    <div className="ts-wrap ts-split ts-reveal" style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: 40, alignItems: "center" }}>
-      <div>
-        <Eyebrow color="var(--ink)" style={{ marginBottom: 14 }}>Ready to bring this to your school?</Eyebrow>
-        <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.03em", fontSize: "clamp(32px, 4.5vw, 54px)", lineHeight: 0.96, color: "var(--ink)", margin: "0 0 16px" }}>
-          See everything that's included.
-        </h2>
-        <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.5, color: "var(--ink)", margin: 0, fontWeight: 500, maxWidth: 480 }}>
-          Head to our Work With Us page to see formats, what students walk away with, and how to get on the calendar.
-        </p>
-      </div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-end" }}>
-        <Button variant="dark" size="lg" href="/work#g68">See what's included →</Button>
-        <Button variant="ghost" size="md" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7" style={{ borderColor: "var(--ink)" }}>Book directly →</Button>
-      </div>
-    </div>
-  </section>
-);
-
 function App() {
   useLucide();
   return (
@@ -102,7 +82,6 @@ function App() {
       <G68Hero />
       <G68Why />
       <G68Concepts />
-      <G68CTA />
       <Footer />
     </React.Fragment>
   );
