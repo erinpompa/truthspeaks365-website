@@ -214,7 +214,7 @@ const Benefits = () => (
 const MidApplyCTA = () => (
   <section style={{ background: "var(--pink)", borderTop: "2px solid var(--ink)", padding: "52px 0" }}>
     <div className="ts-wrap ts-reveal" style={{ display: "flex", justifyContent: "center" }}>
-      <Button variant="dark" size="lg" href="https://webforms.pipedrive.com/f/6Na9tudP4W1Zd45tKSj3nVqkVKBhKWA5iwwauydwnia1okUCzAfDi8XJMrhXraSLZx">Apply now →</Button>
+      <Button variant="dark" size="lg" href="https://webforms.pipedrive.com/f/6Na9tudP4W1Zd45tKSj3nVqkVKBhKWA5iwwauydwnia1okUCzAfDi8XJMrhXraSLZx">Join the waitlist →</Button>
     </div>
   </section>
 );
@@ -254,7 +254,7 @@ function App() {
         chip=""
         eyebrow="Become a presenter"
         title={<span>Your story is <HL color="var(--pink)">the curriculum.</HL></span>}
-        sub={<span>We hire and train women with real stories of moving through adversity, build a teachable framework around each one, and put them in front of the rooms that need them most. <strong style={{color:"var(--white)"}}>Now hiring for the 2026-2027 season. Deadline: July 17, 2026.</strong></span>}
+        sub={<span>We hire and train women with real stories of moving through adversity, build a teachable framework around each one, and put them in front of the rooms that need them most. <strong style={{color:"var(--white)"}}>At this time we are not hiring, but please put your name on the waitlist and we will notify you when we are.</strong></span>}
       />
       <MidApplyCTA />
       <Mission />
@@ -264,9 +264,9 @@ function App() {
       <ApplicationProcess />
       <BottomCTA
         eyebrow=""
-        title={<span>Ready to <HL color="var(--pink)">apply?</HL></span>}
-        body="Application deadline: July 17, 2026."
-        btn="Start your application →"
+        title={<span>Ready to join the <HL color="var(--pink)">waitlist?</HL></span>}
+        body=""
+        btn="Join the waitlist →"
         href="https://webforms.pipedrive.com/f/6Na9tudP4W1Zd45tKSj3nVqkVKBhKWA5iwwauydwnia1okUCzAfDi8XJMrhXraSLZx"
       />
       <Footer />
