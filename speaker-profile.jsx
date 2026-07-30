@@ -13,6 +13,13 @@ const SPEAKERS = {
     bio: "Christine Conti helps students face their fears so they can discover their voice and take courageous action. An experienced educator, wellness advocate, and motivational speaker, Christine inspires students to practice the \"F It\" Framework: Face it. Feel it. Flip it. Through this simple and empowering approach, she guides students to strengthen resilience, speak up because their voice matters, and step forward with courage and confidence. Christine also helps students recognize that their hardships can become a source of strength, something they can use to inspire and help others in the world.",
     speaks: ["Finding your voice", "Facing fear with courage", "Building resilience", "Your voice matters", "Turning hardship into strength"],
     framework: "Face It. Feel It. Flip It.",
+    learningObjectives: [
+      "Name what fear feels like in their own lives and identify moments they stayed silent because of it.",
+      "Learn and apply the F'it Framework: Face it, Feel it, Flip it.",
+      "Practice the 5-Count technique to let fear in and move through it in real time.",
+      "Analyze real stories of setback and comeback, and explain how each person turned fear into fuel.",
+      "Commit to one action step for using their voice, whether that's speaking up, telling a trusted adult, or sharing their story to help someone else.",
+    ],
     ctaTitle: <span>Bring <HL color="var(--pink)">Christine</HL> to your school or event.</span>,
   },
   "nicolle-gonzalez": {
@@ -24,6 +31,13 @@ const SPEAKERS = {
     bio: "Nicolle Gonzalez is a bilingual speaker and social work student who empowers students to navigate difficult emotions with honesty, courage, and hope. Combining her personal story with practical tools, she teaches young people how to recognize what they are feeling, build healthy support systems, and move through life's challenges without letting them define who they are. Students walk away with more than inspiration. They leave with tools to process, manage, and regulate their emotions in real time, and the belief that they matter, they are enough, and they are capable of creating a brighter future.",
     speaks: ["Naming and recognizing your emotions", "Asking for help without shame", "Moving through adversity", "Self-worth and belonging", "Grounding and emotional regulation"],
     framework: "Identify It. Process It. Move Through It.",
+    learningObjectives: [
+      "Define what feelings are and learn to name the emotion they're experiencing instead of pushing it away.",
+      "Understand that avoided emotions don't disappear - they pile up and eventually show up as anger, anxiety, shutting down, or self-criticism.",
+      "Practice the Five Senses grounding technique to pause between what they feel and what they do next.",
+      "Identify at least one trusted adult or peer and learn concrete language for starting a hard conversation, including a text they can actually send.",
+      "Recognize that emotions are information, not weakness, and commit to one self-compassion practice they can use daily.",
+    ],
     ctaTitle: <span>Bring <HL color="var(--sky)">Nicolle</HL> to your school or event.</span>,
   },
   "erin-pompa": {
@@ -117,6 +131,30 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Learning Objectives — only shown when defined for this speaker */}
+      {s.learningObjectives && (
+        <section style={{ background: "var(--paper-2)", padding: "80px 0", borderTop: "2px solid var(--ink)" }}>
+          <div className="ts-wrap ts-reveal" style={{ maxWidth: 820 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
+              <div style={{ width: 48, height: 48, borderRadius: 999, background: s.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                <Icon name="graduation-cap" size={22} color="var(--ink)" />
+              </div>
+              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.05, color: "var(--ink)", margin: 0 }}>
+                Students Will Be Able To
+              </h2>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+              {s.learningObjectives.map((obj, i) => (
+                <div key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start" }}>
+                  <div style={{ width: 34, height: 34, borderRadius: 999, background: s.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 15, color: "var(--ink)" }}>{i + 1}</div>
+                  <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, color: "var(--ink-500)", margin: 0, paddingTop: 5 }}>{obj}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <BottomCTA
         eyebrow=""
