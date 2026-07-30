@@ -74,6 +74,69 @@ const G912Frameworks = () => {
   );
 };
 
+
+const G912SpeakerObjectives = () => {
+  const speakers = [
+    {
+      name: "Christine Conti",
+      role: "Fear Into Courage Speaker",
+      color: "var(--pink)",
+      href: "/speaker-profile?id=christine-conti",
+      objectives: [
+        "Name what fear feels like in their own lives and identify moments they stayed silent because of it.",
+        "Learn and apply the F'it Framework: Face it, Feel it, Flip it.",
+        "Practice the 5-Count technique to let fear in and move through it in real time.",
+        "Analyze real stories of setback and comeback, and explain how each person turned fear into fuel.",
+        "Commit to one action step for using their voice, whether that's speaking up, telling a trusted adult, or sharing their story to help someone else.",
+      ],
+    },
+    {
+      name: "Nicolle Gonzalez",
+      role: "Emotions & Resilience Speaker",
+      color: "var(--sky)",
+      href: "/speaker-profile?id=nicolle-gonzalez",
+      objectives: [
+        "Define what feelings are and learn to name the emotion they're experiencing instead of pushing it away.",
+        "Understand that avoided emotions don't disappear — they pile up and eventually show up as anger, anxiety, shutting down, or self-criticism.",
+        "Practice the Five Senses grounding technique to pause between what they feel and what they do next.",
+        "Identify at least one trusted adult or peer and learn concrete language for starting a hard conversation, including a text they can actually send.",
+        "Recognize that emotions are information, not weakness, and commit to one self-compassion practice they can use daily.",
+      ],
+    },
+  ];
+  return (
+    <section style={{ background: "var(--paper)", padding: "80px 0", borderTop: "2px solid var(--ink)" }}>
+      <div className="ts-wrap">
+        <SectionHead className="ts-reveal" eyebrow="Our presenters" title={<span>Students will be <HL color="var(--violet)">able to.</HL></span>} sub="Here's exactly what students walk away with after each presentation." style={{ marginBottom: 56 }} />
+        <div style={{ display: "flex", flexDirection: "column", gap: 48 }}>
+          {speakers.map(sp => (
+            <div key={sp.name} className="ts-reveal" style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 24, padding: "36px 40px", boxShadow: `6px 6px 0 ${sp.color}` }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
+                <div style={{ width: 48, height: 48, borderRadius: 999, background: sp.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                  <Icon name="mic" size={20} color="var(--ink)" />
+                </div>
+                <div>
+                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 22, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>{sp.name}</div>
+                  <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--ink-500)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 4 }}>{sp.role}</div>
+                </div>
+                <a href={sp.href} style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 8, background: sp.color, color: "var(--ink)", border: "2px solid var(--ink)", borderRadius: 999, padding: "8px 18px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, textDecoration: "none", whiteSpace: "nowrap" }}>View profile <Icon name="arrow-right" size={14} color="var(--ink)" /></a>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                {sp.objectives.map((obj, i) => (
+                  <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
+                    <div style={{ width: 30, height: 30, borderRadius: 999, background: sp.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, color: "var(--ink)" }}>{i + 1}</div>
+                    <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.6, color: "var(--ink-500)", margin: 0, paddingTop: 3 }}>{obj}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 function App() {
   useLucide();
   return (
@@ -82,6 +145,7 @@ function App() {
       <G912Hero />
       <G912Why />
       <G912Frameworks />
+      <G912SpeakerObjectives />
       <Footer />
     </React.Fragment>
   );
