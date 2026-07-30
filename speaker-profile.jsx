@@ -108,8 +108,8 @@ function App() {
           <div className="ts-reveal">
             <div style={{ background: "var(--ink)", borderRadius: 22, padding: "32px 30px", border: "2px solid var(--ink)", boxShadow: `6px 6px 0 ${s.color}` }}>
               <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-                <Icon name="mic" size={20} color={s.color} />
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)", whiteSpace: "nowrap" }}>Topics</span>
+                <Icon name="graduation-cap" size={20} color={s.color} />
+                <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)" }}>Students Will Be Able To</span>
               </div>
               {s.framework && (
                 <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 14, padding: "14px 18px", marginBottom: 18 }}>
@@ -118,12 +118,12 @@ function App() {
                 </div>
               )}
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {s.speaks.map(topic => (
-                  <div key={topic} style={{ display: "flex", alignItems: "center", gap: 14 }}>
-                    <span style={{ width: 30, height: 30, borderRadius: 999, background: "var(--lime)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
+                {(s.learningObjectives || s.speaks).map((item, i) => (
+                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                    <span style={{ width: 30, height: 30, borderRadius: 999, background: "var(--lime)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
                       <Icon name="check" size={16} color="var(--ink)" />
                     </span>
-                    <span className="ts-topic-label" style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5, color: "var(--white)", whiteSpace: "nowrap" }}>{topic}</span>
+                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, color: "var(--white)", lineHeight: 1.5 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -132,29 +132,6 @@ function App() {
         </div>
       </section>
 
-      {/* Learning Objectives — only shown when defined for this speaker */}
-      {s.learningObjectives && (
-        <section style={{ background: "var(--paper-2)", padding: "80px 0", borderTop: "2px solid var(--ink)" }}>
-          <div className="ts-wrap ts-reveal" style={{ maxWidth: 820 }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 32 }}>
-              <div style={{ width: 48, height: 48, borderRadius: 999, background: s.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
-                <Icon name="graduation-cap" size={22} color="var(--ink)" />
-              </div>
-              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(22px, 3vw, 32px)", lineHeight: 1.05, color: "var(--ink)", margin: 0 }}>
-                Students Will Be Able To
-              </h2>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {s.learningObjectives.map((obj, i) => (
-                <div key={i} style={{ display: "flex", gap: 18, alignItems: "flex-start" }}>
-                  <div style={{ width: 34, height: 34, borderRadius: 999, background: s.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 15, color: "var(--ink)" }}>{i + 1}</div>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.6, color: "var(--ink-500)", margin: 0, paddingTop: 5 }}>{obj}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
 
       <BottomCTA
         eyebrow=""
