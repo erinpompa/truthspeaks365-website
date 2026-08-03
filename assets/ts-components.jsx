@@ -183,7 +183,7 @@ const NavBar = ({ active = "Home" }) => {
                   {isActive && <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 3, background: "var(--pink)", borderRadius: 999 }}></span>}
                 </span>
                 {hoveredNav === l.label && (
-                  <div style={{ position: "absolute", top: "calc(100% + 10px)", left: 0, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 14, overflow: "hidden", boxShadow: "4px 4px 0 var(--ink)", minWidth: 170, zIndex: 100 }}>
+                  <div style={{ position: "absolute", top: "100%", left: 0, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 14, overflow: "hidden", boxShadow: "4px 4px 0 var(--ink)", minWidth: 170, zIndex: 100, marginTop: 4 }}>
                     {l.children.map((child, i) => (
                       <a key={child.label} href={child.href} style={{ display: "block", padding: "13px 18px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15, color: "var(--ink)", textDecoration: "none", borderTop: i > 0 ? "1px solid var(--ink-100)" : "none", background: active === child.label ? "var(--lime)" : "transparent" }}>{child.label}</a>
                     ))}
