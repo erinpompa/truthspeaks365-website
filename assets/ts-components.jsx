@@ -129,8 +129,10 @@ const SectionHead = ({ eyebrow, eyebrowColor, title, sub, align = "center", ligh
    NAV multi-page, sticky, frosted on scroll. Logo lockup + page links.
    --------------------------------------------------------------------- */
 const NAV = [
-  { label: "Work With Us", href: "/work" },
-  { label: "For Adults", href: "/adults" },
+  { label: "Work With Us", href: "/work", children: [
+    { label: "For Youth", href: "/work" },
+    { label: "For Adults", href: "/adults" },
+  ]},
   { label: "Become a Presenter", href: "/presenter" },
   { label: "Youth Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
@@ -139,6 +141,7 @@ const NAV = [
 const NavBar = ({ active = "Home" }) => {
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [hoveredNav, setHoveredNav] = React.useState(null);
   React.useEffect(() => {
     const h = () => setScrolled(window.scrollY > 16);
     h(); window.addEventListener("scroll", h);
@@ -168,16 +171,30 @@ const NavBar = ({ active = "Home" }) => {
           <img src="/assets/ts-icon.png" alt="TruthSpeaks 365" style={{ height: 52, display: "block" }} />
         </a>
         <nav className="ts-nav-desk" style={{ display: "flex", alignItems: "center", gap: 26 }}>
-          {NAV.map(l => (
-            <a key={l.label} href={l.href} style={{
-              fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5,
-              color: "var(--ink)", textDecoration: "none", position: "relative",
-              opacity: active === l.label ? 1 : 0.72, paddingBottom: 4
-            }}>
-              {l.label}
-              {active === l.label && <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 3, background: "var(--pink)", borderRadius: 999 }}></span>}
-            </a>
-          ))}
+          {NAV.map(l => {
+            const isActive = active === l.label || (l.children && l.children.some(c => c.label === active));
+            if (l.children) return (
+              <div key={l.label} style={{ position: "relative" }}
+                onMouseEnter={() => setHoveredNav(l.label)}
+                onMouseLeave={() => setHoveredNav(null)}
+              >
+                <span style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5, color: "var(--ink)", cursor: "default", position: "relative", opacity: isActive ? 1 : 0.72, paddingBottom: 4, display: "inline-flex", alignItems: "center", gap: 5, userSelect: "none" }}>
+                  {l.label}<Icon name="chevron-down" size={13} color="var(--ink)" />
+                  {isActive && <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 3, background: "var(--pink)", borderRadius: 999 }}></span>}
+                </span>
+                {hoveredNav === l.label && (
+                  <div style={{ position: "absolute", top: "calc(100% + 10px)", left: 0, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 14, overflow: "hidden", boxShadow: "4px 4px 0 var(--ink)", minWidth: 170, zIndex: 100 }}>
+                    {l.children.map((child, i) => (
+                      <a key={child.label} href={child.href} style={{ display: "block", padding: "13px 18px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15, color: "var(--ink)", textDecoration: "none", borderTop: i > 0 ? "1px solid var(--ink-100)" : "none", background: active === child.label ? "var(--lime)" : "transparent" }}>{child.label}</a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+            return (<a key={l.label} href={l.href} style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 15.5, color: "var(--ink)", textDecoration: "none", position: "relative", opacity: isActive ? 1 : 0.72, paddingBottom: 4 }}>
+              {l.label}{isActive && <span style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 3, background: "var(--pink)", borderRadius: 999 }}></span>}
+            </a>);
+          })}
           <Button variant="primary" size="sm" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book us →</Button>
         </nav>
         <button className="ts-nav-burger" onClick={() => setOpen(o => !o)} aria-label="Menu" aria-expanded={open} aria-controls="ts-nav-mobile" style={{
@@ -189,12 +206,13 @@ const NavBar = ({ active = "Home" }) => {
       </div>
       {open && (
         <div id="ts-nav-mobile" className="ts-nav-mobile" role="navigation" aria-label="Mobile menu" style={{ borderTop: "1px solid var(--ink-100)", background: "var(--paper)", padding: "10px 28px 20px" }}>
-          {NAV.map(l => (
-            <a key={l.label} href={l.href} style={{
-              display: "block", padding: "12px 0", fontFamily: "var(--font-body)", fontWeight: 800,
-              fontSize: 18, color: active === l.label ? "var(--pink-dark)" : "var(--ink)",
-              textDecoration: "none", borderBottom: "1px solid var(--ink-100)"
-            }}>{l.label}</a>
+          {NAV.map(l => l.children ? (
+            <React.Fragment key={l.label}>
+              <div style={{ padding: "12px 0 4px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--ink-400)" }}>{l.label}</div>
+              {l.children.map(child => (<a key={child.label} href={child.href} style={{ display: "block", padding: "10px 0 10px 14px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 17, color: active === child.label ? "var(--pink-dark)" : "var(--ink)", textDecoration: "none", borderBottom: "1px solid var(--ink-100)" }}>{child.label}</a>))}
+            </React.Fragment>
+          ) : (
+            <a key={l.label} href={l.href} style={{ display: "block", padding: "12px 0", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 18, color: active === l.label ? "var(--pink-dark)" : "var(--ink)", textDecoration: "none", borderBottom: "1px solid var(--ink-100)" }}>{l.label}</a>
           ))}
           <div style={{ marginTop: 16 }}>
             <Button variant="primary" size="md" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book us →</Button>
@@ -234,7 +252,7 @@ const Footer = () => (
         <div>
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 15, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--lime)", marginBottom: 16 }}>Explore</div>
           <div style={{ display: "flex", flexDirection: "column", gap: 11 }}>
-            {NAV.map(l => (
+            {NAV.flatMap(l => l.children ? l.children : [l]).map(l => (
               <a key={l.label} href={l.href} style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 16, color: "var(--white)", textDecoration: "none", opacity: 0.85 }}>{l.label}</a>
             ))}
           </div>
