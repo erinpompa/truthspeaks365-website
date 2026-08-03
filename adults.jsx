@@ -13,7 +13,7 @@ const AdultsHero = () => (
         Educator<br /><HL color="var(--lime)">Professional</HL><br />Development
       </h1>
       <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(18px, 2vw, 22px)", lineHeight: 1.5, color: "var(--fg-on-dark1)", maxWidth: 720, margin: "0 auto 36px", fontWeight: 600 }}>
-        Practical, immediately applicable tools that support educator well-being, strengthen classroom relationships, and enhance the ability to support students academically, socially, and emotionally.
+        Practical, immediately applicable tools that support the well-being of those who serve youth, strengthen relationships, and enhance the ability to support students academically, socially, and emotionally.
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center" }}>
         <Button variant="lime" size="lg" href="https://calendar.app.google/3rMyUJt4Q6iRzvzW7">Book a PD session →</Button>
@@ -38,12 +38,12 @@ const AdultsOverview = () => (
           Through reflection, discussion, and hands-on application, participants leave with concrete tools to manage challenges, build resilience, and create more supportive learning environments.
         </p>
         <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>
-          Training is designed for educators across grade levels and roles, with content differentiated to ensure relevance for classroom teachers, support staff, and school leaders.
+          Training is designed for people across roles — classroom teachers, counselors, coaches, administrators, youth workers — with content that ensures relevance no matter how you show up for young people.
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         {[
-          { icon: "users", label: "All roles welcome", body: "Classroom teachers, support staff, and school leaders — content is differentiated so it lands for everyone." },
+          { icon: "users", label: "All roles welcome", body: "Classroom teachers, support staff, school leaders, youth workers — content is differentiated so it lands for everyone." },
           { icon: "zap", label: "Immediately applicable", body: "Every session ends with tools participants can use the next day, not theory to file away." },
           { icon: "heart", label: "Grounded in lived experience", body: "Our presenters combine real personal stories with professional frameworks — the combination that actually moves people." },
         ].map(item => (
@@ -67,11 +67,12 @@ const PD_SESSIONS = [
     presenter: "Erin Pompa",
     role: "Founder & Speaker",
     color: "var(--lime)",
+    img: "/uploads/NCSL+Carousel+post.png.webp",
     title: "Awakening Your Warrior Spirit",
     subtitle: "Building Resilience for Those Who Serve",
     tagline: "A session for the people who give so much to others.",
     body: [
-      "Those who dedicate their lives to supporting young people often carry the weight of their students' challenges while navigating their own personal and professional demands. This session creates space for educators and youth-serving professionals to prioritize their own well-being as the foundation for meaningful impact.",
+      "Those who dedicate their lives to supporting young people often carry the weight of their students' challenges while navigating their own personal and professional demands. This session creates space for those who serve youth to prioritize their own well-being as the foundation for meaningful impact.",
       "Through storytelling, reflection, and practical strategies, participants explore how to navigate stress, reconnect with their purpose, and build resilience in the moments that matter most. Rooted in Erin Pompa's PAG Framework (Perspective Shift through Acceptance and Gratitude), this session empowers participants to shift their mindset, restore emotional balance, and continue showing up with intention, compassion, and strength.",
     ],
     objectives: [
@@ -81,18 +82,18 @@ const PD_SESSIONS = [
       "Recognize that caring for themselves is not separate from their service — it is the foundation that allows them to support others fully.",
       "Leave with renewed perspective, actionable tools, and a deeper connection to the reason they chose this work.",
     ],
-    profileHref: "/speaker-profile?id=erin-pompa",
   },
   {
     presenter: "Christine Conti",
     role: "Fear Into Courage Speaker",
     color: "var(--pink)",
+    img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp",
     title: "Emotional Resilience & Courage in the Classroom",
     subtitle: null,
     tagline: null,
     body: [
-      "This interactive professional development session helps educators strengthen emotional resilience and develop practical tools to navigate fear, stress, conflict, and uncertainty in today's classrooms.",
-      "Christine Conti introduces her F It Framework (Face it. Feel it. Flip it.) as a simple, actionable approach for processing challenges, regulating emotional responses, and responding with confidence during difficult moments with students, colleagues, and school communities. The session empowers educators to remain grounded, courageous, and effective while managing the emotional demands of teaching.",
+      "This interactive session helps those who work with youth strengthen emotional resilience and develop practical tools to navigate fear, stress, conflict, and uncertainty in today's classrooms.",
+      "Christine Conti introduces her F It Framework (Face it. Feel it. Flip it.) as a simple, actionable approach for processing challenges, regulating emotional responses, and responding with confidence during difficult moments with students, colleagues, and school communities. The session empowers participants to remain grounded, courageous, and effective while managing the emotional demands of serving young people.",
     ],
     objectives: [
       "Recognize how fear, stress, and emotional reactions impact decision-making and classroom interactions.",
@@ -101,18 +102,18 @@ const PD_SESSIONS = [
       "Build confidence when responding to challenging student behaviors and situations.",
       "Develop a mindset of courage, adaptability, and proactive problem-solving.",
     ],
-    profileHref: "/speaker-profile?id=christine-conti",
   },
   {
     presenter: "Nicolle Gonzalez",
     role: "Emotions & Resilience Speaker",
     color: "var(--sky)",
+    img: "/uploads/nicolle-gonzalez.jpg",
     title: "Emotional Regulation & Student Support Strategies",
     subtitle: null,
     tagline: null,
     body: [
-      "This professional development session equips educators with practical tools to understand and support emotional regulation in themselves and their students.",
-      "Nicolle Gonzalez combines lived experience with professional social work training to provide educators with actionable strategies for identifying emotions, responding to student needs, and creating emotionally safe classroom environments. The session emphasizes trauma-informed practices, emotional awareness, and strengthening relationships between educators and students to support positive classroom experiences.",
+      "This session equips those who serve youth with practical tools to understand and support emotional regulation in themselves and their students.",
+      "Nicolle Gonzalez combines lived experience with professional social work training to provide actionable strategies for identifying emotions, responding to student needs, and creating emotionally safe classroom environments. The session emphasizes trauma-informed practices, emotional awareness, and strengthening relationships to support positive experiences for young people.",
     ],
     objectives: [
       "Identify and understand emotional states in themselves and their students with greater awareness.",
@@ -121,7 +122,6 @@ const PD_SESSIONS = [
       "Build skills for creating emotionally safe and supportive classroom environments.",
       "Help students develop healthy coping strategies through connection, empathy, and support.",
     ],
-    profileHref: "/speaker-profile?id=nicolle-gonzalez",
   },
 ];
 
