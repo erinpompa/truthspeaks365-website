@@ -158,7 +158,7 @@ const CMLive = () => (
       <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.6, color: "var(--ink)", margin: 0, fontWeight: 500 }}>Character Move is currently in its first series at School 27 in Paterson, NJ. We are seeing real results and we are ready to bring it to your school next.</p>
     </div>
     <div style={{ background: "var(--ink)", borderRadius: 18, padding: "26px 30px" }}>
-      <div style={{ fontFamily: "var(--font-script)", fontWeight: 600, fontSize: 24, color: "var(--sky)", marginBottom: 10 }}>what teachers are saying</div>
+      <div style={{ fontFamily: "var(--font-script)", fontWeight: 600, fontSize: 24, color: "var(--sky)", marginBottom: 10 }}>what those who serve youth are saying</div>
       <p style={{ fontFamily: "var(--font-body)", fontSize: 15.5, lineHeight: 1.6, color: "var(--fg-on-dark2)", margin: "0 0 14px", fontStyle: "italic" }}>
         "The kids are fully engaged. You can see them processing things they don't have words for yet, through movement."
       </p>
