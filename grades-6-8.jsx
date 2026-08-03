@@ -112,7 +112,7 @@ const G68SpeakerObjectives = () => {
           {speakers.map(sp => (
             <div key={sp.name} className="ts-reveal" style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 24, padding: "36px 40px", boxShadow: `6px 6px 0 ${sp.color}` }}>
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
-                <div style={{ width: 56, height: 56, borderRadius: 999, border: `3px solid ${sp.color}`, overflow: "hidden", flexShrink: 0 }}>
+                <div style={{ width: 96, height: 96, borderRadius: 999, border: `3px solid ${sp.color}`, overflow: "hidden", flexShrink: 0 }}>
                   <img src={sp.img} alt={sp.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
                 </div>
                 <div>
