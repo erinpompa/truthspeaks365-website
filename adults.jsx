@@ -38,14 +38,14 @@ const AdultsOverview = () => (
           Through reflection, discussion, and hands-on application, participants leave with concrete tools to manage challenges, build resilience, and create more supportive learning environments.
         </p>
         <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>
-          Training is designed for people across roles — classroom teachers, counselors, coaches, administrators, youth workers — with content that ensures relevance no matter how you show up for young people.
+          Training is designed for people across roles - classroom teachers, counselors, coaches, administrators, youth workers - with content that ensures relevance no matter how you show up for young people.
         </p>
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
         {[
-          { icon: "users", label: "All roles welcome", body: "Classroom teachers, support staff, school leaders, youth workers — content is differentiated so it lands for everyone." },
+          { icon: "users", label: "All roles welcome", body: "Classroom teachers, support staff, school leaders, youth workers - content is differentiated so it lands for everyone." },
           { icon: "zap", label: "Immediately applicable", body: "Every session ends with tools participants can use the next day, not theory to file away." },
-          { icon: "heart", label: "Grounded in lived experience", body: "Our presenters combine real personal stories with professional frameworks — the combination that actually moves people." },
+          { icon: "heart", label: "Grounded in lived experience", body: "Our presenters combine real personal stories with professional frameworks - the combination that actually moves people." },
         ].map(item => (
           <div key={item.label} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "22px 24px", display: "flex", gap: 18, alignItems: "flex-start", boxShadow: "4px 4px 0 var(--ink-200)" }}>
             <div style={{ width: 46, height: 46, borderRadius: 12, background: "var(--ink)", display: "grid", placeItems: "center", border: "2px solid var(--ink)", flexShrink: 0 }}>
@@ -79,7 +79,7 @@ const PD_SESSIONS = [
       "Reflect on their own well-being and identify strategies to maintain emotional balance throughout the school year.",
       "Understand how managing stress and strengthening resilience impacts their effectiveness with students and colleagues.",
       "Apply practical frameworks, including gratitude and acceptance, to navigate challenges and reconnect with purpose.",
-      "Recognize that caring for themselves is not separate from their service — it is the foundation that allows them to support others fully.",
+      "Recognize that caring for themselves is not separate from their service - it is the foundation that allows them to support others fully.",
       "Leave with renewed perspective, actionable tools, and a deeper connection to the reason they chose this work.",
     ],
   },
@@ -138,17 +138,14 @@ const PDSessions = () => (
       <div style={{ display: "flex", flexDirection: "column", gap: 56 }}>
         {PD_SESSIONS.map((pd, idx) => (
           <div key={pd.presenter} className="ts-reveal" style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 28, overflow: "hidden", boxShadow: `8px 8px 0 ${pd.color}` }}>
-            <div style={{ background: "var(--ink)", padding: "28px 36px", display: "flex", alignItems: "center", gap: 16, flexWrap: "wrap" }}>
-              <div style={{ width: 52, height: 52, borderRadius: 999, background: pd.color, border: "2px solid rgba(255,255,255,.2)", display: "grid", placeItems: "center", flexShrink: 0 }}>
-                <Icon name="mic" size={22} color="var(--ink)" />
+            <div style={{ background: "var(--ink)", padding: "28px 36px", display: "flex", alignItems: "center", gap: 20 }}>
+              <div style={{ width: 64, height: 64, borderRadius: 999, border: `3px solid ${pd.color}`, overflow: "hidden", flexShrink: 0 }}>
+                <img src={pd.img} alt={pd.presenter} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
               </div>
-              <div style={{ flex: 1 }}>
+              <div>
                 <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--white)", lineHeight: 1 }}>{pd.presenter}</div>
                 <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12.5, color: "rgba(255,255,255,.55)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 5 }}>{pd.role}</div>
               </div>
-              <a href={pd.profileHref} style={{ display: "inline-flex", alignItems: "center", gap: 8, background: pd.color, color: "var(--ink)", border: "2px solid rgba(255,255,255,.2)", borderRadius: 999, padding: "8px 18px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, textDecoration: "none", whiteSpace: "nowrap" }}>
-                View profile <Icon name="arrow-right" size={14} color="var(--ink)" />
-              </a>
             </div>
             <div style={{ padding: "36px 36px 40px", display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 48, alignItems: "start" }}>
               <div>
@@ -198,7 +195,7 @@ const AdultsRosterNote = () => (
         More presenters <HL color="var(--lime)">coming soon.</HL>
       </h2>
       <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.65, color: "var(--fg-on-dark2)", margin: "0 auto", maxWidth: 640 }}>
-        TruthSpeaks 365 is continuing to expand its team of presenters. Following our recent presenter submission cycle, additional educators, mental health professionals, and youth-focused experts are currently being added to our speaker roster — allowing us to offer schools an even wider range of professional development experiences tailored to their specific needs.
+        TruthSpeaks 365 is continuing to expand its team of presenters. Following our recent presenter submission cycle, additional educators, mental health professionals, and youth-focused experts are currently being added to our speaker roster - allowing us to offer schools an even wider range of professional development experiences tailored to their specific needs.
       </p>
     </div>
   </section>
