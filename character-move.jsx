@@ -138,7 +138,7 @@ const Live = () => (
       </div>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <div style={{ background: "var(--ink)", borderRadius: 20, padding: "28px 32px", maxWidth: 340, width: "100%" }}>
-          <div style={{ fontFamily: "var(--font-script)", fontWeight: 600, fontSize: 26, color: "var(--sky)", marginBottom: 12 }}>what teachers are saying</div>
+          <div style={{ fontFamily: "var(--font-script)", fontWeight: 600, fontSize: 26, color: "var(--sky)", marginBottom: 12 }}>what those who serve youth are saying</div>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.6, color: "var(--fg-on-dark2)", margin: "0 0 16px", fontStyle: "italic" }}>
             "The kids are fully engaged. You can see them processing things they don't have words for yet, through movement."
           </p>
