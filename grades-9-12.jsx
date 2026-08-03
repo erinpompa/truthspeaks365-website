@@ -81,7 +81,7 @@ const G912SpeakerObjectives = () => {
       name: "Christine Conti",
       role: "Fear Into Courage Speaker",
       color: "var(--pink)",
-      href: "/speaker-profile?id=christine-conti",
+      img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp",
       objectives: [
         "Name what fear feels like in their own lives and identify moments they stayed silent because of it.",
         "Learn and apply the F'it Framework: Face it, Feel it, Flip it.",
@@ -94,7 +94,7 @@ const G912SpeakerObjectives = () => {
       name: "Nicolle Gonzalez",
       role: "Emotions & Resilience Speaker",
       color: "var(--sky)",
-      href: "/speaker-profile?id=nicolle-gonzalez",
+      img: "/uploads/nicolle-gonzalez.jpg",
       objectives: [
         "Define what feelings are and learn to name the emotion they're experiencing instead of pushing it away.",
         "Understand that avoided emotions don't disappear — they pile up and eventually show up as anger, anxiety, shutting down, or self-criticism.",
@@ -112,14 +112,13 @@ const G912SpeakerObjectives = () => {
           {speakers.map(sp => (
             <div key={sp.name} className="ts-reveal" style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 24, padding: "36px 40px", boxShadow: `6px 6px 0 ${sp.color}` }}>
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 28 }}>
-                <div style={{ width: 48, height: 48, borderRadius: 999, background: sp.color, border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0 }}>
-                  <Icon name="mic" size={20} color="var(--ink)" />
+                <div style={{ width: 56, height: 56, borderRadius: 999, border: `3px solid ${sp.color}`, overflow: "hidden", flexShrink: 0 }}>
+                  <img src={sp.img} alt={sp.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
                 </div>
                 <div>
                   <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 22, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", lineHeight: 1 }}>{sp.name}</div>
                   <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--ink-500)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 4 }}>{sp.role}</div>
                 </div>
-                <a href={sp.href} style={{ marginLeft: "auto", display: "inline-flex", alignItems: "center", gap: 8, background: sp.color, color: "var(--ink)", border: "2px solid var(--ink)", borderRadius: 999, padding: "8px 18px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, textDecoration: "none", whiteSpace: "nowrap" }}>View profile <Icon name="arrow-right" size={14} color="var(--ink)" /></a>
               </div>
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 {sp.objectives.map((obj, i) => (
