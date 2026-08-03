@@ -130,6 +130,7 @@ const SectionHead = ({ eyebrow, eyebrowColor, title, sub, align = "center", ligh
    --------------------------------------------------------------------- */
 const NAV = [
   { label: "Work With Us", href: "/work" },
+  { label: "For Adults", href: "/adults" },
   { label: "Become a Presenter", href: "/presenter" },
   { label: "Youth Resources", href: "/resources" },
   { label: "Contact", href: "/contact" },
