@@ -13,9 +13,9 @@ const DOWNLOADS = [
   { icon: "circle-dot", color: "var(--pink)", title: "The Black Dot, one-pager", tag: "Student handout", body: "The dot, the white space, and how to widen the frame. Print it, post it, keep it." },
   { icon: "shield", color: "var(--lime)", title: "Warrior Toolkit card", tag: "Pocket card", body: "All four steps on one card students can fold up and carry." },
   { icon: "wind", color: "var(--sky)", title: "Power of the Pause guide", tag: "Quick guide", body: "Build your pause phrase and a 3-breath reset in under five minutes." },
-  { icon: "messages-square", color: "var(--violet)", title: "Conversation starters", tag: "For educators", body: "Prompts to keep the assembly going in homeroom, advisory, or club." },
+  { icon: "messages-square", color: "var(--violet)", title: "Conversation starters", tag: "For those who serve youth", body: "Prompts to keep the assembly going in homeroom, advisory, or club." },
   { icon: "clipboard-list", color: "var(--yellow)", title: "Belief → Thought → Action map", tag: "Worksheet", body: "Walk the chain backward and find where to interrupt it." },
-  { icon: "presentation", color: "var(--coral)", title: "Educator discussion guide", tag: "For educators", body: "A facilitation guide to reinforce the frameworks after we leave." },
+  { icon: "presentation", color: "var(--coral)", title: "Discussion guide", tag: "For those who serve youth", body: "A facilitation guide to reinforce the frameworks after we leave." },
 ];
 
 const Blackdot = () => (
@@ -89,7 +89,7 @@ const DownloadCard = ({ icon, color, title, tag, body }) => {
 const Downloads = () => (
   <section style={{ background: "var(--pink)", padding: "84px 0", borderBottom: "2px solid var(--ink)" }}>
     <div className="ts-wrap">
-      <SectionHead className="ts-reveal" eyebrow="Free to use" title={<span>Take the tools <HL>with you.</HL></span>} sub="Printable handouts and educator guides, for the classroom, the club, or the fridge at home. (Links are placeholders, drop in your real files anytime.)" style={{ marginBottom: 44 }} />
+      <SectionHead className="ts-reveal" eyebrow="Free to use" title={<span>Take the tools <HL>with you.</HL></span>} sub="Printable handouts and guides for those who serve youth - for the classroom, the club, or the fridge at home. (Links are placeholders, drop in your real files anytime.)" style={{ marginBottom: 44 }} />
       <div className="ts-offers ts-reveal" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 18 }}>
         {DOWNLOADS.map(d => <DownloadCard key={d.title} {...d} />)}
       </div>
@@ -173,7 +173,7 @@ function App() {
     <React.Fragment>
       <NavBar active="Youth Resources" />
       <PageHero
-        chip="For students & educators"
+        chip="For students & those who serve them"
         eyebrow="Youth resources"
         title={<span>Tools you can <HL color="var(--pink)">use.</HL></span>}
       />
