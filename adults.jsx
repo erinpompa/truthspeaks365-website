@@ -139,7 +139,7 @@ const PDSessions = () => (
         {PD_SESSIONS.map((pd, idx) => (
           <div key={pd.presenter} className="ts-reveal" style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 28, overflow: "hidden", boxShadow: `8px 8px 0 ${pd.color}` }}>
             <div style={{ background: "var(--ink)", padding: "28px 36px", display: "flex", alignItems: "center", gap: 20 }}>
-              <div style={{ width: 64, height: 64, borderRadius: 999, border: `3px solid ${pd.color}`, overflow: "hidden", flexShrink: 0 }}>
+              <div style={{ width: 100, height: 100, borderRadius: 999, border: `3px solid ${pd.color}`, overflow: "hidden", flexShrink: 0 }}>
                 <img src={pd.img} alt={pd.presenter} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
               </div>
               <div>
