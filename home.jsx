@@ -350,7 +350,7 @@ const PresenterCTA = () => (
           </p>
         </div>
         <div style={{ marginTop: 28 }}>
-          <Button variant="dark" size="lg" href="/presenter">Learn more</Button>
+          <Button variant="dark" size="lg" href="/presenter">Join the waitlist</Button>
         </div>
       </div>
       <div className="ts-reveal" style={{ borderRadius: 20, overflow: "hidden", border: "3px solid var(--ink)", boxShadow: "6px 6px 0 var(--ink)", aspectRatio: "4/5", maxHeight: 500, position: "relative" }}>
