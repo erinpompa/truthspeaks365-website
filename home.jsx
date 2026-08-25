@@ -344,11 +344,6 @@ const PresenterCTA = () => (
         <p style={{ fontFamily: "var(--font-body)", fontSize: 19, lineHeight: 1.5, color: "var(--ink)", margin: "0 0 10px", fontWeight: 500, maxWidth: 520 }}>
           We hire and train women with real stories of moving through adversity, and we build the framework with you. You bring the truth. We'll help you shape it, and get you in front of the rooms that need it.
         </p>
-        <div style={{ display: "inline-block", marginTop: 18, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 14, padding: "12px 20px", boxShadow: "3px 3px 0 var(--ink)" }}>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.4, color: "var(--ink)", margin: 0, fontWeight: 700 }}>
-            Now hiring for the 2026-2027 season. Application deadline July 17th, 2026.
-          </p>
-        </div>
         <div style={{ marginTop: 28 }}>
           <Button variant="dark" size="lg" href="/presenter">Join the waitlist</Button>
         </div>
