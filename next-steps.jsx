@@ -169,27 +169,17 @@ function App() {
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, backgroundImage: "url('/assets/photo-hs-crowd.jpg')", backgroundSize: "cover", backgroundPosition: "center 28%" }} />
         <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "rgba(22,20,19,.91)" }} />
         <div className="ts-wrap" style={{ maxWidth: 760, textAlign: "center", position: "relative", zIndex: 2 }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--lime)", color: "var(--ink)", borderRadius: 999, padding: "7px 18px", marginBottom: 28, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)" }}>
-            <Icon name="calendar-clock" size={14} color="var(--ink)" /> Deadline: Friday, July 17th, 2026
-          </div>
+            
           <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 900, textTransform: "uppercase", letterSpacing: "-0.04em", fontSize: "clamp(48px, 7vw, 88px)", lineHeight: 0.92, margin: "0 0 24px", color: "var(--white)" }}>
             You're in.<br /><span style={{ color: "var(--sky)" }}>Here's what's next.</span>
           </h1>
           <p style={{ fontFamily: "var(--font-body)", fontSize: "clamp(17px, 2vw, 20px)", lineHeight: 1.6, color: "var(--fg-on-dark2)", margin: 0 }}>
-            Erin Pompa, the founder of TruthSpeaks 365, recorded a personal message for you. Start there, then follow the application instructions below and submit your video by the deadline.
+            Erin Pompa, the founder of TruthSpeaks 365, recorded a personal message for you. Start there, then follow the application instructions below.
           </p>
         </div>
       </section>
 
-      {/* Deadline banner */}
-      <div style={{ background: "var(--pink)", borderTop: "2px solid var(--ink)", borderBottom: "2px solid var(--ink)", padding: "16px 0" }}>
-        <div className="ts-wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
-          <Icon name="calendar-clock" size={20} color="var(--ink)" />
-          <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 18, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>
-            Submission deadline: Friday, July 17th, 2026
-          </span>
-        </div>
-      </div>
+
 
       {/* Steps */}
       <section style={{ background: "var(--paper)", padding: "80px 0 100px" }}>
@@ -381,10 +371,7 @@ function App() {
                   <div><strong>In the body of the email, include:</strong> the story you chose and the lesson you are focusing on from it.</div>
                 </div>
               </div>
-              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
-                <Icon name="calendar-x-2" size={18} color="var(--ink)" />
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 17, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)" }}>Deadline: Friday, July 17th, 2026</span>
-              </div>
+
             </div>
           </div>
         </div>
