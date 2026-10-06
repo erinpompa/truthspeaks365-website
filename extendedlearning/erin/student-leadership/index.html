@@ -107,11 +107,23 @@
   table.plan th,table.plan td{border:2px solid var(--ink);padding:10px;text-align:left;vertical-align:top}
   table.plan th{background:var(--lime);font-family:"Archivo Black","Arial Black",sans-serif;font-weight:400;font-size:13px;letter-spacing:.04em}
   table.plan td.ex{font-style:italic;color:var(--muted)}
+  .jump{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+  .jump a{font-family:"Archivo Black","Arial Black",sans-serif;font-size:13px;letter-spacing:.03em;text-decoration:none;color:var(--ink);background:var(--yellow);border:2px solid var(--ink);border-radius:999px;padding:7px 14px;box-shadow:3px 3px 0 var(--ink)}
+  .jump a:hover{background:var(--lime)}
+  #step1,#reflect,#ways{scroll-margin-top:70px}
+  .side{position:sticky;top:70px}
+  .facts,.jumplist{list-style:none;padding:0;margin:6px 0 0}
+  .facts li,.jumplist li{margin:6px 0}
+  .jumplist a{color:var(--ink);font-weight:700}
+  .sbtn{display:block;text-align:center;text-decoration:none;color:var(--ink);background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:9px 14px;margin:10px 0 0;font-family:"Archivo Black","Arial Black",sans-serif;font-size:13px;box-shadow:3px 3px 0 var(--ink)}
+  .sbtn.alt{background:#fff}
+  @media (max-width:760px){.side{position:static}}
+  .backto{display:inline-block;margin-top:6px;font-weight:700;color:var(--ink)}
   .dl{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
   @media print{
     header.photo{background:#fff!important;color:var(--ink);padding:0 0 10px;text-align:left}
     header.photo .sub{color:var(--ink)}
-    .back,.dl,.photo-card,#worksheet,#ways,footer{display:none!important}
+    .back,.dl,.side,#worksheet,#ways,footer{display:none!important}
     .switch{background:#fff;color:var(--ink);border:2px solid var(--ink)}
     .overview{grid-template-columns:1fr}
   }
@@ -175,7 +187,32 @@
           </ul>
         </div>
       </div>
-      <div class="photo-card"><img src="/assets/photo-circle.jpg" alt="Erin Pompa talking with a group of students"></div>
+      <aside class="side">
+        <div class="card s-lime">
+          <h3>Quick info</h3>
+          <ul class="facts">
+            <li><b>Time:</b> 30 to 40 minutes</li>
+            <li><b>Grades:</b> 9 to 12</li>
+            <li><b>Group:</b> Student leadership</li>
+            <li><b>Led by:</b> Advisor</li>
+          </ul>
+        </div>
+        <div class="card s-pink">
+          <h3>Downloads</h3>
+          <a class="sbtn" href="worksheet.pdf" download>Download the worksheet</a>
+          <a class="sbtn alt" href="lesson-plan.pdf" target="_blank" rel="noopener">Print this lesson plan</a>
+        </div>
+        <div class="card s-blue">
+          <h3>Jump to</h3>
+          <ul class="jumplist">
+            <li><a href="#glance">At a glance</a></li>
+            <li><a href="#step1">Step 1: Reflect</a></li>
+            <li><a href="#reflect">Reflection questions</a></li>
+            <li><a href="#ways">Ways to run it</a></li>
+            <li><a href="#worksheet">Worksheet</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
 
@@ -207,7 +244,7 @@
         </div>
       </div>
 
-      <div class="step">
+      <div class="step" id="step1">
         <div class="time">7 MIN<br>STEP 1</div>
         <div>
           <h3><span class="chip pink">1</span>Reflect on everything</h3>
@@ -218,7 +255,11 @@
             <li>What left an imprint?</li>
           </ul>
           <div class="by-end">By the end of this step: every student has named their ONE thing.</div>
-          <p class="tip">Want more? Use the <a href="#reflect">reflection questions</a> below. Push past the first answer. It's usually the one they think an adult wants to hear.</p>
+          <p class="tip">Push past the first answer. It's usually the one they think an adult wants to hear.</p>
+          <div class="jump">
+            <a href="#reflect">More reflection questions ↓</a>
+            <a href="#ways">Ways to run it ↓</a>
+          </div>
         </div>
       </div>
 
@@ -358,6 +399,7 @@
         </ul>
       </div>
     </div>
+    <p><a class="backto" href="#step1">↑ Back to Step 1</a></p>
   </section>
 
   <section id="ways">
@@ -374,6 +416,7 @@
       <div class="card"><h3>Small group to big group</h3>Put students in groups of three or four to talk it out. Each group agrees on ONE sentence that sums up their thinking and shares it with the room.</div>
       <div class="card"><h3>Digital board</h3>Set up a shared board or form so quieter students can post their thinking. Put responses on screen and talk through them together.</div>
     </div>
+    <p><a class="backto" href="#step1">↑ Back to Step 1</a></p>
   </section>
 
 
