@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Extended Learning | TruthSpeaks 365</title>
+<meta name="description" content="Extended learning from TruthSpeaks 365. Lessons from our presenters for those who lead our youth.">
+<link rel="icon" href="/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#161413; --cream:#FBF7F0; --char:#494746; --white:#fff; --muted:#6B6865;
+    --lime:#C1F944; --pink:#FF66C4; --yellow:#FFDE59; --blue:#38B6FF; --purple:#C77DFF;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 Inter,Arial,sans-serif}
+  h1,h2,h3,.label,.btn,.tile b{font-family:"Archivo Black","Arial Black",sans-serif;font-weight:400;letter-spacing:-.01em}
+  .wrap{max-width:980px;margin:0 auto;padding:0 20px}
+  .hl{padding:0 .18em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .lime{background:var(--lime)} .pink{background:var(--pink)} .yellow{background:var(--yellow)} .blue{background:var(--blue)} .purple{background:var(--purple)}
+  .label{font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+
+  /* hero */
+  header{background:var(--char);color:#fff;padding:56px 0 64px}
+  .brand{display:inline-flex;align-items:center;gap:12px;background:var(--ink);border-radius:10px;padding:10px 14px;margin-bottom:36px}
+  .brand span{font-family:"Archivo Black",sans-serif;font-size:18px}
+  .brand .s{color:var(--pink)}
+  .brand em{font-style:normal;font-family:"Archivo Black",sans-serif;background:var(--lime);color:var(--ink);font-size:12px;border-radius:5px;padding:3px 6px}
+  header h1{font-size:clamp(40px,8vw,76px);line-height:1;margin:0 0 20px;text-transform:uppercase}
+  header h1 .hl{color:var(--ink)}
+  header p{font-size:20px;color:#DDD9D4;max-width:640px;margin:0 0 28px}
+  .btn{display:inline-block;text-decoration:none;color:var(--ink);background:var(--lime);border:2px solid var(--ink);border-radius:999px;padding:10px 20px;font-size:14px;letter-spacing:.06em;box-shadow:4px 4px 0 var(--ink);margin:0 10px 10px 0}
+  .btn.alt{background:var(--white)}
+  .btn:hover{transform:translate(1px,1px);box-shadow:3px 3px 0 var(--ink)}
+
+  nav.toc{background:var(--ink);position:sticky;top:0;z-index:5}
+  nav.toc .wrap{display:flex;gap:22px;overflow-x:auto;padding-top:12px;padding-bottom:12px}
+  nav.toc a{color:#fff;text-decoration:none;white-space:nowrap;font-weight:700;font-size:14px}
+  nav.toc a:hover{color:var(--lime)}
+
+  section{padding:64px 0 24px}
+  h2{font-size:clamp(30px,5vw,44px);line-height:1.05;margin:8px 0 18px;text-transform:uppercase}
+  h3{font-size:22px;margin:0 0 10px;line-height:1.2}
+  p.lead{font-size:20px;max-width:720px}
+
+  .card{background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:22px 24px;box-shadow:6px 6px 0 var(--ink);margin-bottom:24px}
+  .card.s-lime{box-shadow:6px 6px 0 var(--lime)} .card.s-pink{box-shadow:6px 6px 0 var(--pink)}
+  .card.s-blue{box-shadow:6px 6px 0 var(--blue)} .card.s-yellow{box-shadow:6px 6px 0 var(--yellow)}
+  .grid{display:grid;gap:22px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media (max-width:760px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  ol,ul{padding-left:22px;margin:8px 0} li{margin:6px 0}
+
+  .chip{display:inline-block;font-family:"Archivo Black",sans-serif;font-size:13px;border:2px solid var(--ink);border-radius:8px;width:34px;height:34px;line-height:30px;text-align:center;margin-right:10px;vertical-align:middle}
+  .tile{border:2px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:16px;text-align:center}
+  .tile b{display:block;font-size:44px;line-height:1}
+  .tile small{font-family:"Archivo Black",sans-serif;font-size:11px;letter-spacing:.15em}
+
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+  .meta span{background:var(--white);border:2px solid var(--ink);border-radius:999px;padding:4px 14px;font-weight:700;font-size:14px}
+
+  .step{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:start;margin-bottom:26px}
+  .step .time{font-family:"Archivo Black",sans-serif;font-size:14px;background:var(--ink);color:#fff;border-radius:10px;padding:10px;text-align:center}
+  @media (max-width:760px){.step{grid-template-columns:1fr}.step .time{width:max-content}}
+  .say{background:var(--cream);border-radius:10px;padding:12px 16px;margin:12px 0;font-style:italic}
+  .tip{font-size:15px;color:var(--muted)}
+
+  .ws .line{border-bottom:2px solid var(--ink);height:34px}
+  .ws h3{margin-top:18px}
+
+  footer{background:var(--ink);color:#fff;padding:56px 0;margin-top:56px}
+  footer h2{color:#fff}
+  footer a{color:var(--lime)}
+
+  @media print{
+    nav.toc,.btn,.noprint{display:none!important}
+    header{background:#fff;color:var(--ink);padding:0 0 12px}
+    header p{color:var(--ink)}
+    body{background:#fff;font-size:12pt}
+    .card{box-shadow:none;break-inside:avoid}
+    section{padding:18px 0;break-inside:auto}
+    #worksheet{break-before:page}
+    footer{background:#fff;color:var(--ink)}
+    footer h2{color:var(--ink)}
+  }
+</style>
+<style>
+  .picks{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin:8px 0 34px}
+  @media (max-width:760px){.picks{grid-template-columns:repeat(3,1fr)}}
+  .pick{text-decoration:none;color:var(--ink);text-align:center;font-family:"Archivo Black",sans-serif;font-size:15px}
+  .pick:hover .pface{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+  .pface{display:grid;place-items:center;width:100%;aspect-ratio:1;border-radius:16px;border:2px solid var(--ink);object-fit:cover;object-position:center 20%;box-shadow:4px 4px 0 var(--ink);margin-bottom:10px;transition:transform .15s,box-shadow .15s}
+  .face{display:grid;place-items:center;width:64px;height:64px;border-radius:14px;border:2px solid var(--ink);object-fit:cover;object-position:center 20%;flex:none}
+  .initial{font-family:"Archivo Black",sans-serif;font-size:28px;color:var(--ink)}
+  .pface.initial{font-size:44px}
+  .who{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .who h3{margin:0;font-size:24px}
+  .presenter{scroll-margin-top:70px;margin-bottom:30px}
+  .presenter:target{outline:4px solid var(--lime);outline-offset:4px}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+  @media (max-width:760px){.tiles{grid-template-columns:1fr}}
+  .tile-l{display:block;border:2px solid var(--ink);border-radius:12px;padding:16px;text-decoration:none;color:var(--ink);background:var(--white)}
+  .tile-l .label{font-size:11px;margin-bottom:8px}
+  .tile-l h3{font-size:18px;margin:0 0 8px}
+  .tile-l p{margin:0;font-size:15px}
+  .tile-l.has{box-shadow:5px 5px 0 var(--ink)}
+  .tile-l.has.s-lime{background:#F3FDD9} .tile-l.has.s-yellow{background:#FFF7D6} .tile-l.has.s-blue{background:#E1F4FF}
+  .tile-l.has:hover{transform:translate(-2px,-2px)}
+  .tile-l .go{display:inline-block;margin-top:12px;font-family:"Archivo Black",sans-serif;font-size:13px;letter-spacing:.05em}
+  .tile-l.soon{border-style:dashed;color:var(--muted);background:transparent}
+  .tile-l.soon p{font-weight:700}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+  .f{font-family:"Archivo Black",sans-serif;font-size:13px;letter-spacing:.03em;background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:999px;padding:8px 16px;cursor:pointer}
+  .f.on{background:var(--ink);color:#fff}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand"><span>TRUTH<span class="s">SPEAKS</span></span><em>365</em></div>
+    <div class="label" style="color:var(--lime);margin-bottom:12px">For those who lead our youth</div>
+    <h1>Extended <span class="hl lime">learning</span></h1>
+    <p>The conversation shouldn't end when the presentation does. These lessons help your students reflect on what they heard, keep the momentum going, and turn it into action.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <div class="label" style="color:var(--muted)">How it works</div>
+    <h2>Three steps. <span class="hl pink">That's it.</span></h2>
+    <div class="grid g3">
+      <div class="card s-pink"><h3><span class="chip pink">1</span>Pick your presenter</h3>Choose the presenter your students saw.</div>
+      <div class="card s-yellow"><h3><span class="chip yellow">2</span>Pick your group</h3>Student leadership, grades 6 to 8, or grades 9 to 12. Each lesson fits a class period or 30 to 40 minutes.</div>
+      <div class="card s-blue"><h3><span class="chip blue">3</span>Lead it</h3>Directions, questions, timing, and handouts are all on the lesson page.</div>
+    </div>
+  </section>
+
+  <section id="presenters">
+    <div class="label" style="color:var(--muted)">Start here</div>
+    <h2>Which presenter <span class="hl lime">did you see?</span></h2>
+    <nav class="picks" aria-label="Presenters">
+      <a class="pick" href="#erin"><img class="pface" src="/extendedlearning/img/erin.jpg" alt="Erin Pompa"><span>Erin</span></a>
+      <a class="pick" href="#christine"><img class="pface" src="/extendedlearning/img/christine.jpg" alt="Christine Conti"><span>Christine</span></a>
+      <a class="pick" href="#nicolle"><img class="pface" src="/uploads/nicolle-gonzalez.jpg" alt="Nicolle Gonzalez"><span>Nicolle</span></a>
+      <a class="pick" href="#candice"><img class="pface" src="/extendedlearning/img/candice.jpg" alt="Candice Beers"><span>Candice</span></a>
+      <a class="pick" href="#janais"><span class="pface initial purple">J</span><span>Janaís</span></a>
+    </nav>
+
+    <div class="label" style="color:var(--muted);margin-bottom:10px">Show lessons for</div>
+    <div class="filters" role="group" aria-label="Filter by group">
+      <button class="f on" data-f="all">All lessons</button>
+      <button class="f" data-f="leadership">Student Leadership</button>
+      <button class="f" data-f="g68">Grades 6 to 8</button>
+      <button class="f" data-f="g912">Grades 9 to 12</button>
+    </div>
+
+    <article class="presenter card s-pink" id="erin">
+      <div class="who"><img class="face" src="/extendedlearning/img/erin.jpg" alt="Erin Pompa"><h3>Erin Pompa</h3></div>
+      <div class="tiles">
+          <a class="tile-l s-lime has" data-track="leadership" href="/extendedlearning/erin/student-leadership/">
+            <div class="label">Student Leadership</div>
+            <h3>Turn Inspiration Into Action: The WOOP Method</h3>
+            <p>Students reflect, pick the ONE thing that stuck, then build a plan for themselves and their school or group. 30 to 40 min.</p>
+            <span class="go">OPEN THE LESSON →</span>
+          </a>
+          <div class="tile-l soon" data-track="g68">
+            <div class="label">Grades 6 to 8</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g912">
+            <div class="label">Grades 9 to 12</div>
+            <p>Coming soon</p>
+          </div>
+      </div>
+    </article>
+    <article class="presenter card s-yellow" id="christine">
+      <div class="who"><img class="face" src="/extendedlearning/img/christine.jpg" alt="Christine Conti"><h3>Christine Conti</h3></div>
+      <div class="tiles">
+          <div class="tile-l soon" data-track="leadership">
+            <div class="label">Student Leadership</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g68">
+            <div class="label">Grades 6 to 8</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g912">
+            <div class="label">Grades 9 to 12</div>
+            <p>Coming soon</p>
+          </div>
+      </div>
+    </article>
+    <article class="presenter card s-blue" id="nicolle">
+      <div class="who"><img class="face" src="/uploads/nicolle-gonzalez.jpg" alt="Nicolle Gonzalez"><h3>Nicolle Gonzalez</h3></div>
+      <div class="tiles">
+          <div class="tile-l soon" data-track="leadership">
+            <div class="label">Student Leadership</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g68">
+            <div class="label">Grades 6 to 8</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g912">
+            <div class="label">Grades 9 to 12</div>
+            <p>Coming soon</p>
+          </div>
+      </div>
+    </article>
+    <article class="presenter card s-lime" id="candice">
+      <div class="who"><img class="face" src="/extendedlearning/img/candice.jpg" alt="Candice Beers"><h3>Candice Beers</h3></div>
+      <div class="tiles">
+          <div class="tile-l soon" data-track="leadership">
+            <div class="label">Student Leadership</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g68">
+            <div class="label">Grades 6 to 8</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g912">
+            <div class="label">Grades 9 to 12</div>
+            <p>Coming soon</p>
+          </div>
+      </div>
+    </article>
+    <article class="presenter card s-purple" id="janais">
+      <div class="who"><span class="face initial purple">J</span><h3>Janaís Roberts</h3></div>
+      <div class="tiles">
+          <div class="tile-l soon" data-track="leadership">
+            <div class="label">Student Leadership</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g68">
+            <div class="label">Grades 6 to 8</div>
+            <p>Coming soon</p>
+          </div>
+          <div class="tile-l soon" data-track="g912">
+            <div class="label">Grades 9 to 12</div>
+            <p>Coming soon</p>
+          </div>
+      </div>
+    </article>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="label" style="color:var(--lime)">TruthSpeaks 365</div>
+    <h2>Bring us back to <span class="hl pink" style="color:var(--ink)">your school</span></h2>
+    <p style="max-width:640px;color:#DDD9D4">TruthSpeaks 365 is a woman-led company bringing women with real stories into schools to build resilience, confidence, and healthy choices.</p>
+    <p><a href="https://truthspeaks365.com">truthspeaks365.com</a></p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.f').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.f').forEach(x => x.classList.toggle('on', x === b));
+    const f = b.dataset.f;
+    document.querySelectorAll('.tile-l').forEach(t => t.classList.toggle('hide', f !== 'all' && t.dataset.track !== f));
+    document.querySelectorAll('.tiles').forEach(g => g.style.gridTemplateColumns = f === 'all' ? '' : '1fr');
+  }));
+</script>
+</body>
+</html>
