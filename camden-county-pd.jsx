@@ -96,14 +96,14 @@ const Resources = () => (
         <ResourceCard
           who="Erin's resources" color="var(--lime)" icon="bell"
           title="Erin is writing a book"
-          body="A book for adults about living a truly great life. Sign up to be the first to know when it's coming out."
+          body="Erin is in the early stages of drafting, and it'll probably be a different book by the time she's done. It's all about quieting your beasts, taking the opposite action, and living a life you're truly proud of, despite hardship and difficulty."
           cta="Keep me posted" href={PIPEDRIVE_FORM}
         />
         <ResourceCard
           who="Christine's resources" color="var(--pink)" icon="book-open"
           title="Split-Second Courage"
           body="What if your fears were the key to your dreams? Christine's book shares real stories of people who charged headfirst into their fears."
-          cta="Get the book" href={AMAZON_BOOK}
+          cta="Grab Christine's book" href={AMAZON_BOOK}
         />
         <ResourceCard
           who="Candice's resources" color="var(--sky)" icon="external-link"
@@ -111,6 +111,15 @@ const Resources = () => (
           body="Keep your practice going with Candice's spa and yoga studio - classes, wellness, and more."
           cta="Visit pureskys.com" href={PURE_SKYS}
         />
+      </div>
+      <div style={{ marginTop: 28, background: "var(--ink)", borderRadius: 18, padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+        <div style={{ flex: 1, minWidth: 240 }}>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--white)", marginBottom: 6 }}>Extended Learning</div>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: "var(--fg-on-dark2)", margin: 0 }}>Something we're growing over time. Ready-to-use lessons and resources to keep the conversation going with your students.</p>
+        </div>
+        <a href="/extendedlearning/" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--lime)", color: "var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "12px 20px", borderRadius: 10, textDecoration: "none", flexShrink: 0 }}>
+          <Icon name="graduation-cap" size={14} color="var(--ink)" /> Explore the lessons
+        </a>
       </div>
     </div>
   </section>
