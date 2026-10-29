@@ -110,7 +110,7 @@ const Resources = () => (
         <ResourceCard
           who="Erin's resources" color="var(--lime)" icon="bell"
           title="Join Erin's Book Crew"
-          body="Like Erin's content? Get on the list to hear first when her book for adults releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast, with the subtitle Taking the Opposite Action. It's all about reframing and shifting your perspective so you can live a life you're truly proud of."
+          body="This one's for the grown-ups! Like Erin's content? Get on the list to hear first when her book for adults releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast, with the subtitle Taking the Opposite Action. It's all about reframing and shifting your perspective so you can live a life you're truly proud of."
           cta="Join the crew" href={PIPEDRIVE_FORM}
         />
         <ResourceCard
@@ -127,12 +127,12 @@ const Resources = () => (
         />
       </div>
       <div style={{ marginTop: 12 }} />
-      <Band bg="var(--pink)" title="Extended Learning" icon="graduation-cap" btnBg="var(--white)" cta="Explore the lessons" href="/extendedlearning/"
+      <Band dark title="Extended Learning" icon="graduation-cap" btnBg="var(--lime)" cta="Explore the lessons" href="/extendedlearning/"
         body="Over time, we're building a library of extended lessons to support students after the presentations we give. Save this link and come back whenever you want inspiration or lessons to bring into your classroom." />
       <Band title="Support for your students" icon="heart-handshake" btnBg="var(--pink)" cta="Student resources" href="/resources/"
         body="Of course, we know you have counselors, SACs, admins, and so many beautiful people already in place. We just wanted you to know we also have a resource page for young people, in case it helps." />
       <Band bg="var(--lime)" title="Know someone who could use us?" icon="globe" btnBg="var(--white)" cta="Visit truthspeaks365.com" href="https://truthspeaks365.com" external
-        body="Lastly, do you know a school, organization, or nonprofit that could benefit from our presentations? We do youth presentations for grades 3 to 12 and some college groups, plus professional development. We help humans shift negative thoughts and shift their perspective. Share our website with them!" />
+        body="Lastly, do you know a school, organization, or nonprofit that could benefit from our presentations? We do youth presentations for grades 3 to 12, plus professional development. We help humans shift negative thoughts and shift their perspective. Share our website with them!" />
     </div>
   </section>
 );
