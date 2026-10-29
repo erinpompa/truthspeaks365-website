@@ -121,6 +121,15 @@ const Resources = () => (
           <Icon name="graduation-cap" size={14} color="var(--ink)" /> Explore the lessons
         </a>
       </div>
+      <div style={{ marginTop: 16, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+        <div style={{ flex: 1, minWidth: 240 }}>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", marginBottom: 6 }}>Support for your students</div>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: "var(--ink-500)", margin: 0 }}>If a student needs support, share our resources page with them. It has hotlines, tools, and places to turn.</p>
+        </div>
+        <a href="/resources/" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "12px 20px", borderRadius: 10, textDecoration: "none", flexShrink: 0 }}>
+          <Icon name="heart-handshake" size={14} color="var(--ink)" /> Student resources
+        </a>
+      </div>
     </div>
   </section>
 );
