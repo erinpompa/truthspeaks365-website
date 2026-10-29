@@ -91,8 +91,8 @@ const ResourceCard = ({ who, color, title, body, cta, href, icon }) => (
 
 const BOOKING = "https://calendar.app.google/3rMyUJt4Q6iRzvzW7";
 
-const Band = ({ dark, title, body, cta, href, icon, btnBg, external }) => (
-  <div style={{ marginTop: 16, background: dark ? "var(--ink)" : "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "24px 26px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
+const Band = ({ dark, bg, title, body, cta, href, icon, btnBg, external }) => (
+  <div style={{ marginTop: 16, background: bg || (dark ? "var(--ink)" : "var(--white)"), border: "2px solid var(--ink)", borderRadius: 18, padding: "24px 26px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
     <div style={{ flex: 1, minWidth: 240 }}>
       <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: dark ? "var(--white)" : "var(--ink)", marginBottom: 6 }}>{title}</div>
       <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: dark ? "var(--fg-on-dark2)" : "var(--ink-500)", margin: 0 }}>{body}</p>
@@ -110,29 +110,29 @@ const Resources = () => (
         <ResourceCard
           who="Erin's resources" color="var(--lime)" icon="bell"
           title="Join Erin's Book Crew"
-          body="Like Erin's content? Get on the list to hear first when her book for adults releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast and Taking the Opposite Action, and it's all about reframing and shifting your perspective so you can live a life you're truly proud of."
+          body="Like Erin's content? Get on the list to hear first when her book for adults releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast, with the subtitle Taking the Opposite Action. It's all about reframing and shifting your perspective so you can live a life you're truly proud of."
           cta="Join the crew" href={PIPEDRIVE_FORM}
         />
         <ResourceCard
           who="Christine's resources" color="var(--pink)" icon="book-open"
           title="Get Christine's Book"
-          body="Split-Second Courage: what if your fears were the key to your dreams?"
+          body="Loved Christine's session? Want to dive deeper into shifting your perspective and taking courageous action? Grab her book, Split-Second Courage, and keep that momentum going."
           cta="Grab it now" href={AMAZON_BOOK}
         />
         <ResourceCard
           who="Candice's resources" color="var(--sky)" icon="external-link"
           title="Pure Skys Spa & Yoga"
-          body="Keep your practice going with Candice's spa and yoga studio - classes, wellness, and more."
-          cta="Visit pureskys.com" href={PURE_SKYS}
+          body="Want to go deeper with your breathwork, yoga, massage, or Reiki? Check out Candice's spa and yoga studio for classes, wellness, and more."
+          cta="Visit Pure Skys" href={PURE_SKYS}
         />
       </div>
       <div style={{ marginTop: 12 }} />
-      <Band dark title="Extended Learning" icon="graduation-cap" btnBg="var(--lime)" cta="Explore the lessons" href="/extendedlearning/"
+      <Band bg="var(--pink)" title="Extended Learning" icon="graduation-cap" btnBg="var(--white)" cta="Explore the lessons" href="/extendedlearning/"
         body="Over time, we're building a library of extended lessons to support students after the presentations we give. Save this link and come back whenever you want inspiration or lessons to bring into your classroom." />
       <Band title="Support for your students" icon="heart-handshake" btnBg="var(--pink)" cta="Student resources" href="/resources/"
         body="Of course, we know you have counselors, SACs, admins, and so many beautiful people already in place. We just wanted you to know we also have a resource page for young people, in case it helps." />
-      <Band dark title="Know someone who could use us?" icon="calendar" btnBg="var(--sky)" cta="Book a call" href={BOOKING} external
-        body="Lastly, if you know someone who might be interested in our services, we'd love to connect. We do professional development for organizations and schools, youth presentations, you name it. We help humans shift negative thoughts and shift their perspective." />
+      <Band bg="var(--lime)" title="Know someone who could use us?" icon="globe" btnBg="var(--white)" cta="Visit truthspeaks365.com" href="https://truthspeaks365.com" external
+        body="Lastly, do you know a school, organization, or nonprofit that could benefit from our presentations? We do youth presentations for grades 3 to 12 and some college groups, plus professional development. We help humans shift negative thoughts and shift their perspective. Share our website with them!" />
     </div>
   </section>
 );
