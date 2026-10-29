@@ -95,15 +95,15 @@ const Resources = () => (
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 22 }}>
         <ResourceCard
           who="Erin's resources" color="var(--lime)" icon="bell"
-          title="Erin is writing a book"
-          body="Erin is in the early stages of drafting, and it'll probably be a different book by the time she's done. It's all about quieting your beasts, taking the opposite action, and living a life you're truly proud of, despite hardship and difficulty."
-          cta="Keep me posted" href={PIPEDRIVE_FORM}
+          title="Join Erin's Book Crew"
+          body="Like Erin's content? Get on the list to hear first when her book releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast and Taking the Opposite Action, and it's all about reframing and shifting your perspective so you can live a life you're truly proud of."
+          cta="Join the crew" href={PIPEDRIVE_FORM}
         />
         <ResourceCard
           who="Christine's resources" color="var(--pink)" icon="book-open"
-          title="Split-Second Courage"
-          body="What if your fears were the key to your dreams? Christine's book shares real stories of people who charged headfirst into their fears."
-          cta="Grab Christine's book" href={AMAZON_BOOK}
+          title="Get Christine's Book"
+          body="Split-Second Courage: What if your fears were the key to your dreams? Real stories of people who charged headfirst into their fears, and how you can grow that courage too."
+          cta="Grab it now" href={AMAZON_BOOK}
         />
         <ResourceCard
           who="Candice's resources" color="var(--sky)" icon="external-link"
@@ -124,11 +124,16 @@ const Resources = () => (
       <div style={{ marginTop: 16, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "26px 28px", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 20, flexWrap: "wrap" }}>
         <div style={{ flex: 1, minWidth: 240 }}>
           <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", marginBottom: 6 }}>Support for your students</div>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: "var(--ink-500)", margin: 0 }}>If a student needs support, share our resources page with them. It has hotlines, tools, and places to turn.</p>
+          <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: "var(--ink-500)", margin: 0 }}>If a student needs support, share these with them. The Youth Resource Portal lets students pick what they're going through and points them to the right help. The resources page has hotlines, tools, and places to turn.</p>
         </div>
-        <a href="/resources/" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "12px 20px", borderRadius: 10, textDecoration: "none", flexShrink: 0 }}>
-          <Icon name="heart-handshake" size={14} color="var(--ink)" /> Student resources
+        <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+        <a href="/youth-resource-quest.html" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--sky)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "12px 20px", borderRadius: 10, textDecoration: "none" }}>
+          <Icon name="compass" size={14} color="var(--ink)" /> Youth Resource Portal
         </a>
+        <a href="/resources/" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "12px 20px", borderRadius: 10, textDecoration: "none", flexShrink: 0 }}>
+          <Icon name="heart-handshake" size={14} color="var(--ink)" /> Resources page
+        </a>
+        </div>
       </div>
     </div>
   </section>
