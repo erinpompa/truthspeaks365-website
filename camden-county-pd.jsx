@@ -45,9 +45,9 @@ const CCHero = () => (
       </p>
       <div style={{ display: "flex", justifyContent: "center", gap: 28, marginTop: 48, flexWrap: "wrap" }}>
         {[
-          { name: "Erin Pompa", img: "/uploads/NCSL+Carousel+post.png.webp", color: "var(--lime)", hasImg: true },
-          { name: "Christine Conti", img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp", color: "var(--pink)", hasImg: true },
-          { name: "Candice Beers", img: null, color: "var(--sky)", hasImg: false },
+          { name: "Erin Pompa", img: "/uploads/cc-erin.jpg", color: "var(--lime)", hasImg: true },
+          { name: "Christine Conti", img: "/uploads/cc-christine.jpg", color: "var(--pink)", hasImg: true },
+          { name: "Candice Beers", img: "/uploads/cc-candice.jpg", color: "var(--sky)", hasImg: true },
         ].map(p => (
           <div key={p.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
             <div style={{ width: 110, height: 110, borderRadius: 999, border: `3px solid ${p.color}`, overflow: "hidden", background: "var(--ink-500)", display: "grid", placeItems: "center" }}>
@@ -98,7 +98,7 @@ const ErinSection = () => (
     <div className="ts-wrap ts-reveal">
       <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 40 }}>
         <div style={{ width: 80, height: 80, borderRadius: 999, border: "3px solid var(--lime)", overflow: "hidden", flexShrink: 0 }}>
-          <img src="/uploads/NCSL+Carousel+post.png.webp" alt="Erin Pompa" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
+          <img src="/uploads/cc-erin.jpg" alt="Erin Pompa" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
         </div>
         <div>
           <div style={{ display: "inline-block", background: "var(--lime)", border: "2px solid var(--ink)", borderRadius: 8, padding: "4px 12px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)", marginBottom: 6 }}>Erin's Resources</div>
@@ -143,7 +143,7 @@ const ChristineSection = () => (
     <div className="ts-wrap ts-reveal">
       <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 40 }}>
         <div style={{ width: 80, height: 80, borderRadius: 999, border: "3px solid var(--pink)", overflow: "hidden", flexShrink: 0 }}>
-          <img src="/uploads/Christine+Conti+Full+Body+Shot+1.png.webp" alt="Christine Conti" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
+          <img src="/uploads/cc-christine.jpg" alt="Christine Conti" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
         </div>
         <div>
           <div style={{ display: "inline-block", background: "var(--pink)", border: "2px solid var(--ink)", borderRadius: 8, padding: "4px 12px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)", marginBottom: 6 }}>Christine's Resources</div>
@@ -187,8 +187,8 @@ const CandiceSection = () => (
   <section style={{ background: "var(--paper)", padding: "80px 0" }}>
     <div className="ts-wrap ts-reveal">
       <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 40 }}>
-        <div style={{ width: 80, height: 80, borderRadius: 999, border: "3px solid var(--sky)", overflow: "hidden", flexShrink: 0, background: "var(--ink-500)", display: "grid", placeItems: "center" }}>
-          <Icon name="user" size={36} color="rgba(255,255,255,.3)" />
+        <div style={{ width: 80, height: 80, borderRadius: 999, border: "3px solid var(--sky)", overflow: "hidden", flexShrink: 0 }}>
+          <img src="/uploads/cc-candice.jpg" alt="Candice Beers" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center" }} />
         </div>
         <div>
           <div style={{ display: "inline-block", background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 8, padding: "4px 12px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)", marginBottom: 6 }}>Candice's Resources</div>
