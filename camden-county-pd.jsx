@@ -7,6 +7,7 @@ const GOOGLE_FORM = "https://docs.google.com/forms/d/e/1FAIpQLScHyNtlViL-LoUuI1u
 const PIPEDRIVE_FORM = "https://webforms.pipedrive.com/f/clTep0VNxXRyL9v4qQAQH1MknN1K5SsbuThJFHcYabdZNS63Ki18JRtYVXQpC4UtRF";
 const AMAZON_BOOK = "https://www.amazon.com/dp/1952654394";
 const PURE_SKYS = "https://www.pureskys.com";
+const FEAR_WORKSHEET = "https://drive.google.com/file/d/1myhIL62xqgcW_XEXsvPwVMZ-RDXpEqrT/view?usp=sharing";
 
 const PRESENTERS = [
   { name: "Erin Pompa", role: "Founder & CEO", img: "/uploads/cc-erin.jpg", color: "var(--lime)" },
@@ -78,9 +79,10 @@ const Presenters = () => (
 );
 
 /* ---- Resource card ---- */
-const ResourceCard = ({ who, color, title, body, cta, href, icon }) => (
+const ResourceCard = ({ who, color, title, body, cta, href, icon, extra }) => (
   <div style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "24px 22px", boxShadow: `5px 5px 0 ${color}`, display: "flex", flexDirection: "column", gap: 10 }}>
     <div style={{ alignSelf: "flex-start", background: color, border: "2px solid var(--ink)", borderRadius: 8, padding: "3px 10px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)" }}>{who}</div>
+    {extra}
     <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 20, textTransform: "uppercase", letterSpacing: "-0.02em", color: "var(--ink)", margin: 0, lineHeight: 1.1 }}>{title}</h3>
     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, lineHeight: 1.55, color: "var(--ink-500)", margin: 0, flex: 1 }}>{body}</p>
     <a href={href} target="_blank" rel="noopener noreferrer" style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: 8, background: "var(--ink)", color: "var(--white)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 13, textTransform: "uppercase", padding: "11px 18px", borderRadius: 10, textDecoration: "none", marginTop: 4 }}>
@@ -115,6 +117,15 @@ const Resources = () => (
         />
         <ResourceCard
           who="Christine's resources" color="var(--pink)" icon="book-open"
+          extra={
+            <div style={{ background: "color-mix(in srgb, var(--pink) 14%, white)", border: "2px solid var(--pink)", borderRadius: 12, padding: "14px 16px", margin: "2px 0 8px" }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 16, textTransform: "uppercase", color: "var(--ink)", marginBottom: 4 }}>Fear Reflection Worksheet</div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.5, color: "var(--ink-500)", margin: "0 0 10px" }}>Use it with your students or for yourself.</p>
+              <a href={FEAR_WORKSHEET} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 12, textTransform: "uppercase", padding: "9px 14px", borderRadius: 10, textDecoration: "none" }}>
+                <Icon name="file-text" size={13} color="var(--ink)" /> Open the worksheet
+              </a>
+            </div>
+          }
           title="Get Christine's Book"
           body="Loved Christine's session? Want to dive deeper into shifting your perspective and taking courageous action? Grab her book, Split-Second Courage, and keep that momentum going."
           cta="Grab it now" href={AMAZON_BOOK}
