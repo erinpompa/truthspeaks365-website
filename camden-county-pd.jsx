@@ -63,14 +63,14 @@ const Survey = () => (
 /* ---- Presenter photos ---- */
 const Presenters = () => (
   <section style={{ background: "var(--paper)", padding: "56px 0 24px" }}>
-    <div className="ts-wrap" style={{ display: "flex", justifyContent: "center", gap: 40, flexWrap: "wrap" }}>
+    <div className="ts-wrap" style={{ display: "flex", justifyContent: "center", gap: "clamp(12px, 4vw, 40px)" }}>
       {PRESENTERS.map(p => (
         <div key={p.name} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 130, height: 130, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden" }}>
+          <div style={{ width: "clamp(84px, 24vw, 130px)", height: "clamp(84px, 24vw, 130px)", borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden" }}>
             <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
           </div>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 16, textTransform: "uppercase", color: "var(--ink)" }}>{p.name}</div>
-          <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink-500)", marginTop: -6 }}>{p.role}</div>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(12px, 3.4vw, 16px)", textTransform: "uppercase", color: "var(--ink)", textAlign: "center", lineHeight: 1.1 }}>{p.name}</div>
+          <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: "clamp(10px, 2.6vw, 12px)", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink-500)", marginTop: -4, textAlign: "center" }}>{p.role}</div>
         </div>
       ))}
     </div>
