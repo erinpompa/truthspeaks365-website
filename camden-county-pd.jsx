@@ -131,7 +131,7 @@ const Resources = () => (
         body="Over time, we're building a library of extended lessons to support students after the presentations we give. Save this link and come back whenever you want inspiration or lessons to bring into your classroom." />
       <Band title="Support for your students" icon="heart-handshake" btnBg="var(--pink)" cta="Student resources" href="/resources/"
         body="Of course, we know you have counselors, SACs, admins, and so many beautiful people already in place. We just wanted you to know we also have a resource page for young people, in case it helps." />
-      <Band bg="var(--lime)" title="Know someone who could use us?" icon="globe" btnBg="var(--white)" cta="Visit truthspeaks365.com" href="https://truthspeaks365.com" external
+      <Band bg="var(--lime)" title="Know someone who could use us?" icon="globe" btnBg="var(--white)" cta="Click here" href="https://truthspeaks365.com" external
         body="Lastly, do you know a school, organization, or nonprofit that could benefit from our presentations? We do youth presentations for grades 3 to 12, plus professional development. We help humans shift negative thoughts and shift their perspective. Share our website with them!" />
     </div>
   </section>
