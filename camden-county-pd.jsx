@@ -91,6 +91,30 @@ const ResourceCard = ({ who, color, title, body, cta, href, icon, extra }) => (
   </div>
 );
 
+const InnerBox = ({ title, body, cta, href, icon }) => (
+  <div style={{ background: "color-mix(in srgb, var(--pink) 12%, white)", border: "2px solid var(--pink)", borderRadius: 12, padding: "16px 16px", display: "flex", flexDirection: "column", gap: 8 }}>
+    <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 17, textTransform: "uppercase", letterSpacing: "-0.01em", color: "var(--ink)", lineHeight: 1.1 }}>{title}</div>
+    <p style={{ fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.5, color: "var(--ink-500)", margin: 0 }}>{body}</p>
+    <a href={href} target="_blank" rel="noopener noreferrer" style={{ alignSelf: "flex-start", display: "inline-flex", alignItems: "center", gap: 8, background: "var(--ink)", color: "var(--white)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 12, textTransform: "uppercase", padding: "10px 16px", borderRadius: 10, textDecoration: "none", marginTop: 2 }}>
+      <Icon name={icon} size={13} color="var(--pink)" /> {cta}
+    </a>
+  </div>
+);
+
+const ChristineCard = () => (
+  <div style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "24px 22px", boxShadow: "5px 5px 0 var(--pink)", display: "flex", flexDirection: "column", gap: 12 }}>
+    <div style={{ alignSelf: "flex-start", background: "var(--pink)", border: "2px solid var(--ink)", borderRadius: 8, padding: "3px 10px", fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--ink)" }}>Christine's resources</div>
+    <InnerBox
+      title="Fear Reflection Worksheet" icon="file-text" cta="Open the worksheet" href={FEAR_WORKSHEET}
+      body="Take what you learned in Christine's session further. This worksheet supports what you learned, and you can use it for yourself or with your students."
+    />
+    <InnerBox
+      title="Get Christine's Book" icon="book-open" cta="Grab it now" href={AMAZON_BOOK}
+      body="Want to dive deeper into shifting your perspective and taking courageous action? Grab her book, Split-Second Courage, and keep that momentum going."
+    />
+  </div>
+);
+
 const BOOKING = "https://calendar.app.google/3rMyUJt4Q6iRzvzW7";
 
 const Band = ({ dark, bg, title, body, cta, href, icon, btnBg, external }) => (
@@ -115,21 +139,7 @@ const Resources = () => (
           body="This one's for the grown-ups! Like Erin's content? Get on the list to hear first when her book for adults releases. It's still in the draft stage with a long way to go. The working title is Quieting the Beast, with the subtitle Taking the Opposite Action. It's all about reframing and shifting your perspective so you can live a life you're truly proud of."
           cta="Join the crew" href={PIPEDRIVE_FORM}
         />
-        <ResourceCard
-          who="Christine's resources" color="var(--pink)" icon="book-open"
-          extra={
-            <div style={{ background: "color-mix(in srgb, var(--pink) 14%, white)", border: "2px solid var(--pink)", borderRadius: 12, padding: "14px 16px", margin: "2px 0 8px" }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 16, textTransform: "uppercase", color: "var(--ink)", marginBottom: 4 }}>Fear Reflection Worksheet</div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.5, color: "var(--ink-500)", margin: "0 0 10px" }}>Use it with your students or for yourself.</p>
-              <a href={FEAR_WORKSHEET} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "var(--pink)", color: "var(--ink)", border: "2px solid var(--ink)", fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 12, textTransform: "uppercase", padding: "9px 14px", borderRadius: 10, textDecoration: "none" }}>
-                <Icon name="file-text" size={13} color="var(--ink)" /> Open the worksheet
-              </a>
-            </div>
-          }
-          title="Get Christine's Book"
-          body="Loved Christine's session? Want to dive deeper into shifting your perspective and taking courageous action? Grab her book, Split-Second Courage, and keep that momentum going."
-          cta="Grab it now" href={AMAZON_BOOK}
-        />
+        <ChristineCard />
         <ResourceCard
           who="Candice's resources" color="var(--sky)" icon="external-link"
           title="Pure Skys Spa & Yoga"
