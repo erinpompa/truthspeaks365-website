@@ -123,6 +123,45 @@ const PD_SESSIONS = [
       "Help students develop healthy coping strategies through connection, empathy, and support.",
     ],
   },
+  {
+    presenter: "Candice Beers",
+    role: "Wellness Educator & Founder, Pure Skys Spa & Yoga",
+    color: "var(--violet)",
+    img: "/uploads/pd-candice.jpg",
+    title: "Centering Through Yoga and Breathwork",
+    subtitle: null,
+    tagline: null,
+    body: [
+      "Educators arrive with lives beyond the classroom, and students do too. Candice shares how becoming pregnant at 14 and raising her son in high school shaped her sense of belonging and self-worth.",
+      "Then she guides a practical exploration of the mind, body, and spirit connection: noticing physical cues and emotions, making space for them, and using breath, gentle movement, imagery, and a chosen phrase to regain steadiness. Participants leave with a three-minute routine for themselves and a simple, optional classroom practice. No experience with yoga or meditation is needed.",
+    ],
+    objectives: [
+      "Recognize how unforeseen circumstances can affect both educators and students, and notice early signs of stress in the body.",
+      "Practice a body scan, gentle movement, and breathing routine for moments of stress.",
+      "Name an emotion and choose a grounding image or phrase without judging or suppressing it.",
+      "Build a three-minute personal routine and adapt one optional prompt for their classroom.",
+    ],
+  },
+  {
+    presenter: "Janaïs Mia Roberts",
+    role: "Educator & Leadership Facilitator",
+    color: "var(--lime)",
+    img: "/uploads/pd-janais.jpg",
+    title: "Team Building & Connection",
+    subtitle: null,
+    tagline: null,
+    body: [
+      "Strong teams are built on trust, and trust is built through genuine connection. In this highly interactive session, Janaïs leads participants through reflective experiences designed to encourage vulnerability, deepen understanding, and strengthen relationships among colleagues.",
+      "Activities such as Crossing the Line, Anchors & Wings, and Peeling the Onion invite participants to share perspectives, discover common ground, and see one another beyond their roles. Along the way, teams strengthen communication and collaboration, recognize the individual strengths each member brings, and learn to appreciate the different perspectives that make a team stronger. Participants leave with renewed connection and a shared sense of purpose that supports a healthier, more collaborative culture for the adults in the building and, ultimately, the young people they serve.",
+    ],
+    objectives: [
+      "Engage in structured activities that build trust, reflection, and authentic connection among colleagues.",
+      "Identify the individual strengths they and their colleagues contribute to the team.",
+      "Demonstrate communication practices that support collaboration and healthy team dynamics.",
+      "Describe how differing perspectives strengthen the team's work.",
+      "Articulate a shared sense of purpose that guides how the team works together.",
+    ],
+  },
 ];
 
 const PDSessions = () => (
