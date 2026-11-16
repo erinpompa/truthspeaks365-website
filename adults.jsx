@@ -248,7 +248,6 @@ function App() {
       <AdultsHero />
       <AdultsOverview />
       <PDSessions />
-      <AdultsRosterNote />
       <BottomCTA
         eyebrow=""
         title={<span>Ready to bring <HL color="var(--lime)">TruthSpeaks 365</HL> to your staff?</span>}
