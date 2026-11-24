@@ -80,6 +80,7 @@ const G912SpeakerObjectives = () => {
     {
       name: "Christine Conti",
       role: "Fear Into Courage Speaker",
+      bio: "Christine is an educator, wellness advocate, and best-selling author who helps people face their fears and take courageous action. After a life-changing diagnosis, she rebuilt her life step by step and created the F It Framework: Face it. Feel it. Flip it.",
       color: "var(--pink)",
       img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp",
       objectives: [
@@ -93,6 +94,7 @@ const G912SpeakerObjectives = () => {
     {
       name: "Nicolle Gonzalez",
       role: "Emotions & Resilience Speaker",
+      bio: "Nicolle is a bilingual speaker and social work student at Rutgers University. Drawing on her own lived experience and her Name It. Pause It. Say It. framework, she helps students understand the emotions they carry and find the words to talk about them. She presents in English and Spanish.",
       color: "var(--sky)",
       img: "/uploads/nicolle-gonzalez.jpg",
       objectives: [
@@ -106,6 +108,7 @@ const G912SpeakerObjectives = () => {
     {
       name: "Candice Beers",
       role: "Mind & Body Wellness Speaker",
+      bio: "Candice is a wellness educator and the founder of Pure Skys Spa & Yoga Studio. She became a mom at 14 and raised her son while in high school, and she shares how that shaped her sense of belonging and self-worth. A yoga instructor since 2016, she teaches students to use breath, movement, and body awareness to steady themselves when life gets hard.",
       color: "var(--violet)",
       img: "/uploads/pd-candice.jpg",
       objectives: [
@@ -119,6 +122,7 @@ const G912SpeakerObjectives = () => {
     {
       name: "Janaïs Mia Roberts",
       role: "Connection & Confidence Speaker",
+      bio: "Janaïs is an educator, mentor, and leadership facilitator with a Master of Education in Educational Leadership from William Paterson University. With a background in youth mentorship, vocal coaching, and public speaking, she helps students build confidence, communicate honestly, and recognize the strengths they bring.",
       color: "var(--lime)",
       img: "/uploads/pd-janais.jpg",
       objectives: [
@@ -146,6 +150,7 @@ const G912SpeakerObjectives = () => {
                   <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--ink-500)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: 4 }}>{sp.role}</div>
                 </div>
               </div>
+              {sp.bio && <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.65, color: "var(--ink-500)", margin: "-8px 0 24px" }}>{sp.bio}</p>}
               <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
                 {sp.objectives.map((obj, i) => (
                   <div key={i} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
