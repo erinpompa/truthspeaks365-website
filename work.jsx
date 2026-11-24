@@ -230,7 +230,7 @@ const G68Presenters = () => {
     { name: "Erin Pompa",       role: "Founder & Speaker",           tagline: "The shift starts here. Embrace the power of a perspective shift.",  color: "var(--lime)",   img: "/uploads/NCSL+Carousel+post.png.webp",                href: "https://erinpompa.com" },
     { name: "Christine Conti",  role: "Fear Into Courage Speaker",   tagline: "Let's turn fear into courage and find your voice.", color: "var(--pink)",   img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp", href: "/speaker-profile?id=christine-conti" },
     { name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Identify it. Process it. Move through it.", color: "var(--sky)", nameColor: "var(--orange)", img: "/uploads/nicolle-gonzalez.jpg", href: "/speaker-profile?id=nicolle-gonzalez" },
-    { name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.", color: "var(--violet)", img: "/uploads/candice-portrait.jpg", href: "/speaker-profile?id=candice-beers" },
+    { name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.", color: "var(--violet)", nameColor: "var(--ink)", img: "/uploads/candice-portrait.jpg", href: "/speaker-profile?id=candice-beers" },
     { name: "Janaïs Mia Roberts", role: "Connection & Confidence Speaker", tagline: "You are enough. No comparison needed.", color: "var(--lime)", nameColor: "var(--ink)", img: "/uploads/janais-portrait.jpg", href: "/speaker-profile?id=janais-mia-roberts" },
   ];
   return (
