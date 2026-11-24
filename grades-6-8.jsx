@@ -103,6 +103,32 @@ const G68SpeakerObjectives = () => {
         "Recognize that emotions are information, not weakness, and commit to one self-compassion practice they can use daily.",
       ],
     },
+    {
+      name: "Candice Beers",
+      role: "Mind & Body Wellness Speaker",
+      color: "var(--violet)",
+      img: "/uploads/pd-candice.jpg",
+      objectives: [
+        "Recognize how unexpected life events can affect how they feel, and notice the early signs of stress in their body.",
+        "Practice a body scan, gentle movement, and breathing routine they can use in stressful moments.",
+        "Name an emotion and choose a grounding image or phrase without judging it or pushing it away.",
+        "Understand that their circumstances don't define their worth or where they belong.",
+        "Build a three-minute reset routine they can use before a test, a game, or a hard conversation.",
+      ],
+    },
+    {
+      name: "Janaïs Mia Roberts",
+      role: "Connection & Confidence Speaker",
+      color: "var(--lime)",
+      img: "/uploads/pd-janais.jpg",
+      objectives: [
+        "Take part in activities that build trust, reflection, and real connection with their classmates.",
+        "Identify the strengths they bring and recognize the strengths in the people around them.",
+        "Practice honest, respectful communication that helps a group work together.",
+        "See how different perspectives make a team stronger, and look past first impressions to find common ground.",
+        "Walk away with more confidence in their own voice and a shared sense of purpose with their peers.",
+      ],
+    },
   ];
   return (
     <section style={{ background: "var(--paper)", padding: "80px 0", borderTop: "2px solid var(--ink)" }}>
