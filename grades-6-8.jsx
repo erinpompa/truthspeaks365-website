@@ -108,7 +108,7 @@ const G68SpeakerObjectives = () => {
     {
       name: "Candice Beers",
       role: "Mind & Body Wellness Speaker",
-      bio: "Candice is a wellness educator and the founder of Pure Skys Spa & Yoga Studio. She became a mom at 14 and raised her son while in high school, and she shares how that shaped her sense of belonging and self-worth. A yoga instructor since 2016, she teaches students to use breath, movement, and body awareness to steady themselves when life gets hard.",
+      bio: <React.Fragment>Candice became a mom at 14 and raised her son while she was still in high school. She knows what it's like to wonder where you belong and whether you're enough, and she shares how that season shaped her sense of belonging and self-worth. Today she is a yoga instructor, a licensed massage therapist, and the founder of <a href="https://www.pureskys.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", fontWeight: 700, textDecoration: "underline" }}>Pure Skys Spa &amp; Yoga Studio</a>, where she creates wellness programs for adults and young people, including Girl Scouts and a mentorship program for young women. She teaches students how to connect with their bodies and use breath and movement to work through challenges, so they have something to reach for when life gets heavy.</React.Fragment>,
       color: "var(--violet)",
       img: "/uploads/pd-candice.jpg",
       objectives: [
@@ -122,7 +122,7 @@ const G68SpeakerObjectives = () => {
     {
       name: "Janaïs Mia Roberts",
       role: "Connection & Confidence Speaker",
-      bio: "Janaïs is an educator, mentor, and leadership facilitator with a Master of Education in Educational Leadership from William Paterson University. With a background in youth mentorship, vocal coaching, and public speaking, she helps students build confidence, communicate honestly, and recognize the strengths they bring.",
+      bio: "Janaïs is an educator, mentor, and leadership facilitator who believes strong groups are built on trust, and trust is built through real connection. Her sessions are hands-on and highly interactive. Through activities like Crossing the Line, Anchors & Wings, and Peeling the Onion, students share their perspectives, discover what they have in common, and see each other beyond labels and first impressions. Drawing on her background in youth mentorship, vocal coaching, and public speaking, she helps students find their voice, communicate honestly, and recognize the strengths they and their classmates bring. She holds a Master of Education in Educational Leadership from William Paterson University.",
       color: "var(--lime)",
       img: "/uploads/pd-janais.jpg",
       objectives: [
