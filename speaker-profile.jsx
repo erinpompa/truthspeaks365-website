@@ -6,6 +6,7 @@
 const SPEAKERS = {
   "christine-conti": {
     name: "Christine Conti",
+    covers: ["Bullying & teasing","Body image","Feeling \"not enough\"","Sexual assault","Anxiety & depression","Eating disorders","Facing fear","Finding your voice","Setting boundaries","Turning setbacks into fuel"],
     abstract: "In this presentation, students will hear Christine's story of facing a life-changing diagnosis and rebuilding her life one step at a time. They'll learn her F It Framework: Face it. Feel it. Flip it., a simple way to move through fear instead of staying stuck in it. Through real stories of setback and comeback and the 5-Count technique, students will see how fear can become fuel. The goal is for every student to leave believing their voice matters and ready to take one courageous step to use it.",
     role: "Fear Into Courage Speaker",
     sub: "Helping students turn their fear into courage and find their voice.",
@@ -25,6 +26,7 @@ const SPEAKERS = {
   },
   "nicolle-gonzalez": {
     name: "Nicolle Gonzalez",
+    covers: ["Naming your emotions","Emotional regulation","Grounding techniques","Family pressure","A parent's illness","Loneliness & isolation","Substance use & addiction","Incarceration & second chances","Asking for help","Self-talk & self-worth"],
     abstract: "In this presentation, students will hear Nicolle's story of moving through fear, isolation, addiction, and recovery. Using her Name It. Pause It. Say It. framework, they'll learn how to recognize what they're feeling, create space between emotion and reaction, and stop carrying everything alone. Through interactive activities and the Five Senses grounding technique, students will practice tools they can use in real time. The goal is for students to see that feelings are information, not weakness, and to leave knowing who they can reach out to for help.",
     role: "Emotions & Resilience Speaker",
     tagline: "Helping students identify what they're feeling and giving them tools to process, manage, and regulate their emotions.",
@@ -44,6 +46,7 @@ const SPEAKERS = {
   },
   "candice-beers": {
     name: "Candice Beers",
+    covers: ["Teen pregnancy & parenting","Belonging","Self-worth","Stress in the body","Breathwork","Yoga & gentle movement","Mind-body connection","Grounding when life gets heavy"],
     abstract: "In this presentation, students will hear Candice's story of becoming a mom at 14 and finding her way to belonging and self-worth. They'll learn how stress shows up in the body and practice simple tools like breathwork, a body scan, and gentle movement to come back to themselves when life gets heavy. Students will build a three-minute reset routine they can use before a test, a game, or a hard conversation. The goal is for students to understand that their circumstances don't define their worth, and to leave with something real to reach for.",
     role: "Mind & Body Wellness Speaker",
     sub: "Helping students connect with their bodies and use breath and movement to work through challenges.",
@@ -62,6 +65,7 @@ const SPEAKERS = {
   },
   "janais-mia-roberts": {
     name: "Janaïs Mia Roberts",
+    covers: ["Comparison","Self-worth","\"Not good enough\" self-talk","Confidence","Finding your voice","Trust & connection","Seeing beyond labels","Recognizing your strengths"],
     abstract: "In this hands-on presentation, students will take on comparison and the voice that says they're not good enough. Through interactive activities like Crossing the Line, Anchors & Wings, and Peeling the Onion, they'll share perspectives, discover what they have in common, and see each other beyond labels and first impressions. Students will practice honest, respectful communication and recognize the strengths they and their classmates bring. The goal is for students to stop measuring themselves against everyone else and leave with more confidence in their own voice.",
     role: "Connection & Confidence Speaker",
     sub: "Helping students quiet comparison, find their self-worth, and build real connection.",
@@ -135,46 +139,54 @@ function App() {
         </div>
       </section>
 
-      {/* Bio + speaks on no color band */}
+      {/* About the speaker, about the talk, objectives, what it covers */}
       <section style={{ background: "var(--paper)", padding: "80px 0" }}>
-        <div className="ts-wrap ts-speaker-bio" style={{ display: "grid", gridTemplateColumns: "1.1fr 0.9fr", gap: 60, alignItems: "start" }}>
-          <div className="ts-reveal">
-            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(26px, 3vw, 38px)", lineHeight: 1.05, color: "var(--ink)", margin: "0 0 22px" }}>
-              {s.name.split(" ")[0]} <HL color={s.color}>{s.name.split(" ").slice(1).join(" ")}</HL>
+        <div className="ts-wrap" style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: 28 }}>
+          <div>
+            <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(26px, 3vw, 38px)", lineHeight: 1.05, color: "var(--ink)", margin: "0 0 18px" }}>
+              About <HL color={s.color}>{s.name.split(" ")[0]}</HL>
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, color: "var(--ink-500)", margin: 0 }}>{s.bio}</p>
-            {s.abstract && <div style={{ marginTop: 28, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "22px 24px", boxShadow: `5px 5px 0 ${s.color}` }}>
-              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 10 }}>About the talk</div>
-              <p style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>{s.abstract}</p>
-            </div>}
           </div>
-          <div className="ts-reveal">
-            <div style={{ background: "var(--ink)", borderRadius: 22, padding: "32px 30px", border: "2px solid var(--ink)", boxShadow: `6px 6px 0 ${s.color}` }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
-                <Icon name="graduation-cap" size={20} color={s.color} />
-                <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)" }}>Students Will Be Able To</span>
+          {s.abstract && <div style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "26px 28px", boxShadow: `5px 5px 0 ${s.color}` }}>
+            <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 12 }}>About the talk</div>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>{s.abstract}</p>
+          </div>}
+          <div style={{ background: "var(--ink)", borderRadius: 20, padding: "28px 28px", border: "2px solid var(--ink)", boxShadow: `5px 5px 0 ${s.color}` }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
+              <Icon name="graduation-cap" size={20} color={s.color} />
+              <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)" }}>Students will be able to</span>
+            </div>
+            {s.framework && (
+              <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 14, padding: "14px 18px", marginBottom: 18 }}>
+                <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 4 }}>Her framework</div>
+                <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 19, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "-0.01em" }}>{s.framework}</div>
               </div>
-              {s.framework && (
-                <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 14, padding: "14px 18px", marginBottom: 18 }}>
-                  <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 11, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 4 }}>Her framework</div>
-                  <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 19, color: "var(--ink)", textTransform: "uppercase", letterSpacing: "-0.01em" }}>{s.framework}</div>
+            )}
+            <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+              {(s.learningObjectives || s.speaks).map((item, i) => (
+                <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
+                  <span style={{ width: 30, height: 30, borderRadius: 999, background: "var(--lime)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                    <Icon name="check" size={16} color="var(--ink)" />
+                  </span>
+                  <span style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 15, color: "var(--white)", lineHeight: 1.5 }}>{item}</span>
                 </div>
-              )}
-              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-                {(s.learningObjectives || s.speaks).map((item, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 14 }}>
-                    <span style={{ width: 30, height: 30, borderRadius: 999, background: "var(--lime)", border: "2px solid var(--ink)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
-                      <Icon name="check" size={16} color="var(--ink)" />
-                    </span>
-                    <span style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, color: "var(--white)", lineHeight: 1.5 }}>{item}</span>
-                  </div>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
+          {s.covers && <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 20, padding: "26px 28px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+              <Icon name="message-circle" size={18} color="var(--ink)" />
+              <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)" }}>What this talk covers</span>
+            </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+              {s.covers.map(c => (
+                <span key={c} style={{ background: "var(--white)", border: "1.5px solid var(--ink)", borderRadius: 999, padding: "7px 14px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 14, color: "var(--ink)" }}>{c}</span>
+              ))}
+            </div>
+          </div>}
         </div>
       </section>
-
 
       <BottomCTA
         eyebrow=""
