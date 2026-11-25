@@ -56,7 +56,7 @@ const G68Concepts = () => {
     <section style={{ background: "var(--lime)", padding: "80px 0", borderTop: "2px solid var(--ink)" }}>
       <div className="ts-wrap">
         <SectionHead className="ts-reveal" eyebrow="What we cover" title={<span>Concepts that <HL color="var(--pink)">actually stick.</HL></span>} sub="Each assembly focuses on one. Students leave with something they can name, remember, and use." style={{ marginBottom: 48 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="ts-reveal">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 20 }} className="ts-reveal ts-split">
           {concepts.map(c => (
             <div key={c.title} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "28px 26px", display: "flex", gap: 20, alignItems: "flex-start", boxShadow: "4px 4px 0 var(--ink-200)" }}>
               <div style={{ width: 52, height: 52, borderRadius: 14, background: c.color, display: "grid", placeItems: "center", border: "2px solid var(--ink)", flexShrink: 0 }}>
