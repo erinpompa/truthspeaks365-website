@@ -520,7 +520,7 @@ function App() {
 
       {active !== "g35" && <section style={{ background: "var(--paper)", padding: "32px 0 8px" }}>
         <div className="ts-wrap">
-          <img src="/uploads/team-banner.jpg" alt="The TruthSpeaks 365 presenters" style={{ width: "100%", maxWidth: 900, display: "block", margin: "0 auto", borderRadius: 20, border: "2px solid var(--ink)" }} />
+          <img src="/uploads/team-cutout.png" alt="The TruthSpeaks 365 presenters" style={{ width: "100%", maxWidth: 900, display: "block", margin: "0 auto" }} />
         </div>
       </section>}
 
