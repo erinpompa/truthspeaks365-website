@@ -355,16 +355,16 @@ const G912Detail = ({ p, note }) => (
 const G912Presenters = ({ list = G912_PRESENTERS, note }) => (
   <div>
     <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(18px, 3vw, 34px)", justifyContent: "center", marginBottom: 8 }}>
+    <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(10px, 3vw, 34px)", justifyContent: "center", marginBottom: 8 }}>
       {[{ name: "Erin Pompa", role: "Founder & Speaker", color: "var(--lime)", img: "/uploads/cc-erin.jpg", href: "https://erinpompa.com" }, ...list].map(p => (
         <a key={p.name} href={p.objectives ? "#" : p.href} target={p.objectives ? undefined : "_blank"} rel="noopener noreferrer"
           onClick={e => { if (p.objectives) { e.preventDefault(); const el = document.getElementById("sp-" + p.name.split(" ")[0].toLowerCase()); el && el.scrollIntoView({ behavior: "smooth", block: "start" }); } }}
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, textDecoration: "none", width: 130 }}>
-          <div style={{ width: 120, height: 120, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", background: "var(--white)", transition: "transform .15s" }}
+          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, textDecoration: "none", width: "clamp(88px, 26vw, 130px)" }}>
+          <div style={{ width: "clamp(76px, 21vw, 120px)", height: "clamp(76px, 21vw, 120px)", borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", background: "var(--white)", transition: "transform .15s" }}
             onMouseEnter={e => e.currentTarget.style.transform = "scale(1.05)"} onMouseLeave={e => e.currentTarget.style.transform = "none"}>
             <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
           </div>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 15, color: "var(--ink)", textAlign: "center", lineHeight: 1.1 }}>{p.name}</div>
+          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(12px, 3.4vw, 15px)", color: "var(--ink)", textAlign: "center", lineHeight: 1.1 }}>{p.name}</div>
           <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 10.5, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--ink)", textAlign: "center", lineHeight: 1.3 }}>{p.role}</div>
         </a>
       ))}
