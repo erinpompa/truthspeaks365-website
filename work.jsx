@@ -249,6 +249,8 @@ const G912_PRESENTERS = [
   {
     name: "Christine Conti", role: "Fear Into Courage Speaker", tagline: "Let's turn fear into courage and find your voice.",
     color: "var(--pink)", img: "/uploads/cc-christine.jpg", href: "/speaker-profile?id=christine-conti",
+    abstract: "Helping students turn their fear into courage and find their voice.",
+    bio: "Christine is an educator, wellness advocate, and best-selling author who helps people face their fears and take courageous action. After a life-changing diagnosis, she rebuilt her life step by step and created the F It Framework: Face it. Feel it. Flip it.",
     objectives: [
       "Name what fear feels like in their own lives and identify moments they stayed silent because of it.",
       "Learn and apply the F'it Framework: Face it, Feel it, Flip it.",
@@ -261,6 +263,8 @@ const G912_PRESENTERS = [
   {
     name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Identify it. Process it. Move through it.",
     color: "var(--sky)", img: "/uploads/nicolle-gonzalez.jpg", href: "/speaker-profile?id=nicolle-gonzalez",
+    abstract: "Helping students identify what they're feeling and giving them tools to process, manage, and regulate their emotions.",
+    bio: "Nicolle is a bilingual speaker and social work student at Rutgers University. Drawing on her own lived experience and her Name It. Pause It. Say It. framework, she helps students understand the emotions they carry and find the words to talk about them. She presents in English and Spanish.",
     objectives: [
       "Define what feelings are and learn to name the emotion they're experiencing instead of pushing it away.",
       "Understand that avoided emotions don't disappear - they pile up and eventually show up as anger, anxiety, shutting down, or self-criticism.",
@@ -273,6 +277,8 @@ const G912_PRESENTERS = [
   {
     name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.",
     color: "var(--violet)", img: "/uploads/cc-candice.jpg", href: "/speaker-profile?id=candice-beers",
+    abstract: "Helping students connect with their bodies and use breath and movement to work through challenges.",
+    bio: <React.Fragment>Candice became a mom at 14 and raised her son while she was still in high school. She knows what it's like to wonder where you belong and whether you're enough, and she shares how that season shaped her sense of belonging and self-worth. Today she is a yoga instructor, a licensed massage therapist, and the founder of <a href="https://www.pureskys.com" target="_blank" rel="noopener noreferrer" style={{ color: "var(--ink)", fontWeight: 700, textDecoration: "underline" }}>Pure Skys Spa &amp; Yoga Studio</a>, where she creates wellness programs for adults and young people, including Girl Scouts and a mentorship program for young women. She teaches students how to connect with their bodies and use breath and movement to work through challenges, so they have something to reach for when life gets heavy.</React.Fragment>,
     objectives: [
       "Recognize how unexpected life events can affect how they feel, and notice the early signs of stress in their body.",
       "Practice a body scan, gentle movement, and breathing routine they can use in stressful moments.",
@@ -285,6 +291,8 @@ const G912_PRESENTERS = [
   {
     name: "Janaïs Mia Roberts", role: "Connection & Confidence Speaker", tagline: "You are enough. No comparison needed.",
     color: "var(--lime)", img: "/uploads/janais-portrait.jpg", href: "/speaker-profile?id=janais-mia-roberts",
+    abstract: "Helping students quiet comparison, find their self-worth, and build real connection.",
+    bio: "Janaïs is an educator, mentor, and leadership facilitator who talks with students about comparison, the voice that says you're not good enough, and how to find your own self-worth. She believes strong groups are built on trust, and trust is built through real connection, so her sessions are hands-on and highly interactive. Through activities like Crossing the Line, Anchors & Wings, and Peeling the Onion, students share their perspectives, discover what they have in common, and see each other beyond labels and first impressions. Drawing on her background in youth mentorship, vocal coaching, and public speaking, she helps students stop measuring themselves against everyone else, find their voice, and recognize the strengths they bring. She holds a Master of Education in Educational Leadership from William Paterson University.",
     objectives: [
       "Take part in activities that build trust, reflection, and real connection with their classmates.",
       "Identify the strengths they bring and recognize the strengths in the people around them.",
@@ -320,6 +328,10 @@ const G912Detail = ({ p, note }) => { const [open, setOpen] = React.useState(fal
         {open && p.objectives && <a href={p.href} style={{ display: "inline-flex", marginLeft: 18, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>{"See " + p.name.split(" ")[0] + "'s full page →"}</a>}
       </div>
     </div>
+    {p.objectives && open && (p.abstract || p.bio) && <div style={{ marginBottom: 20 }}>
+      {p.abstract && <p style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 17, lineHeight: 1.5, color: "var(--ink)", margin: "0 0 10px" }}>{p.abstract}</p>}
+      {p.bio && <p style={{ fontFamily: "var(--font-body)", fontSize: 16, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>{p.bio}</p>}
+    </div>}
     {p.objectives && open && <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
       <div style={{ background: "var(--ink)", borderRadius: 18, padding: "24px 22px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
