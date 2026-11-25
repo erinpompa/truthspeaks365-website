@@ -60,7 +60,7 @@ const Pillars = () => {
     <section style={{ background: "var(--paper)", padding: "80px 0", borderBottom: "1px solid var(--ink-100)" }}>
       <div className="ts-wrap">
         <SectionHead className="ts-reveal" eyebrow="What every session includes" title={<span>Movement. Reflection. <HL color="var(--sky)">Connection.</HL></span>} sub="Each session combines these four elements to nurture the whole child not just their behavior." style={{ marginBottom: 48 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }} className="ts-reveal">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }} className="ts-reveal ts-grid-4">
           {items.map(item => (
             <div key={item.title} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "28px 24px", display: "flex", flexDirection: "column", gap: 14, boxShadow: "4px 4px 0 var(--ink-200)" }}>
               <div style={{ width: 52, height: 52, borderRadius: 14, background: item.color, display: "grid", placeItems: "center", border: "2px solid var(--ink)", flexShrink: 0 }}>
@@ -110,7 +110,7 @@ const HowItWorks = () => {
     <section style={{ background: "var(--paper-2)", padding: "84px 0", borderTop: "1px solid var(--ink-100)" }}>
       <div className="ts-wrap">
         <SectionHead className="ts-reveal" eyebrow="How it works" title={<span>Flexible, <HL color="var(--pink)">by design.</HL></span>} sub="Character Move fits into your school's world, not the other way around." style={{ marginBottom: 52 }} />
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="ts-reveal">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }} className="ts-reveal ts-grid-3">
           {steps.map(s => (
             <div key={s.n} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 20, padding: "32px 28px", boxShadow: "4px 4px 0 var(--ink-200)", display: "flex", flexDirection: "column", gap: 16 }}>
               <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 52, lineHeight: 1, color: s.color, WebkitTextStroke: "2px var(--ink)", letterSpacing: "-0.03em" }}>{s.n}</div>
