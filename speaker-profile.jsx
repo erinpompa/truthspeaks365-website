@@ -6,6 +6,7 @@
 const SPEAKERS = {
   "christine-conti": {
     name: "Christine Conti",
+    abstract: "In this presentation, students will hear Christine's story of facing a life-changing diagnosis and rebuilding her life one step at a time. They'll learn her F It Framework: Face it. Feel it. Flip it., a simple way to move through fear instead of staying stuck in it. Through real stories of setback and comeback and the 5-Count technique, students will see how fear can become fuel. The goal is for every student to leave believing their voice matters and ready to take one courageous step to use it.",
     role: "Fear Into Courage Speaker",
     sub: "Helping students turn their fear into courage and find their voice.",
     color: "var(--pink)",
@@ -24,6 +25,7 @@ const SPEAKERS = {
   },
   "nicolle-gonzalez": {
     name: "Nicolle Gonzalez",
+    abstract: "In this presentation, students will hear Nicolle's story of moving through fear, isolation, addiction, and recovery. Using her Name It. Pause It. Say It. framework, they'll learn how to recognize what they're feeling, create space between emotion and reaction, and stop carrying everything alone. Through interactive activities and the Five Senses grounding technique, students will practice tools they can use in real time. The goal is for students to see that feelings are information, not weakness, and to leave knowing who they can reach out to for help.",
     role: "Emotions & Resilience Speaker",
     tagline: "Helping students identify what they're feeling and giving them tools to process, manage, and regulate their emotions.",
     color: "var(--sky)",
@@ -42,6 +44,7 @@ const SPEAKERS = {
   },
   "candice-beers": {
     name: "Candice Beers",
+    abstract: "In this presentation, students will hear Candice's story of becoming a mom at 14 and finding her way to belonging and self-worth. They'll learn how stress shows up in the body and practice simple tools like breathwork, a body scan, and gentle movement to come back to themselves when life gets heavy. Students will build a three-minute reset routine they can use before a test, a game, or a hard conversation. The goal is for students to understand that their circumstances don't define their worth, and to leave with something real to reach for.",
     role: "Mind & Body Wellness Speaker",
     sub: "Helping students connect with their bodies and use breath and movement to work through challenges.",
     color: "var(--violet)",
@@ -59,6 +62,7 @@ const SPEAKERS = {
   },
   "janais-mia-roberts": {
     name: "Janaïs Mia Roberts",
+    abstract: "In this hands-on presentation, students will take on comparison and the voice that says they're not good enough. Through interactive activities like Crossing the Line, Anchors & Wings, and Peeling the Onion, they'll share perspectives, discover what they have in common, and see each other beyond labels and first impressions. Students will practice honest, respectful communication and recognize the strengths they and their classmates bring. The goal is for students to stop measuring themselves against everyone else and leave with more confidence in their own voice.",
     role: "Connection & Confidence Speaker",
     sub: "Helping students quiet comparison, find their self-worth, and build real connection.",
     color: "var(--lime)",
@@ -76,6 +80,7 @@ const SPEAKERS = {
   },
   "erin-pompa": {
     name: "Erin Pompa",
+    abstract: "In this presentation, students will hear a powerful story about overcoming perfectionism, self-doubt, and people pleasing. This story will teach important life skills, helping students deal with tough times using resilience and determination. We'll use a simple PAG framework to show them positive ways to cope and change negative self-talk. They'll also learn about gratitude and acceptance, getting tools to live a rich and brave life. The goal is to inspire personal growth, encouraging a positive mindset that helps them face challenges with confidence and take care of their well-being.",
     role: "Founder & Speaker",
     tagline: "The shift starts here.",
     sub: "I'll help you embrace the power of a perspective shift.",
@@ -138,6 +143,10 @@ function App() {
               {s.name.split(" ")[0]} <HL color={s.color}>{s.name.split(" ").slice(1).join(" ")}</HL>
             </h2>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 18, lineHeight: 1.7, color: "var(--ink-500)", margin: 0 }}>{s.bio}</p>
+            {s.abstract && <div style={{ marginTop: 28, background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 18, padding: "22px 24px", boxShadow: `5px 5px 0 ${s.color}` }}>
+              <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 10 }}>About the talk</div>
+              <p style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>{s.abstract}</p>
+            </div>}
           </div>
           <div className="ts-reveal">
             <div style={{ background: "var(--ink)", borderRadius: 22, padding: "32px 30px", border: "2px solid var(--ink)", boxShadow: `6px 6px 0 ${s.color}` }}>
