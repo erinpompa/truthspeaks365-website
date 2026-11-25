@@ -322,8 +322,8 @@ const G912Detail = ({ p, note }) => { const [open, setOpen] = React.useState(fal
         <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, letterSpacing: "-0.01em", color: "var(--ink)", lineHeight: 1.1, marginBottom: 5 }}>{p.name}</div>
         <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 7 }}>{p.role}</div>
         <div style={{ fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.45, color: "var(--ink)", fontStyle: "italic", marginBottom: 10 }}>"{p.tagline}"</div>
-        <a href={p.objectives ? "#" : p.href} onClick={e => { if (p.objectives) { e.preventDefault(); setOpen(o => !o); } }} target={!p.objectives && p.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
-          {p.cta || (open ? "Show less" : "Click here to learn more about " + p.name.split(" ")[0])} <Icon name="arrow-right" size={14} color="var(--ink)" />
+        <a href={p.href} target={p.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
+          {p.cta || ("Click here to learn more about " + p.name.split(" ")[0])} <Icon name="arrow-right" size={14} color="var(--ink)" />
         </a>
         {open && p.objectives && <a href={p.href} style={{ display: "inline-flex", marginLeft: 18, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>{"See " + p.name.split(" ")[0] + "'s full page →"}</a>}
       </div>
