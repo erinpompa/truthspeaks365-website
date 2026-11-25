@@ -499,8 +499,6 @@ function App() {
     <React.Fragment>
       <NavBar active="Work With Us" />
       <PageHero
-        bgImage="/uploads/team-banner.jpg"
-        overlay="linear-gradient(90deg, rgba(22,20,19,.9) 0%, rgba(22,20,19,.7) 50%, rgba(22,20,19,.35) 100%)"
         chip="Programs by age"
         eyebrow="Work with us"
         title={<span>One mission.<br /><HL color="var(--pink)">Three rooms.</HL></span>}
