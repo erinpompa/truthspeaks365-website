@@ -6,6 +6,7 @@
 const SPEAKERS = {
   "christine-conti": {
     name: "Christine Conti",
+    covers68: ["Bullying & teasing","Body image","Feeling \"not enough\"","Facing fear","Finding your voice","Setting boundaries","Turning setbacks into fuel"],
     covers: ["Bullying & teasing","Body image","Feeling \"not enough\"","Sexual assault","Anxiety & depression","Eating disorders","Facing fear","Finding your voice","Setting boundaries","Turning setbacks into fuel"],
     abstract: "In this presentation, students will hear Christine's story of facing a life-changing diagnosis and rebuilding her life one step at a time. They'll learn her F It Framework: Face it. Feel it. Flip it., a simple way to move through fear instead of staying stuck in it. Through real stories of setback and comeback and the 5-Count technique, students will see how fear can become fuel. The goal is for every student to leave believing their voice matters and ready to take one courageous step to use it.",
     role: "Fear Into Courage Speaker",
@@ -26,6 +27,7 @@ const SPEAKERS = {
   },
   "nicolle-gonzalez": {
     name: "Nicolle Gonzalez",
+    covers68: ["Naming your emotions","Emotional regulation","Grounding techniques","Family pressure","Loneliness","Asking for help","Self-talk & self-worth"],
     covers: ["Naming your emotions","Emotional regulation","Grounding techniques","Family pressure","A parent's illness","Loneliness & isolation","Substance use & addiction","Incarceration & second chances","Asking for help","Self-talk & self-worth"],
     abstract: "In this presentation, students will hear Nicolle's story of moving through fear, isolation, addiction, and recovery. Using her Name It. Pause It. Say It. framework, they'll learn how to recognize what they're feeling, create space between emotion and reaction, and stop carrying everything alone. Through interactive activities and the Five Senses grounding technique, students will practice tools they can use in real time. The goal is for students to see that feelings are information, not weakness, and to leave knowing who they can reach out to for help.",
     role: "Emotions & Resilience Speaker",
@@ -46,6 +48,7 @@ const SPEAKERS = {
   },
   "candice-beers": {
     name: "Candice Beers",
+    covers68: ["Belonging","Self-worth","Stress in the body","Breathwork","Yoga & movement","Grounding"],
     covers: ["Teen pregnancy & parenting","Belonging","Self-worth","Stress in the body","Breathwork","Yoga & gentle movement","Mind-body connection","Grounding when life gets heavy"],
     abstract: "In this presentation, students will hear Candice's story of becoming a mom at 14 and finding her way to belonging and self-worth. They'll learn how stress shows up in the body and practice simple tools like breathwork, a body scan, and gentle movement to come back to themselves when life gets heavy. Students will build a three-minute reset routine they can use before a test, a game, or a hard conversation. The goal is for students to understand that their circumstances don't define their worth, and to leave with something real to reach for.",
     role: "Mind & Body Wellness Speaker",
@@ -65,6 +68,7 @@ const SPEAKERS = {
   },
   "janais-mia-roberts": {
     name: "Janaïs Mia Roberts",
+    covers68: ["Comparison","Self-worth","\"Not good enough\" self-talk","Confidence","Finding your voice","Trust & connection","Recognizing your strengths"],
     covers: ["Comparison","Self-worth","\"Not good enough\" self-talk","Confidence","Finding your voice","Trust & connection","Seeing beyond labels","Recognizing your strengths"],
     abstract: "In this hands-on presentation, students will take on comparison and the voice that says they're not good enough. Through interactive activities like Crossing the Line, Anchors & Wings, and Peeling the Onion, they'll share perspectives, discover what they have in common, and see each other beyond labels and first impressions. Students will practice honest, respectful communication and recognize the strengths they and their classmates bring. The goal is for students to stop measuring themselves against everyone else and leave with more confidence in their own voice.",
     role: "Connection & Confidence Speaker",
@@ -100,6 +104,8 @@ function App() {
   useLucide();
   const id = new URLSearchParams(window.location.search).get("id") || "christine-conti";
   const s = SPEAKERS[id] || SPEAKERS["christine-conti"];
+  const g68 = new URLSearchParams(window.location.search).get("grade") === "68";
+  const themes = (g68 && s.covers68) || s.covers;
 
   return (
     <React.Fragment>
@@ -182,10 +188,11 @@ function App() {
               <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)" }}>Themes within this presentation</span>
             </div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-              {s.covers.map(c => (
+              {themes.map(c => (
                 <span key={c} style={{ background: "var(--white)", border: "1.5px solid var(--ink)", borderRadius: 999, padding: "7px 14px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 14, color: "var(--ink)" }}>{c}</span>
               ))}
             </div>
+            {g68 && <div style={{ marginTop: 16, fontFamily: "var(--font-body)", fontSize: 14, lineHeight: 1.5, fontStyle: "italic", color: "var(--ink)" }}>Every talk is adjusted for middle school. Heavier parts of a speaker's story are only shared with your school's approval.</div>}
           </div>}
         </div>
       </section>
