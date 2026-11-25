@@ -306,7 +306,7 @@ const G68_PRESENTERS = G912_PRESENTERS.map(p => ({ ...p, covers: G68_COVERS[p.na
 
 const G912Detail = ({ p, note }) => (
   <div id={"sp-" + p.name.split(" ")[0].toLowerCase()} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 26px", boxShadow: `5px 5px 0 var(--ink)`, marginTop: 24, scrollMarginTop: 150 }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 22 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: p.objectives ? 22 : 0 }}>
       <div style={{ width: 120, height: 120, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", flexShrink: 0, background: "var(--white)" }}>
         <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
       </div>
@@ -314,12 +314,12 @@ const G912Detail = ({ p, note }) => (
         <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, letterSpacing: "-0.01em", color: "var(--ink)", lineHeight: 1.1, marginBottom: 5 }}>{p.name}</div>
         <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 7 }}>{p.role}</div>
         <div style={{ fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.45, color: "var(--ink)", fontStyle: "italic", marginBottom: 10 }}>"{p.tagline}"</div>
-        <a href={p.href} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
-          Learn more <Icon name="arrow-right" size={14} color="var(--ink)" />
+        <a href={p.href} target={p.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
+          {p.cta || "Learn more"} <Icon name="arrow-right" size={14} color="var(--ink)" />
         </a>
       </div>
     </div>
-    <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
+    {p.objectives && <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
       <div style={{ background: "var(--ink)", borderRadius: 18, padding: "24px 22px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
           <Icon name="graduation-cap" size={18} color={p.color} />
@@ -348,17 +348,14 @@ const G912Detail = ({ p, note }) => (
         </div>
         {note && <div style={{ marginTop: 14, fontFamily: "var(--font-body)", fontSize: 13, lineHeight: 1.5, fontStyle: "italic", color: "var(--ink)" }}>{note}</div>}
       </div>
-    </div>
+    </div>}
   </div>
 );
 
 const G912Presenters = ({ list = G912_PRESENTERS, note }) => (
   <div>
     <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
-    <div className="ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-      <PresenterCard name="Erin Pompa" role="Founder & Speaker" tagline="The shift starts here. Embrace the power of a perspective shift." color="var(--lime)" img="/uploads/NCSL+Carousel+post.png.webp" href="https://erinpompa.com" />
-      {list.map(p => <PresenterCard key={p.name} name={p.name} role={p.role} tagline={p.tagline} color={p.color} nameColor={({ "Nicolle Gonzalez": "var(--orange)", "Candice Beers": "var(--ink)", "Janaïs Mia Roberts": "var(--ink)" })[p.name]} img={p.img} href={p.href} circle />)}
-    </div>
+    <G912Detail p={{ name: "Erin Pompa", role: "Founder & Speaker", tagline: "The shift starts here. Embrace the power of a perspective shift.", color: "var(--lime)", img: "/uploads/cc-erin.jpg", href: "https://erinpompa.com", cta: "Click here to learn more about Erin" }} />
     {list.map(p => <G912Detail key={p.name} p={p} note={note} />)}
   </div>
 );
@@ -461,7 +458,6 @@ const TabContent = ({ t }) => (
     {(() => {
       const band = {
         g68: { src: "/assets/photo-presenter-classroom.jpg", obj: "center center", h: "clamp(200px, 42vw, 480px)", scrim: "rgba(22,20,19,.15)" },
-        g912: { src: "/assets/photo-christine-selfie.jpg", obj: "center 30%", h: "clamp(180px, 32vw, 360px)", scrim: "rgba(22,20,19,.08)" },
       }[t.id];
       return band ? (
         <div className="ts-reveal" style={{ borderRadius: 24, overflow: "hidden", border: "1px solid var(--ink-100)", marginBottom: 44, position: "relative" }}>
@@ -503,6 +499,8 @@ function App() {
     <React.Fragment>
       <NavBar active="Work With Us" />
       <PageHero
+        bgImage="/uploads/team-banner.jpg"
+        overlay="linear-gradient(90deg, rgba(22,20,19,.9) 0%, rgba(22,20,19,.7) 50%, rgba(22,20,19,.35) 100%)"
         chip="Programs by age"
         eyebrow="Work with us"
         title={<span>One mission.<br /><HL color="var(--pink)">Three rooms.</HL></span>}
