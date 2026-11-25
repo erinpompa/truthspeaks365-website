@@ -185,7 +185,7 @@ const CMAbout = () => (
   </div>
 );
 
-const PresenterCard = ({ name, tagline, role, color, nameColor, img, href }) => {
+const PresenterCard = ({ name, tagline, role, color, nameColor, img, href, circle }) => {
   const [hover, setHover] = React.useState(false);
   const handleEnter = () => setHover(true);
   const handleLeave = () => setHover(false);
@@ -199,7 +199,9 @@ const PresenterCard = ({ name, tagline, role, color, nameColor, img, href }) => 
         transition: "all .15s cubic-bezier(.2,.8,.2,1)",
         aspectRatio: "3/4", background: isComingSoon ? color : "var(--ink-800)"
       }}>
-        {img
+        {img && circle
+          ? <div style={{ width: "100%", height: "100%", display: "grid", placeItems: "center", background: color }}><div style={{ width: "78%", aspectRatio: "1", borderRadius: 999, overflow: "hidden", border: "3px solid var(--ink)", background: "var(--white)" }}><img src={img} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} /></div></div>
+          : img
           ? <img src={img} alt={name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
           : <div style={{ width: "100%", height: "100%", display: "grid", placeItems: "center" }}>
               <div style={{ textAlign: "center", padding: 24 }}>
@@ -230,8 +232,8 @@ const G68Presenters = () => {
     { name: "Erin Pompa",       role: "Founder & Speaker",           tagline: "The shift starts here. Embrace the power of a perspective shift.",  color: "var(--lime)",   img: "/uploads/NCSL+Carousel+post.png.webp",                href: "https://erinpompa.com" },
     { name: "Christine Conti",  role: "Fear Into Courage Speaker",   tagline: "Let's turn fear into courage and find your voice.", color: "var(--pink)",   img: "/uploads/Christine+Conti+Full+Body+Shot+1.png.webp", href: "/speaker-profile?id=christine-conti" },
     { name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Identify it. Process it. Move through it.", color: "var(--sky)", nameColor: "var(--orange)", img: "/uploads/nicolle-gonzalez.jpg", href: "/speaker-profile?id=nicolle-gonzalez" },
-    { name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.", color: "var(--violet)", nameColor: "var(--ink)", img: "/uploads/candice-portrait.jpg", href: "/speaker-profile?id=candice-beers" },
-    { name: "Janaïs Mia Roberts", role: "Connection & Confidence Speaker", tagline: "You are enough. No comparison needed.", color: "var(--lime)", nameColor: "var(--ink)", img: "/uploads/janais-portrait.jpg", href: "/speaker-profile?id=janais-mia-roberts" },
+    { name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.", color: "var(--violet)", nameColor: "var(--ink)", img: "/uploads/cc-candice.jpg", circle: true, href: "/speaker-profile?id=candice-beers" },
+    { name: "Janaïs Mia Roberts", role: "Connection & Confidence Speaker", tagline: "You are enough. No comparison needed.", color: "var(--lime)", nameColor: "var(--ink)", img: "/uploads/janais-portrait.jpg", circle: true, href: "/speaker-profile?id=janais-mia-roberts" },
   ];
   return (
     <div>
@@ -242,6 +244,114 @@ const G68Presenters = () => {
     </div>
   );
 };
+
+const G912_PRESENTERS = [
+  {
+    name: "Christine Conti", role: "Fear Into Courage Speaker", tagline: "Let's turn fear into courage and find your voice.",
+    color: "var(--pink)", img: "/uploads/cc-christine.jpg", href: "/speaker-profile?id=christine-conti",
+    objectives: [
+      "Name what fear feels like in their own lives and identify moments they stayed silent because of it.",
+      "Learn and apply the F'it Framework: Face it, Feel it, Flip it.",
+      "Practice the 5-Count technique to let fear in and move through it in real time.",
+      "Analyze real stories of setback and comeback, and explain how each person turned fear into fuel.",
+      "Commit to one action step for using their voice, whether that's speaking up, telling a trusted adult, or sharing their story to help someone else.",
+    ],
+    covers: ["Bullying & teasing", "Body image", "Feeling \"not enough\"", "Sexual assault", "Anxiety & depression", "Eating disorders", "Facing fear", "Finding your voice", "Setting boundaries", "Turning setbacks into fuel"],
+  },
+  {
+    name: "Nicolle Gonzalez", role: "Emotions & Resilience Speaker", tagline: "Identify it. Process it. Move through it.",
+    color: "var(--sky)", img: "/uploads/nicolle-gonzalez.jpg", href: "/speaker-profile?id=nicolle-gonzalez",
+    objectives: [
+      "Define what feelings are and learn to name the emotion they're experiencing instead of pushing it away.",
+      "Understand that avoided emotions don't disappear - they pile up and eventually show up as anger, anxiety, shutting down, or self-criticism.",
+      "Practice the Five Senses grounding technique to pause between what they feel and what they do next.",
+      "Identify at least one trusted adult or peer and learn concrete language for starting a hard conversation, including a text they can actually send.",
+      "Recognize that emotions are information, not weakness, and commit to one self-compassion practice they can use daily.",
+    ],
+    covers: ["Naming your emotions", "Emotional regulation", "Grounding techniques", "Family pressure", "A parent's illness", "Loneliness & isolation", "Substance use & addiction", "Incarceration & second chances", "Asking for help", "Self-talk & self-worth"],
+  },
+  {
+    name: "Candice Beers", role: "Mind & Body Wellness Speaker", tagline: "Breathe. Move. Come back to yourself.",
+    color: "var(--violet)", img: "/uploads/cc-candice.jpg", href: "/speaker-profile?id=candice-beers",
+    objectives: [
+      "Recognize how unexpected life events can affect how they feel, and notice the early signs of stress in their body.",
+      "Practice a body scan, gentle movement, and breathing routine they can use in stressful moments.",
+      "Name an emotion and choose a grounding image or phrase without judging it or pushing it away.",
+      "Understand that their circumstances don't define their worth or where they belong.",
+      "Build a three-minute reset routine they can use before a test, a game, or a hard conversation.",
+    ],
+    covers: ["Teen pregnancy & parenting", "Belonging", "Self-worth", "Stress in the body", "Breathwork", "Yoga & gentle movement", "Mind-body connection", "Grounding when life gets heavy"],
+  },
+  {
+    name: "Janaïs Mia Roberts", role: "Connection & Confidence Speaker", tagline: "You are enough. No comparison needed.",
+    color: "var(--lime)", img: "/uploads/janais-portrait.jpg", href: "/speaker-profile?id=janais-mia-roberts",
+    objectives: [
+      "Take part in activities that build trust, reflection, and real connection with their classmates.",
+      "Identify the strengths they bring and recognize the strengths in the people around them.",
+      "Practice honest, respectful communication that helps a group work together.",
+      "See how different perspectives make a team stronger, and look past first impressions to find common ground.",
+      "Walk away with more confidence in their own voice and a shared sense of purpose with their peers.",
+    ],
+    covers: ["Comparison", "Self-worth", "\"Not good enough\" self-talk", "Confidence", "Finding your voice", "Trust & connection", "Seeing beyond labels", "Recognizing your strengths"],
+  },
+];
+
+const G912Detail = ({ p }) => (
+  <div style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 26px", boxShadow: `5px 5px 0 var(--ink)`, marginTop: 24 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 22 }}>
+      <div style={{ width: 120, height: 120, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", flexShrink: 0, background: "var(--white)" }}>
+        <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
+      </div>
+      <div style={{ flex: 1, minWidth: 220 }}>
+        <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, letterSpacing: "-0.01em", color: "var(--ink)", lineHeight: 1.1, marginBottom: 5 }}>{p.name}</div>
+        <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 7 }}>{p.role}</div>
+        <div style={{ fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.45, color: "var(--ink)", fontStyle: "italic", marginBottom: 10 }}>"{p.tagline}"</div>
+        <a href={p.href} style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
+          Learn more <Icon name="arrow-right" size={14} color="var(--ink)" />
+        </a>
+      </div>
+    </div>
+    <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
+      <div style={{ background: "var(--ink)", borderRadius: 18, padding: "24px 22px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+          <Icon name="graduation-cap" size={18} color={p.color} />
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--white)" }}>Students will be able to</span>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {p.objectives.map((o, i) => (
+            <div key={i} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+              <span style={{ width: 24, height: 24, borderRadius: 999, background: p.color, border: "2px solid rgba(255,255,255,.2)", display: "grid", placeItems: "center", flexShrink: 0, marginTop: 1 }}>
+                <Icon name="check" size={13} color="var(--ink)" />
+              </span>
+              <span style={{ fontFamily: "var(--font-body)", fontWeight: 600, fontSize: 14, color: "var(--white)", lineHeight: 1.5 }}>{o}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div style={{ background: p.color, border: "2px solid var(--ink)", borderRadius: 18, padding: "24px 22px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
+          <Icon name="message-circle" size={18} color="var(--ink)" />
+          <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)" }}>What this talk covers</span>
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {p.covers.map(c => (
+            <span key={c} style={{ background: "var(--white)", border: "1.5px solid var(--ink)", borderRadius: 999, padding: "6px 13px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--ink)" }}>{c}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const G912Presenters = () => (
+  <div>
+    <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
+    <div className="ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+      <PresenterCard name="Erin Pompa" role="Founder & Speaker" tagline="The shift starts here. Embrace the power of a perspective shift." color="var(--lime)" img="/uploads/NCSL+Carousel+post.png.webp" href="https://erinpompa.com" />
+    </div>
+    {G912_PRESENTERS.map(p => <G912Detail key={p.name} p={p} />)}
+  </div>
+);
 
 const CMVideoPlayer = () => {
   const [playing, setPlaying] = React.useState(false);
@@ -355,7 +465,7 @@ const TabContent = ({ t }) => (
     {(t.id === "g68" || t.id === "g912") && (
       <React.Fragment>
         <div style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 24, padding: "32px", marginBottom: 44 }}>
-          <G68Presenters />
+          {t.id === "g912" ? <G912Presenters /> : <G68Presenters />}
         </div>
         <G68HowItWorks />
       </React.Fragment>
