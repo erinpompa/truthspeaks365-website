@@ -141,7 +141,8 @@ function App() {
 
       {/* About the speaker, about the talk, objectives, what it covers */}
       <section style={{ background: "var(--paper)", padding: "80px 0" }}>
-        <div className="ts-wrap" style={{ maxWidth: 900, margin: "0 auto", display: "flex", flexDirection: "column", gap: 28 }}>
+        <div className="ts-wrap ts-split" style={{ maxWidth: 1120, margin: "0 auto", display: "grid", gridTemplateColumns: s.covers ? "1.7fr 1fr" : "1fr", gap: 32, alignItems: "start" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 28, minWidth: 0 }}>
           <div>
             <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 800, textTransform: "uppercase", letterSpacing: "-0.02em", fontSize: "clamp(26px, 3vw, 38px)", lineHeight: 1.05, color: "var(--ink)", margin: "0 0 18px" }}>
               About <HL color={s.color}>{s.name.split(" ")[0]}</HL>
@@ -152,7 +153,6 @@ function App() {
             <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 12 }}>About the talk</div>
             <p style={{ fontFamily: "var(--font-body)", fontSize: 17, lineHeight: 1.65, color: "var(--ink-500)", margin: 0 }}>{s.abstract}</p>
           </div>}
-          <div className="ts-split" style={{ display: "grid", gridTemplateColumns: s.covers ? "1.35fr 1fr" : "1fr", gap: 22, alignItems: "start" }}>
           <div style={{ background: "var(--ink)", borderRadius: 20, padding: "28px 28px", border: "2px solid var(--ink)", boxShadow: `5px 5px 0 ${s.color}` }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 20 }}>
               <Icon name="graduation-cap" size={20} color={s.color} />
@@ -175,7 +175,8 @@ function App() {
               ))}
             </div>
           </div>
-          {s.covers && <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 20, padding: "26px 28px" }}>
+          </div>
+          {s.covers && <div style={{ background: s.color, border: "2px solid var(--ink)", borderRadius: 20, padding: "26px 28px", position: "sticky", top: 100 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 16 }}>
               <Icon name="message-circle" size={18} color="var(--ink)" />
               <span style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 13, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)" }}>Themes within this presentation</span>
@@ -186,7 +187,6 @@ function App() {
               ))}
             </div>
           </div>}
-          </div>
         </div>
       </section>
 
