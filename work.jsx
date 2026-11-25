@@ -304,9 +304,9 @@ const G68_COVERS = {
 };
 const G68_PRESENTERS = G912_PRESENTERS.map(p => ({ ...p, covers: G68_COVERS[p.name] || p.covers }));
 
-const G912Detail = ({ p, note }) => (
+const G912Detail = ({ p, note }) => { const [open, setOpen] = React.useState(false); useLucide(); return (
   <div id={"sp-" + p.name.split(" ")[0].toLowerCase()} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 26px", boxShadow: `5px 5px 0 var(--ink)`, marginTop: 24, scrollMarginTop: 150 }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: p.objectives ? 22 : 0 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: p.objectives && open ? 22 : 0 }}>
       <div style={{ width: 120, height: 120, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", flexShrink: 0, background: "var(--white)" }}>
         <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
       </div>
@@ -314,12 +314,13 @@ const G912Detail = ({ p, note }) => (
         <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: 24, letterSpacing: "-0.01em", color: "var(--ink)", lineHeight: 1.1, marginBottom: 5 }}>{p.name}</div>
         <div style={{ fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 12, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: 7 }}>{p.role}</div>
         <div style={{ fontFamily: "var(--font-body)", fontSize: 14.5, lineHeight: 1.45, color: "var(--ink)", fontStyle: "italic", marginBottom: 10 }}>"{p.tagline}"</div>
-        <a href={p.href} target={p.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
-          {p.cta || ("Click here to learn more about " + p.name.split(" ")[0])} <Icon name="arrow-right" size={14} color="var(--ink)" />
+        <a href={p.objectives ? "#" : p.href} onClick={e => { if (p.objectives) { e.preventDefault(); setOpen(o => !o); } }} target={!p.objectives && p.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 6, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>
+          {p.cta || (open ? "Show less" : "Click here to learn more about " + p.name.split(" ")[0])} <Icon name="arrow-right" size={14} color="var(--ink)" />
         </a>
+        {open && p.objectives && <a href={p.href} style={{ display: "inline-flex", marginLeft: 18, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 13.5, color: "var(--ink)", borderBottom: "2px solid var(--ink)", paddingBottom: 1, textDecoration: "none" }}>{"See " + p.name.split(" ")[0] + "'s full page →"}</a>}
       </div>
     </div>
-    {p.objectives && <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
+    {p.objectives && open && <div className="ts-split" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 18, alignItems: "start" }}>
       <div style={{ background: "var(--ink)", borderRadius: 18, padding: "24px 22px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
           <Icon name="graduation-cap" size={18} color={p.color} />
@@ -350,24 +351,11 @@ const G912Detail = ({ p, note }) => (
       </div>
     </div>}
   </div>
-);
+); };
 
 const G912Presenters = ({ list = G912_PRESENTERS, note }) => (
   <div>
     <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
-    <div style={{ display: "flex", flexWrap: "wrap", gap: "clamp(10px, 3vw, 34px)", justifyContent: "center", marginBottom: 8 }}>
-      {[{ name: "Erin Pompa", role: "Founder & Speaker", color: "var(--lime)", img: "/uploads/cc-erin.jpg" }, ...list].map(p => (
-        <a key={p.name} href="#"
-          onClick={e => { e.preventDefault(); const el = document.getElementById("sp-" + p.name.split(" ")[0].toLowerCase()); el && el.scrollIntoView({ behavior: "smooth", block: "start" }); }}
-          style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8, textDecoration: "none", width: "clamp(88px, 26vw, 130px)" }}>
-          <div style={{ width: "clamp(76px, 21vw, 120px)", height: "clamp(76px, 21vw, 120px)", borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", background: "var(--white)", transition: "transform .15s" }}
-            onMouseEnter={e => e.currentTarget.style.transform = "scale(1.05)"} onMouseLeave={e => e.currentTarget.style.transform = "none"}>
-            <img src={p.img} alt={p.name} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }} />
-          </div>
-          <div style={{ fontFamily: "var(--font-display)", fontWeight: 900, fontSize: "clamp(12px, 3.4vw, 15px)", color: "var(--ink)", textAlign: "center", lineHeight: 1.1 }}>{p.name}</div>
-        </a>
-      ))}
-    </div>
     <G912Detail p={{ name: "Erin Pompa", role: "Founder & Speaker", tagline: "The shift starts here. Embrace the power of a perspective shift.", color: "var(--lime)", img: "/uploads/cc-erin.jpg", href: "https://erinpompa.com", cta: "Click here to learn more about Erin" }} />
     {list.map(p => <G912Detail key={p.name} p={p} note={note} />)}
   </div>
@@ -518,11 +506,11 @@ function App() {
         sub="Pick your audience. We'll bring the right woman, the right story, and the right framework built for that age group. Every presentation is tailored to fit the room, because a third grader and a tenth grader are not the same, and we wouldn't treat them like they are."
       />
 
-      <section style={{ background: "var(--paper)", padding: "32px 0 8px" }}>
+      {active !== "g35" && <section style={{ background: "var(--paper)", padding: "32px 0 8px" }}>
         <div className="ts-wrap">
           <img src="/uploads/team-banner.jpg" alt="The TruthSpeaks 365 presenters" style={{ width: "100%", maxWidth: 900, display: "block", margin: "0 auto", borderRadius: 20, border: "2px solid var(--ink)" }} />
         </div>
-      </section>
+      </section>}
 
       {/* sticky tab bar */}
       <div style={{ position: "sticky", top: 74, zIndex: 40, background: "var(--paper)", borderBottom: "1px solid var(--ink-100)" }}>
