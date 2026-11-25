@@ -296,7 +296,15 @@ const G912_PRESENTERS = [
   },
 ];
 
-const G912Detail = ({ p }) => (
+const G68_COVERS = {
+  "Christine Conti": ["Bullying & teasing", "Body image", "Feeling \"not enough\"", "Facing fear", "Finding your voice", "Setting boundaries", "Turning setbacks into fuel"],
+  "Nicolle Gonzalez": ["Naming your emotions", "Emotional regulation", "Grounding techniques", "Family pressure", "Loneliness", "Asking for help", "Self-talk & self-worth"],
+  "Candice Beers": ["Belonging", "Self-worth", "Stress in the body", "Breathwork", "Yoga & movement", "Grounding"],
+  "Janaïs Mia Roberts": ["Comparison", "Self-worth", "\"Not good enough\" self-talk", "Confidence", "Finding your voice", "Trust & connection", "Recognizing your strengths"],
+};
+const G68_PRESENTERS = G912_PRESENTERS.map(p => ({ ...p, covers: G68_COVERS[p.name] || p.covers }));
+
+const G912Detail = ({ p, note }) => (
   <div style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 26px", boxShadow: `5px 5px 0 var(--ink)`, marginTop: 24 }}>
     <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap", marginBottom: 22 }}>
       <div style={{ width: 120, height: 120, borderRadius: 999, border: `4px solid ${p.color}`, outline: "2px solid var(--ink)", overflow: "hidden", flexShrink: 0, background: "var(--white)" }}>
@@ -338,18 +346,19 @@ const G912Detail = ({ p }) => (
             <span key={c} style={{ background: "var(--white)", border: "1.5px solid var(--ink)", borderRadius: 999, padding: "6px 13px", fontFamily: "var(--font-body)", fontWeight: 700, fontSize: 13, color: "var(--ink)" }}>{c}</span>
           ))}
         </div>
+        {note && <div style={{ marginTop: 14, fontFamily: "var(--font-body)", fontSize: 13, lineHeight: 1.5, fontStyle: "italic", color: "var(--ink)" }}>{note}</div>}
       </div>
     </div>
   </div>
 );
 
-const G912Presenters = () => (
+const G912Presenters = ({ list = G912_PRESENTERS, note }) => (
   <div>
     <div style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16, textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--ink)", marginBottom: 22 }}>Meet our presenters</div>
     <div className="ts-grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
       <PresenterCard name="Erin Pompa" role="Founder & Speaker" tagline="The shift starts here. Embrace the power of a perspective shift." color="var(--lime)" img="/uploads/NCSL+Carousel+post.png.webp" href="https://erinpompa.com" />
     </div>
-    {G912_PRESENTERS.map(p => <G912Detail key={p.name} p={p} />)}
+    {list.map(p => <G912Detail key={p.name} p={p} note={note} />)}
   </div>
 );
 
@@ -465,7 +474,7 @@ const TabContent = ({ t }) => (
     {(t.id === "g68" || t.id === "g912") && (
       <React.Fragment>
         <div style={{ background: "var(--sky)", border: "2px solid var(--ink)", borderRadius: 24, padding: "32px", marginBottom: 44 }}>
-          {t.id === "g912" ? <G912Presenters /> : <G68Presenters />}
+          {t.id === "g912" ? <G912Presenters /> : <G912Presenters list={G68_PRESENTERS} note="Every talk is adjusted for middle school. Heavier parts of a speaker's story are only shared with your school's approval." />}
         </div>
         <G68HowItWorks />
       </React.Fragment>
