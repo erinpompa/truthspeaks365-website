@@ -310,7 +310,7 @@ const G68_COVERS = {
   "Candice Beers": ["Belonging", "Self-worth", "Stress in the body", "Breathwork", "Yoga & movement", "Grounding"],
   "Janaïs Mia Roberts": ["Comparison", "Self-worth", "\"Not good enough\" self-talk", "Confidence", "Finding your voice", "Trust & connection", "Recognizing your strengths"],
 };
-const G68_PRESENTERS = G912_PRESENTERS.map(p => ({ ...p, covers: G68_COVERS[p.name] || p.covers }));
+const G68_PRESENTERS = G912_PRESENTERS.map(p => ({ ...p, covers: G68_COVERS[p.name] || p.covers, href: p.href + "&grade=68" }));
 
 const G912Detail = ({ p, note }) => { const [open, setOpen] = React.useState(false); useLucide(); return (
   <div id={"sp-" + p.name.split(" ")[0].toLowerCase()} style={{ background: "var(--white)", border: "2px solid var(--ink)", borderRadius: 22, padding: "28px 26px", boxShadow: `5px 5px 0 var(--ink)`, marginTop: 24, scrollMarginTop: 150 }}>
