@@ -278,10 +278,10 @@ const Footer = () => (
 );
 
 // Inner-page hero band (ink) eyebrow + big title + sub, optional kicker chip
-const PageHero = ({ eyebrow, title, sub, accent = "var(--lime)", chip, bgImage }) => (
+const PageHero = ({ eyebrow, title, sub, accent = "var(--lime)", chip, bgImage, overlay }) => (
   <section id="main-content" style={{ background: "var(--ink)", color: "var(--white)", padding: "64px 0 72px", position: "relative", overflow: "hidden" }}>
     {bgImage && <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 0, backgroundImage: `url('${bgImage}')`, backgroundSize: "cover", backgroundPosition: "center 28%" }}></div>}
-    {bgImage && <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: "rgba(22,20,19,.88)" }}></div>}
+    {bgImage && <div aria-hidden="true" style={{ position: "absolute", inset: 0, zIndex: 1, background: overlay || "rgba(22,20,19,.88)" }}></div>}
     <div className="ts-wrap ts-reveal" style={{ maxWidth: 920, position: "relative", zIndex: 2 }}>
       {chip && <div style={{ display: "inline-flex", alignItems: "center", gap: 8, background: accent, color: "var(--ink)", borderRadius: 999, padding: "7px 16px", marginBottom: 22, fontFamily: "var(--font-body)", fontWeight: 800, fontSize: 12.5, letterSpacing: "0.1em", textTransform: "uppercase", border: "2px solid var(--ink)", whiteSpace: "nowrap" }}>{chip}</div>}
       {eyebrow && <Eyebrow color={accent} style={{ marginBottom: 16 }}>{eyebrow}</Eyebrow>}
